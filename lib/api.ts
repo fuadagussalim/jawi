@@ -1,5 +1,4 @@
 const API_URL = process.env.WORDPRESS_API_URL;
-
 async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
   const headers = { "Content-Type": "application/json" };
 
@@ -7,6 +6,10 @@ async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
     headers[
       "Authorization"
     ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`;
+  }
+
+  if (!API_URL) {
+    throw new Error('WordPress API URL is not defined');
   }
 
   // WPGraphQL Plugin must be enabled

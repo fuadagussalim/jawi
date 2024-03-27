@@ -32,8 +32,8 @@ export default function PostPreview({
         <div className="flex inline">
 
         <p className="flex inline px-2"> - </p>
-        <Author author={author}>
-        </Author>
+        <Author author={author}/>
+      
         </div>
       </div>
       <div

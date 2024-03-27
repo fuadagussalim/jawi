@@ -1,5 +1,4 @@
-import type { ReactNode } from 'react';
-import Typewriter from 'typewriter-effect';
+import React, { useState, useEffect } from 'react';
 
 interface TypewriterContentProps {
   content: string;
@@ -7,9 +6,21 @@ interface TypewriterContentProps {
 
 const TypewriterContent: React.FC<TypewriterContentProps> = ({
   content,
-}: TypewriterContentProps) =>
-  new Promise((resolve) => {
-    setTimeout(() => resolve(<Typewriter options={{ autoStart: true }}>{content}</Typewriter>), 0);
-  });
+}: TypewriterContentProps) => {
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Simulate typewriter effect
+      setText((prevText) =>
+        prevText.length === content.length ? prevText : content.substring(0, prevText.length + 1)
+      );
+    }, 100);
+    
+    return () => clearInterval(interval);
+  }, [content]);
+
+  return <div>{text}</div>;
+};
 
 export default TypewriterContent;

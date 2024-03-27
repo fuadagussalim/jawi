@@ -33,7 +33,8 @@ import { MyVideo } from "../components/MyVideo";
 import Post from "./posts/[slug]";
 // import Link from "next/link";
 import { NavLink } from "../components/Nav/NavLinks";
-import { postsData } from '../app/api/data'
+
+import CoverImage from "../components/cover-image";
 
 // export async function getStaticProps({ preview = false }) {
 //     const posts = await getAllPostsForHome(preview);
@@ -152,7 +153,7 @@ export default function ClientPage() {
 
     return (
         <Layout preview={""} className="">
-            <>
+            <div className="hidden md:block">
                 <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
                     <HomeBanner href='#about' image='/DEF_7207.JPG' maintext='Javan Wildlife Institute' subtext='Menjadi mitra rujukan sains konservasi di Indonesia' align="left" />
                     <SectionContainer id="home" className="components--container grid gap-8 sm:gap-24 mx-0 px-0">
@@ -161,11 +162,11 @@ export default function ClientPage() {
                         >
                             <SectionContainer id="portofolio" className="feature-tabs">
                                 <CardGroup className=" sm:grid-cols-1 md:grid-cols-2 divide-y p-400 divide-black-400">
-                                    <Card className="alig-baseline h-full col-span-1 text-primary-900  bg-[#F3F5F8]">
+                                    <Card className="alig-baseline h-full col-span-1 md:text-primary-900  bg-[#F3F5F8]">
                                         <CardBody className="sm:w-full md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] p-12">
-                                            <div className="flex flex-col my-auto py-auto h-full my-auto justify-center content-center align-center">
-                                                <h3 className="text-black text-justify font-black p-auto my-0">ABOUT JAWI</h3>
-                                                <p className="text-black text-justify max-w-xs p-auto sm:max-w-full"> organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.. </p>
+                                            <div className="flex flex-col  p-10 pr-10  h-full px-auto justify-center content-center align-center">
+                                                <h3 className="text-black sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">ABOUT JAWI</h3>
+                                                <p className="text-black sm:font-normal pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
                                             </div>
                                         </CardBody>
                                     </Card>
@@ -178,7 +179,7 @@ export default function ClientPage() {
                                                     PROGRAM
                                                 </CardHeader>
                                                 <p className="text-black ">
-                                                    Menciptakan keselarasan antara manusia, alam, dan satwa liar melalui penerapan ilmu pengetahuan dan teknologi dengan berasaskan konservasi sumber daya alam dengan prinsip pembangunan yang berkelanjutan
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
                                             </CardBody>
                                         </Card>
@@ -189,7 +190,7 @@ export default function ClientPage() {
                                                     OUR STORY
                                                 </CardHeader>
                                                 <p className="text-black ">
-                                                    Tim Jawi sudah banyak terlibat dalam beberapa project survei keanekaragaman hayati di berbebagai tipe habitat, mulai dari mangrove..
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
 
                                             </CardBody>
@@ -219,7 +220,7 @@ export default function ClientPage() {
                                                 </CardHeader>
                                                 <p className="text-black h-full">
 
-                                                    Mengarusutamakan sains konservasi yang inklusif di Indonesia..
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
                                             </CardBody>
                                         </Card>
@@ -232,7 +233,7 @@ export default function ClientPage() {
                                                     TEAM
                                                 </CardHeader>
                                                 <p className="text-black ">
-                                                    Dalam bidang kehutanan dan konservasi, pemahaman spasial secara menyeluruh mengenai lokasi-lokasi penting dan esensial bagi satwa liar dan masyarakat menjadi kunci untuk perancangan desain pengelolaan wilayah kerja..
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
                                             </CardBody>
                                         </Card>
@@ -454,7 +455,13 @@ export default function ClientPage() {
 
                     </SectionContainer>
                 </div>
-            </>
+            </div>
+
+            <div className="md:hidden h-[740px]">
+                
+
+                Ini tampilan mobile
+            </div>
         </Layout>
     );
 }

@@ -7,8 +7,7 @@ import Intro from "../../components/intro";
 import Footer from "../../components/footer"
 import Layout from "../../components/layout";
 import { getAllPostsForHome } from "../../lib/api";
-import { CMS_NAME } from "../lib/constants";
-import ClientPage from "./ClientPage";
+
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
 
 
@@ -42,10 +41,10 @@ export default function Index({ allPosts: { edges }, preview }) {
         </Container>
      
       {/* </Container> */}
-
+{/* 
       <ImageCarousel>
 
-      </ImageCarousel>
+      </ImageCarousel> */}
     
     </Layout>
   );

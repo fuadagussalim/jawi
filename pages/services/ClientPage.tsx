@@ -49,9 +49,9 @@ export default function ClientPage() {
                                 </CardHeader>
 
                             </CardGroup>
-                            <CardPost title={"Contoh"} image={""} subtitle={"ini sub judul"}>
+                            {/* <CardPost title="Contoh" image="" subtitle="ini sub judul">
 
-                            </CardPost>
+                            </CardPost> */}
                         </SectionContainer>
                     </MotionBTTContainer>
 

@@ -17,7 +17,7 @@ export default function Layout({preview, className = "", children } ) {
           /> */}
            <Header />
         <main
-          className={`main relative overflow-hidden ${
+          className={`main relative overflow-hidden  ${
               className && className
           }`}
           >
