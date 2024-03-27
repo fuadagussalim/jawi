@@ -22,5 +22,5 @@ const TypewriterContent: React.FC<TypewriterContentProps> = ({
 
   return <div>{text}</div>;
 };
-
-export default TypewriterContent;
+export {}
+// export default TypewriterContent;
