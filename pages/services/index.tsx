@@ -12,48 +12,48 @@ import ClientPage from "./ClientPage";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
 
 
-export default function Index({ allServices: { edges }, preview }) {
-  const heroPost = edges[0]?.node;
-  const morePosts = edges.slice(1);
-  const allServices = edges[0].node
-  console.log(allServices[0]);
+// export default function Index({ allServices: { edges }, preview }) {
+//   const heroPost = edges[0]?.node;
+//   const morePosts = edges.slice(1);
+//   const allServices = edges[0].node
+//   console.log(allServices[0]);
 
-  return (
-    <Layout preview={preview}>
-      {/* <ClientPage>
+//   return (
+//     <Layout preview={preview}>
+//       {/* <ClientPage>
 
-      </ClientPage> */}
-      <Head>
-        <title>{`JAWI | Javan Wildlife`}</title>
-      </Head>
-      <Container>
-        <Intro />
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.featuredImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
+//       </ClientPage> */}
+//       {/* <Head>
+//         <title>{`JAWI | Javan Wildlife`}</title>
+//       </Head>
+//       <Container>
+//         <Intro />
+//         {heroPost && (
+//           <HeroPost
+//             title={heroPost.title}
+//             coverImage={heroPost.featuredImage}
+//             date={heroPost.date}
+//             author={heroPost.author}
+//             slug={heroPost.slug}
+//             excerpt={heroPost.excerpt}
+//           />
+//         )}
+//         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+//       </Container>
 
-      <ImageCarousel>
+//       <ImageCarousel>
 
-      </ImageCarousel>
-    
-    </Layout>
-  );
-}
+//       </ImageCarousel>
+//      */}
+//     </Layout>
+//   );
+// }
 
-export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const allServices = await getServices(preview);
+// export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+//   const allServices = await getServices(preview);
 
-  return {
-    props: { allServices, preview },
-    revalidate: 10,
-  };
-};
+//   return {
+//     props: { allServices, preview },
+//     revalidate: 10,
+//   };
+// };

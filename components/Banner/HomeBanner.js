@@ -6,7 +6,7 @@ import { SectionContainer } from "../Section";
 import { PageTitle } from "../Title";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import Typewriter from 'typewriter-effect';
+import Typewriter from "react-simple-typewriter";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
 import MyVideo from "../MyVideo";
@@ -15,6 +15,7 @@ import clsx from "clsx";
 import Video from 'next-video';
 
 import Link from "next/link";
+import TypewriterContent from "../Typewriter/Typewriter";
 export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true, maintextclass = "", subtextclass = "", align = "center", motionClass = "" }) => {
 
     var visibility = 'awal'
@@ -54,7 +55,7 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                                 
 
 
-                                    <Typewriter 
+                                    {/* <Typewriter 
                                         onInit={(typewriter) => {
                                             if (typeAnimation){
                                                 typewriter.typeString(`${subtext}`)
@@ -67,8 +68,10 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                                             }
                                            
                                         }}
-                                    />
-
+                                    /> */}
+                                    <TypewriterContent content={`${subtext}`}>
+                                        subtext
+                                    </TypewriterContent>
 
 
                                 
