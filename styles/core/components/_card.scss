@@ -1,0 +1,25 @@
+/**
+
+=========================================================
+** Custom Card styling
+=========================================================
+
+**/
+
+@layer components {
+    .card {
+        @apply grid text-black/60;
+    }
+    .card--container {
+        @apply grid h-full flex-wrap;
+    }
+    .card-group--container {
+        @apply grid w-full gap-4;
+    }
+    .card--header {
+        @apply mt-8 mb-2 flex w-full items-center justify-between;
+        h2 {
+            @apply mb-0 text-xl;
+        }
+    }
+}

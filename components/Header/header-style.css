@@ -1,0 +1,35 @@
+
+header {
+    padding: 20px;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 1s ease;
+    background-color: transparent; /* Default transparent background */
+  }
+  
+  header h1 {
+    margin: 0;
+    color: #fff;
+  }
+  
+  header.scrolled {
+    background-color: #ca1a1a; /* Change to your desired solid color */
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .header.scrolled a {
+    color: #000; /* Change to your desired color */
+  }
+  
+
+  

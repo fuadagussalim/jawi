@@ -1,0 +1,110 @@
+
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+// 
+// Core CSS Reset/MISCS
+@import "core/misc";
+
+// Core Declarations
+@import "core/variables";
+
+// Core Layouts and Style Definitions
+@import "core/general";
+@import "core/typography";
+@import "core/utilities";
+
+// Core Components
+@import "core/components/button";
+@import "core/components/badge";
+@import "core/components/nav";
+@import "core/components/header";
+@import "core/components/card";
+@import "core/components/page-banner";
+@import "core/components/footer";
+
+// Core Plugins
+// @import "plugins/plugin-tailwind";
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header.transparent {
+    background-color: transparent;
+  }
+  
+  .header.solid {
+    background-color: #fff;
+    text-decoration-color: black;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 0 16px;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .nav-link {
+    // color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+//   .nav-link:hover {
+//     color: #ccc;
+//   }
+
+  .header:hover {
+    color: #000000;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+ .button:hover {
+    color: #d8d5d5;
+    background-color: hsl(0, 3%, 30%);
+  }
+
+
+  .header:hover nav-link{
+    color: #000000;
+    background-color: hsl(0, 0%, 100%);
+  }
+  
+  .header.hovered {
+    color: #000;
+    background-color: #fff;
+  }
+  .header.hovered .nav-link{
+    color: #000;
+    background-color: #fff;
+  }
+
+//   .navbar-nav.hovered ul{ 
+//     color: #000;
+//     background-color: #fff;
+//   }
+
+

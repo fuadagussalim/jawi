@@ -100,6 +100,32 @@ export async function getAllPostsForHome(preview) {
 
   return data?.posts;
 }
+export async function getServices(preview) {
+  const data = await fetchAPI(
+    `
+    query AllPosts {
+      post(id: "") {
+        services {
+          deskripsi
+          fieldGroupName
+          judul
+          post
+          servicesimage {
+            sourceUrl
+          }
+        }
+      }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    },
+  );
+
+  return data?.posts;
+}
 
 export async function getPostAndMorePosts(slug, preview, previewData) {
   const postPreview = preview && previewData?.post;

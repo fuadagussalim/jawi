@@ -1,0 +1,10 @@
+@layer components {
+    #footer {
+        .footer {
+           
+            &--background {
+                @apply opacity-50;
+            }
+        }
+    }
+}
