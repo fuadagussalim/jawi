@@ -1,6 +1,6 @@
-require('dotenv').config(); // This loads the environment variables from .env into process.env
+// require('dotenv').config(); // This loads the environment variables from .env into process.env
 
-// Rest of your code
+// // Rest of your code
 
 import Head from "next/head";
 import { GetStaticProps } from "next";
