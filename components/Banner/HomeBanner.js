@@ -54,7 +54,7 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                             <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
                                 
 
-
+subtext
                                     {/* <Typewriter 
                                         onInit={(typewriter) => {
                                             if (typeAnimation){
@@ -69,9 +69,9 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                                            
                                         }}
                                     /> */}
-                                    <TypewriterContent content={`${subtext}`}>
+                                    {/* <TypewriterContent content={`${subtext}`}>
                                         subtext
-                                    </TypewriterContent>
+                                    </TypewriterContent> */}
 
 
                                 
