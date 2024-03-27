@@ -20,5 +20,5 @@ const TypewriterContent: React.FC<TypewriterContentProps> = ({
     </span>
   );
 };
-
-export default TypewriterContent;
+export{}
+// export default TypewriterContent;
