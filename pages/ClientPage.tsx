@@ -457,10 +457,10 @@ export default function ClientPage() {
                 </div>
             </div>
 
-            <div className="md:hidden h-[740px]">
+            <div className="md:hidden h-[440px]">
                 
 
-                Ini tampilan mobile
+                Mohon maaaf.. Tampilan mobile masih dalam tahap penegembangan
             </div>
         </Layout>
     );
