@@ -66,7 +66,7 @@ export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
     query AllPosts {
-      posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+      posts(where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             title
@@ -238,4 +238,32 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   if (data.posts.edges.length > 2) data.posts.edges.pop();
 
   return data;
+}
+
+export async function getAllPages(preview) {
+  const data = await fetchAPI(
+    `
+    query Pages {
+      pages {
+        nodes {
+          content
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+          title
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    },
+  );
+
+  return data?.pages;
 }
