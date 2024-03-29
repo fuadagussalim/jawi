@@ -2,7 +2,8 @@
   @apply text-lg overflow-hidden;
 }
 .wp-caption img[class*="wp-image-"]{
-  @apply max-w-1
+
+  @apply w-1/2;
 }
 
 .content p,
@@ -76,4 +77,13 @@
 
 .content audio {
   @apply w-full;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
