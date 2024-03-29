@@ -11,12 +11,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
 import MyVideo from "../MyVideo";
 import clsx from "clsx";
+import StarField from '../AnimatedAttribute/StarField'
+import './stars.module.scss'
 // import { useWindowSize } from '../../utils/hooks/useWindowSize';
 import Video from 'next-video';
 
 import Link from "next/link";
 import TypewriterContent from "../Typewriter/Typewriter";
-export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true, maintextclass = "", subtextclass = "", align = "center", motionClass = "" }) => {
+export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = true, maintextclass = "", subtextclass = "", align = "center", motionClass = "" }) => {
 
     var visibility = 'awal'
     if (typeAnimation) {
@@ -52,10 +54,10 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                         <PageTitle className={`${subtextclass} grid relative capitalize font-light mt-0`} type="xsmall">
 
                             <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
-                                
 
-{subtext}
-                                    {/* <Typewriter 
+
+                                {subtext}
+                                {/* <Typewriter 
                                         onInit={(typewriter) => {
                                             if (typeAnimation){
                                                 typewriter.typeString(`${subtext}`)
@@ -69,12 +71,12 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                                            
                                         }}
                                     /> */}
-                                    {/* <TypewriterContent content={`${subtext}`}>
+                                {/* <TypewriterContent content={`${subtext}`}>
                                         subtext
                                     </TypewriterContent> */}
 
 
-                                
+
 
 
 
@@ -87,17 +89,28 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                     </div>
 
                     <Link type="button" className="text-white font-bold bg-black px-10 py-3 hover:bg-white hover:text-black" href={href} passHref={true}>
-                  
 
-                  Read More
-              
-                  
-              </Link>
-                    
+
+                        Read More
+
+
+                    </Link>
+
                     {/* <Button variant="black" radius="100" className="relative text-white">Read More</Button> */}
 
                 </div>
-                <div className={`bg-black md:hidden lg:block z-20 stroke-black items-start  text-white top-1/3 left-14 text-${align} w-full p-10 `}>
+                <div className={`bg-black md:hidden z-20 stroke-black items-start  text-white top-1/3 left-14 text-${align} w-full p-10 `}>
+                    <div class="stars h-full absolute z-25">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+
+                    </div>
                     <div className="w-full grid grid-cols-1 ">
                         <PageTitle className={`${maintextclass} grid mb-1 uppercase  relative font-extrabold w-full`} type="default">
                             <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}>
@@ -109,10 +122,10 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                         <PageTitle className={`${subtextclass} grid relative capitalize font-light mt-0`} type="xsmall">
 
                             <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
-                                
 
-{subtext}
-                                    {/* <Typewriter 
+
+                                {subtext}
+                                {/* <Typewriter 
                                         onInit={(typewriter) => {
                                             if (typeAnimation){
                                                 typewriter.typeString(`${subtext}`)
@@ -126,12 +139,12 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                                            
                                         }}
                                     /> */}
-                                    {/* <TypewriterContent content={`${subtext}`}>
+                                {/* <TypewriterContent content={`${subtext}`}>
                                         subtext
                                     </TypewriterContent> */}
 
 
-                                
+
 
 
 
@@ -141,21 +154,22 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
 
                             </MotionBTTContainer>
                         </PageTitle>
+                        <StarField></StarField>
                     </div>
 
                     <Link type="button" className="text-black font-bold bg-white px-10 py-3 hover:bg-orange hover:text-black" href={href} passHref={true}>
-                  
 
-                  Read More
-              
-                  
-              </Link>
-                    
+
+                        Read More
+
+
+                    </Link>
+
                     {/* <Button variant="black" radius="100" className="relative text-white">Read More</Button> */}
 
                 </div>
                 <div>
-                    {/* <div className="inset-0 bg-black  z-10 mt-20 md:mt-0"></div> */}
+                    {/* <div className="inset-0 bg-black  z-10 mt-20 md:mt-0"><StarField/></div> */}
                     <Image
                         className="object-scale-down  m-0 p-0 bg-blend-darken"
                         src={image}
