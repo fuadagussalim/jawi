@@ -464,14 +464,14 @@ export default function ClientPage({ allPosts}) {
             </div>
             <div className="sm:px-5">
                 
-            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto md:m-20 sm:mb-10 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full w-2/3">
+            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-10 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full w-2/3">
 
                             
                                     <CardImage src='/product.jpeg' className='gridcol-span-1 h-full' imageClassName={'object-cover objet-bottom'} alt={''} />
 
-                                    <Card className="grid col-span-1 align-middle sm:ml-0 sm:mt-5 md:mt-0 md:p-0 md:ml-10 text-primary-400">
-                                        <CardBody className="flex align-middle h-full items-center rounded-0 align-top my-0 pt-0">
-                                            <div className="w-full">
+                                    <Card className="grid col-span-1 align-middle md:align-top sm:ml-0 sm:mt-5 md:mt-0 md:p-0 md:ml-10 text-primary-400">
+                                        <CardBody className="flex sm:align-middle md:align-top h-full sm:items-center md:items-top rounded-0 align-top my-0 pt-0">
+                                            <div className="w-full md:h-full">
                                                 <div>
                                                     <h1 className="text-black text-left m-0 max-w-xs text-2xl font-bold sm:max-w-full">SUPPORT US!</h1>
 
