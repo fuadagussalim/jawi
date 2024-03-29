@@ -452,7 +452,7 @@ export default function ClientPage({ allPosts}) {
             </div>
             <div className="sm:px-5">
                 
-            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto md:m-20 sm:mb-20 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full w-2/3">
+            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto md:m-20 sm:mb-10 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full w-2/3">
 
                             
                                     <CardImage src='/product.jpeg' className='gridcol-span-1 h-full' imageClassName={'object-cover objet-bottom'} alt={''} />
