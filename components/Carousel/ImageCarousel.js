@@ -2,33 +2,12 @@
 import { useState, useEffect } from "react";
 import { getAllPostsForHome } from "../../lib/api";
 
-const ImageCarousel = () => {
+const ImageCarousel = ({carouselPosts}) => {
+    const posts = carouselPosts;
     const [currentImageIndex, setCurrentImageIndex] = useState(1);
     const [previousImageIndex, setpreviousImageIndex] = useState(currentImageIndex - 1 < 1 ? 4 : currentImageIndex - 1);
     const [afterImageIndex, setafterImageIndex] = useState(currentImageIndex + 1 > 4 ? 0 : currentImageIndex + 1);
-    const [posts, setPosts] = useState(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const postsData = await getAllPostsForHome(false);
-            setPosts(postsData);
-        };
-
-        fetchData();
-    }, []);
-
-    if (!posts) {
-        return <div>Loading...</div>;
-    }
-
-    const images = posts.edges
-        .filter(({ node }) => node.featuredImage?.node?.sourceUrl)
-        .map(({ node }) => node.featuredImage.node.sourceUrl);
-
-    const titles = posts.edges.filter(({ node }) => node.featuredImage?.node?.sourceUrl).map(({ node }) => node.title);
-
-    const dates = posts.edges.filter(({ node }) => node.featuredImage?.node?.sourceUrl).map(({ node }) => node.date);
-
+   
     function handlePrevClick() {
         // Check if at the first slide
         if (currentImageIndex === 1) {
@@ -64,22 +43,22 @@ const ImageCarousel = () => {
                 <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="relative hidden md:show grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
                         <h5 className="absolute font-bold text-shadow text-white z-20 bottom-[30px] m-5">
-                            {titles[previousImageIndex]}
+                            {posts[previousImageIndex].title}
                         </h5>
-                        <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{dates[previousImageIndex]}</p>
-                        <img src={images[previousImageIndex]} alt="" className="absolute w-full h-full object-cover transition duration-500" />
+                        <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{posts[previousImageIndex].date}</p>
+                        <img src={posts[previousImageIndex].image} alt="" className="absolute w-full h-full object-cover transition duration-500" />
                     </div>
                     <div className="relative grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
-                        <h5 className="absolute font-bold text-white z-20 bottom-[30px] m-5">{titles[currentImageIndex]}</h5>
-                        <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{dates[currentImageIndex]}</p>
-                        <img src={images[currentImageIndex]} alt="" className="absolute w-full h-full object-cover transition duration-500" />
+                        <h5 className="absolute font-bold text-white z-20 bottom-[30px] m-5">{posts[currentImageIndex].title}</h5>
+                        <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{posts[currentImageIndex].date}</p>
+                        <img src={posts[currentImageIndex].image} alt="" className="absolute w-full h-full object-cover transition duration-500" />
                     </div>
                     <div className="relative hidden md:show grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
                         <h5 className="absolute font-bold text-white z-20 bottom-[30px] m-5">
-                            {titles[afterImageIndex]}
+                            {posts[afterImageIndex].title}
                         </h5>
-                        <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{dates[afterImageIndex]}</p>
-                        <img src={images[afterImageIndex]} alt="" className="absolute w-full h-full object-cover transition duration-500" />
+                        <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{posts[afterImageIndex].date}</p>
+                        <img src={posts[afterImageIndex].image} alt="" className="absolute w-full h-full object-cover transition duration-500" />
                     </div>
                 </div>
                 <button className="absolute top-1/2 transform -translate-y-1/2 right-0 z-10 p-2 bg-black text-white font-bold" onClick={handleNextClick}>

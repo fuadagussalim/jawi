@@ -21,10 +21,11 @@ export default function Index({ allPosts: { edges }, preview, allPages: { edgesP
     //  && edgesPages
      ) {
     const heroPost = edges[0]?.node;
-    const morePosts = edges.slice(1);
+    const morePosts = edges;
+    // console.log(heroPost);
     // const pages = edgesPages[0]?.node;
     return (
-      <ClientPage></ClientPage>
+      <ClientPage allPosts={morePosts}></ClientPage>
 
     );
   } else {

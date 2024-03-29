@@ -14,7 +14,7 @@ import ImageCarousel from "../../components/Carousel/ImageCarousel";
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node;
   const morePosts = edges.slice(1);
-  console.log(heroPost);
+  // console.log(heroPost);
 
   return (
     <Layout preview={preview}>

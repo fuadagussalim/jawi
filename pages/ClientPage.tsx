@@ -1,5 +1,5 @@
 'use client'
-
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { BadgeMessage, BadgeGroup, BadgeIcon } from "../components/Badge";
 import { SectionContainer } from "../components/Section";
@@ -46,7 +46,32 @@ import CoverImage from "../components/cover-image";
 //     };
 //   }
 
-export default function ClientPage() {
+export default function ClientPage({ allPosts}) {
+  
+    // const morePosts = edges.slice(1);
+    // console.log(allPosts);
+    // console.log(allPosts)
+    console.log('print post', allPosts);
+    interface CarouselPost {
+        title: string;
+        image: string;
+        date: string;
+      }
+      
+    const carouselPosts: CarouselPost[] = [];
+      
+    allPosts.map((node) => {
+        console.log({ node });
+      carouselPosts.push({
+        title: node.node.title,
+        image: node.node.featuredImage.node.sourceUrl,
+        date: node.node.date,
+      });
+    });
+    console.log(carouselPosts)
+
+
+
 
     // const posts = await getAllPostsForHome(false);
     // console.log(posts.edges);
@@ -123,31 +148,6 @@ export default function ClientPage() {
     //         }
     //     ]
     // }
-
-    const images = [
-        'https://source.unsplash.com/random/800x600?sig=1',
-        'https://source.unsplash.com/random/800x600?sig=2',
-        'https://source.unsplash.com/random/800x600?sig=3',
-        'https://source.unsplash.com/random/800x600?sig=4',
-        'https://source.unsplash.com/random/800x600?sig=5',
-    ];
-
-    const dates = [
-        'https://source.unsplash.com/random/800x600?sig=1',
-        'https://source.unsplash.com/random/800x600?sig=2',
-        'https://source.unsplash.com/random/800x600?sig=3',
-        'https://source.unsplash.com/random/800x600?sig=4',
-        'https://source.unsplash.com/random/800x600?sig=5',
-    ];
-
-    const titles = [
-        'https://source.unsplash.com/random/800x600?sig=1',
-        'https://source.unsplash.com/random/800x600?sig=2',
-        'https://source.unsplash.com/random/800x600?sig=3',
-        'https://source.unsplash.com/random/800x600?sig=4',
-        'https://source.unsplash.com/random/800x600?sig=5',
-    ];
-
 
 
 
@@ -461,12 +461,28 @@ export default function ClientPage() {
                     </SectionContainer>
                 </div>
             </div>
+            <ImageCarousel carouselPosts={carouselPosts}>
 
+            </ImageCarousel>
+{/* 
             <div className="md:hidden h-[440px]">
                 
 
                 Mohon maaaf.. Tampilan mobile masih dalam tahap penegembangan
-            </div>
+            </div> */}
         </Layout>
     );
 }
+
+
+// export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+//     const allPosts = await getAllPostsForHome(preview);
+  
+//     return {
+//       props: { allPosts, preview },
+//       revalidate: 10,
+//     };
+//   };
+  
+
+
