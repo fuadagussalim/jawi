@@ -54,14 +54,14 @@ export default function ClientPage({ allPosts}) {
     // console.log(allPosts)
     console.log('print post', allPosts);
     interface CarouselPost {
-        title: string;
+        title: string?;
         image: string;
         date: string;
       }
       
     const carouselPosts: CarouselPost[] = [];
       
-    allPosts.map((node) => {
+    allPosts?allPosts.map((node) => {
         console.log({ node });
         const postDate = new Date(node.node.date);
       carouselPosts.push({
@@ -70,7 +70,15 @@ export default function ClientPage({ allPosts}) {
         
         date: format((postDate), "MMMM dd, yyyy HH:mm:ss"),
       });
-    });
+    }):
+      
+      carouselPosts.push({
+        'title': "Tidak dapat terkoneksi dengan server",
+        'image': "Tidak dapat terkoneksi dengan server",
+        
+        'date': "Tidak dapat terkoneksi dengan server",
+      });
+   
     console.log(carouselPosts)
 
 
