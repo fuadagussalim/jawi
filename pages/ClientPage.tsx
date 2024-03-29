@@ -54,7 +54,7 @@ export default function ClientPage({ allPosts}) {
     // console.log(allPosts)
     console.log('print post', allPosts);
     interface CarouselPost {
-        title: string?;
+        title: string;
         image: string;
         date: string;
       }
