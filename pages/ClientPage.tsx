@@ -29,12 +29,13 @@ import Footer from "../components/footer";
 import Images from "../components/ImageLoop/ImageLoop";
 // import '../styles/globals.scss'
 import ImageCarousel from "../components/Carousel/ImageCarousel";
-import { MyVideo } from "../components/MyVideo";
+import VideoPlayer from "../components/VideoPlayer";
 import Post from "./posts/[slug]";
 // import Link from "next/link";
 import { NavLink } from "../components/Nav/NavLinks";
 import {format} from "date-fns";
 import CoverImage from "../components/cover-image";
+import YouTubePlayer from "../components/YoutubePlayer";
 
 // export async function getStaticProps({ preview = false }) {
 //     const posts = await getAllPostsForHome(preview);
@@ -255,9 +256,11 @@ export default function ClientPage({ allPosts}) {
 
                                     {/* <CardImage src='/Picture2-1.png' className='grid md:col-span-2 lg:col-span-2 sm:col-span-1 ' imageClassName={''} alt={''} /> */}
                                     {/* <CardImage src='/Picture2-1.png' className='grid md:col-span-2 lg:col-span-2 sm:col-span-1 ' imageClassName={''} alt={''} /> */}
-                                    <div className="grid md:col-span-2 lg:col-span-2 sm:col-span-1">
-                                        <iframe width="1000" height="563" src="https://www.youtube.com/embed/LBCGzeuQkHc?si=VxjCDXQbJBZQEBcj" title="Drone Emprite" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+                                    <div className="grid md:col-span-2 lg:col-span-2 aspect-video sm:col-span-1">
+                                       <YouTubePlayer id={"LBCGzeuQkHc"} width='100%' height='100%'/>
+                                        {/* <iframe width="100%" height={16/9*width} src="https://www.youtube.com/embed/LBCGzeuQkHc?si=VxjCDXQbJBZQEBcj" title="Drone Emprite" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe> */}
                                     </div>
+                                    {/* <VideoPlayer/> */}
                                     <Card className="grid col-span-1 align-middle text-primary-900">
                                         <CardBody className="flex align-middle items-center align-center h-full bg-[#F3F5F8]">
                                             <div className="w-full items-center align-center py-auto">

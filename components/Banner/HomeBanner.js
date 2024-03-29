@@ -9,7 +9,7 @@ import Image from "next/image";
 import Typewriter from "react-simple-typewriter";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
-import MyVideo from "../MyVideo";
+import MyVideo from "../VideoPlayer";
 import clsx from "clsx";
 import StarField from '../AnimatedAttribute/StarField'
 import './stars.module.scss'
