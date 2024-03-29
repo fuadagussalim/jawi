@@ -273,7 +273,7 @@ export default function ClientPage({ allPosts}) {
                                                     {/* <Button className="self-auto bg-black text-white rounded-5 items-center mt-5"> */}
                                                     {/* <Link type="button" className="text-white  font-bold bg-black px-10 py-3 hover:bg-[#faa51a] hover:text-black " href="/detail/site-projek" passHref={true}> */}
 
-                                                        <Button className="hover:bg-orange hover:text-white " href="/portofolio/site-projek">
+                                                        <Button className="hover:bg-orange w-[150px] hover:text-white " href="/portofolio/site-projek">
 
                                                         Read More
                                                         </Button>
@@ -304,14 +304,14 @@ export default function ClientPage({ allPosts}) {
 
                                             <h3 className="text-white w-full text-center m-0 text-2xl font-extrabold">EXPERIENCES</h3>
                                             <p className="text-white text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">Our Capability</p>
-                                            <CardGroup className="absolute h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 my-20 mt-0 mx-auto left-0 right-0 p-10 w-2/3">
+                                            <CardGroup className="absolute h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 my-20 mt-0 mx-auto left-0 right-0 sm:p-5  sm:w-full md:drop-shadow-none sm:drop-shadow-lg md:p-10 md:w-2/3">
 
 
-                                                <CardImage src='/survey-biodibersitas-crop.png' className='gridcol-span-1 h-64' imageClassName={'object-cover objet-bottom'} alt={''} />
+                                                <CardImage src='/survey-biodibersitas-crop.png' className='gridcol-span-1  md:sm-0 h-64' imageClassName={'object-cover objet-bottom'} alt={''} />
 
-                                                <Card className="grid h-full rounded-none  col-span-1 align-middle text-primary-400">
+                                                <Card className="grid h-full rounded-none  sm:mb-10 md:mb-0 col-span-1 align-middle text-primary-400">
                                                     <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] m-10">
-                                                        <div className="w-full rounded-0">
+                                                        <div className="w-full sm:pt-5  rounded-0">
                                                             <div>
 
                                                                 <h3 className="text-black w-full text-center m-0 text-base font-extrabold">SURVEI BIODIVERSITAS</h3>
@@ -335,6 +335,7 @@ export default function ClientPage({ allPosts}) {
 
                                                     </CardBody>
                                                 </Card>
+                                                <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64 sm:block md:hidden' imageClassName={' object-cover objet-bottom'} alt={''} />
                                                 <Card className="h-full rounded-none  grid col-span-1 align-middle text-primary-400">
                                                     <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] p-20">
                                                         <div className="w-full">
@@ -355,7 +356,7 @@ export default function ClientPage({ allPosts}) {
 
                                                     </CardBody>
                                                 </Card>
-                                                <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64' imageClassName={'object-cover objet-bottom'} alt={''} />
+                                                <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64 sm:hidden md:block' imageClassName={' object-cover objet-bottom'} alt={''} />
                                                 <CardImage src='/model-OU-17052023-1.jpg' className='gridcol-span-1 h-64' imageClassName={'object-cover objet-bottom'} alt={''} />
                                                 <Card className="h-full rounded-none  grid col-span-1 align-middle text-primary-400">
                                                     <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] p-20">

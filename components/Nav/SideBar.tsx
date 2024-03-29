@@ -27,36 +27,36 @@ const Sidebar = ({
         </button> */}
    <ul className={"sidebar-nav text-center   font-bold text-xl "}
         >
-          <li>
-            <Link className="my-auto "  onClick={toggle} href="/">
+          <li className="m-5">
+            <Link className="my-auto mb-10"  onClick={toggle} href="/">
               HOME
             </Link>
           </li>
-          <li>
+          <li className="m-5">
             <Link className="my-auto " onClick={toggle} href="/services">
               SERVICES
             </Link>
           </li>
-          <li>
+          <li className="m-5">
 
             <Link className="my-auto " onClick={toggle} href="/portofolio">
               PORTOFOLIO
             </Link>
           </li>
-          <li>
+          <li className="m-5">
 
             <Link className="my-auto " onClick={toggle} href="/blog">
 
               POSTS
             </Link>
           </li>
-          <li>
+          <li className="m-5">
 
             <Link className="my-auto " onClick={toggle} href="/about">
               ABOUT
             </Link>
           </li>
-          <li>
+          <li className="m-5">
 
 
 
