@@ -22,7 +22,7 @@ import {
     CardImage,
     Card
 } from "../components/Card";
-
+import ScrollAppearLine from '../components/AnimatedAttribute/ScrollAppearLine'
 import Header from "../components/header";
 import { Button } from "../components/Button";
 import Footer from "../components/footer";
@@ -170,19 +170,28 @@ export default function ClientPage() {
                                             </div>
                                         </CardBody>
                                     </Card>
-                                    <CardGroup className="grid scroll-m-24 mt-0 lg:mt-20 lg:pr-24 grid-cols-1 mx-auto md:grid-cols-2">
+                                    <CardGroup className="grid scroll-m-24 mt-0 pr-0 lg:mt-20 lg:pr-24 grid-cols-1 md:mx-auto md:grid-cols-2">
 
-                                        <Card className="bg-[#F3F5F8] p-10 lg:px-0 col-span-1">
-                                            <CardBody className="w-full bg-[#F3F5F8] p-0">
+                                        <Card className="bg-[#F3F5F8]  md:w-full lg:px-0 col-span-1">
+                                            {/* <CardBody className="w-full bg-[#F3F5F8] p-0">
 
                                                 <CardHeader hasBadge={""} className="!text-2xl !font-bold text-[#faa51a]">
                                                     PROGRAM
                                                 </CardHeader>
-                                                <p className="text-black ">
+                                                <p className="text-black text">
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
-                                            </CardBody>
+                                            </CardBody> */}
+                                            <CardBody className="sm:w-full md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] p-12">
+                                            <div className="flex flex-col  p-10 pr-10  h-full px-auto justify-center content-center align-center">
+                                                <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">PROGRAM</h3>
+                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
+                                            </div>
+                                        </CardBody>
                                         </Card>
+                                        <ScrollAppearLine threshold={0.9}>
+
+                                        </ScrollAppearLine>
                                         <Card className="bg-[#F3F5F8] rounded-none col-span-1 p-10 lg:px-0">
                                             <CardBody className="w-full bg-[#F3F5F8]  p-0">
 
@@ -209,7 +218,7 @@ export default function ClientPage() {
                                             </p>
                                             </CardBody>
                                         </Card> */}
-                                        <Card className="bg-[#F3F5F8] align-start p-10 lg:p-0 rounded-none col-span-1">
+                                        <Card className="bg-[#F3F5F8] align-start p-0 lg:p-0 rounded-none col-span-1">
                                             <hr className="bg-black-200 h-0.5 text-black font-bold">
                                             </hr>
                                             <CardBody className="w-full bg-[#F3F5F8] align-top h-full p-0">
