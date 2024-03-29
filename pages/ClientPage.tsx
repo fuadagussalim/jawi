@@ -70,8 +70,9 @@ export default function ClientPage({ allPosts}) {
         
         date: format((postDate), "MMMM dd, yyyy HH:mm:ss"),
       });
-    }):
-      
+    }):(
+        
+    )    
       carouselPosts.push({
         title: "Tidak dapat terkoneksi dengan server",
         image: "Tidak dapat terkoneksi dengan server",
@@ -80,6 +81,8 @@ export default function ClientPage({ allPosts}) {
       });
    
     console.log(carouselPosts)
+
+   
 
 
 
@@ -505,7 +508,11 @@ export default function ClientPage({ allPosts}) {
                                     </Card>
                                 </CardGroup>
             </div>
-            <ImageCarousel carouselPosts={carouselPosts}/>
+            {allPosts && allPosts.length > 2 ?  <ImageCarousel carouselPosts={carouselPosts}/>: (
+        <p>No posts found.</p>
+      )}
+          
+          
 
         
 {/* 
