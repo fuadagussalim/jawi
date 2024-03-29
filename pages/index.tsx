@@ -17,10 +17,12 @@ import ImageCarousel from "../components/Carousel/ImageCarousel";
 import Footer from "../components/footer";
 export default function Index({ allPosts: { edges }, preview, allPages: { edgesPages } }) {
 
-  if (edges && edgesPages) {
+  if (edges
+    //  && edgesPages
+     ) {
     const heroPost = edges[0]?.node;
     const morePosts = edges.slice(1);
-    const pages = edgesPages[0]?.node;
+    // const pages = edgesPages[0]?.node;
     return (
       <ClientPage></ClientPage>
 
