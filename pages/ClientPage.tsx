@@ -33,7 +33,7 @@ import { MyVideo } from "../components/MyVideo";
 import Post from "./posts/[slug]";
 // import Link from "next/link";
 import { NavLink } from "../components/Nav/NavLinks";
-
+import {format} from "date-fns";
 import CoverImage from "../components/cover-image";
 
 // export async function getStaticProps({ preview = false }) {
@@ -62,10 +62,12 @@ export default function ClientPage({ allPosts}) {
       
     allPosts.map((node) => {
         console.log({ node });
+        const postDate = new Date(node.node.date);
       carouselPosts.push({
         title: node.node.title,
         image: node.node.featuredImage.node.sourceUrl,
-        date: node.node.date,
+        
+        date: format((postDate), "MMMM dd, yyyy HH:mm:ss"),
       });
     });
     console.log(carouselPosts)

@@ -1,6 +1,8 @@
 'use client'
 import { useState, useEffect } from "react";
 import { getAllPostsForHome } from "../../lib/api";
+import { format } from "date-fns";
+
 
 const ImageCarousel = ({carouselPosts}) => {
     const posts = carouselPosts;
@@ -49,7 +51,7 @@ const ImageCarousel = ({carouselPosts}) => {
                         <img src={posts[previousImageIndex].image} alt="" className="absolute w-full h-full object-cover transition duration-500" />
                     </div>
                     <div className="relative grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
-                        <h5 className="absolute font-bold text-white z-20 bottom-[30px] m-5">{posts[currentImageIndex].title}</h5>
+                        <h5 className="absolute font-bold drop-shadow-lg text-white z-20 bottom-[30px] m-5">{posts[currentImageIndex].title}</h5>
                         <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{posts[currentImageIndex].date}</p>
                         <img src={posts[currentImageIndex].image} alt="" className="absolute w-full h-full object-cover transition duration-500" />
                     </div>
