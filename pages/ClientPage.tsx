@@ -463,9 +463,9 @@ export default function ClientPage({ allPosts}) {
                     </SectionContainer>
                 </div>
             </div>
-            <ImageCarousel carouselPosts={carouselPosts}>
+            <ImageCarousel carouselPosts={carouselPosts}/>
 
-            </ImageCarousel>
+        
 {/* 
             <div className="md:hidden h-[440px]">
                 
