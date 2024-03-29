@@ -35,11 +35,11 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
 
     return (
 
-        <SectionContainer className="page-banner--container m-0 p-0">
+        <SectionContainer className="page-banner--container m-0 p-0 bg-[#F3F5F8]">
 
             {/* <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}> */}
 
-            <div className="page-banner--image relative m-0 p-0">
+            <div className="pt-20 md:pt-0 page-banner--image relative m-0 p-0">
                 <div className={`absolute hidden md:block lg:block z-20 stroke-black items-start  text-white top-1/3 left-14 text-${align} w-full p-10 ml-5 `}>
                     <div className="w-full grid grid-cols-1 ">
                         <PageTitle className={`${maintextclass} grid mb-1 uppercase  relative font-extrabold w-full`} type="default">
@@ -97,10 +97,67 @@ export const HomeBanner = ({href, image, maintext, subtext, typeAnimation = true
                     {/* <Button variant="black" radius="100" className="relative text-white">Read More</Button> */}
 
                 </div>
+                <div className={`bg-black md:hidden lg:block z-20 stroke-black items-start  text-white top-1/3 left-14 text-${align} w-full p-10 `}>
+                    <div className="w-full grid grid-cols-1 ">
+                        <PageTitle className={`${maintextclass} grid mb-1 uppercase  relative font-extrabold w-full`} type="default">
+                            <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}>
+
+                                {maintext}
+
+                            </MotionBTTContainer>
+                        </PageTitle>
+                        <PageTitle className={`${subtextclass} grid relative capitalize font-light mt-0`} type="xsmall">
+
+                            <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
+                                
+
+{subtext}
+                                    {/* <Typewriter 
+                                        onInit={(typewriter) => {
+                                            if (typeAnimation){
+                                                typewriter.typeString(`${subtext}`)
+                                                .callFunction(() => {
+                                                    console.log(`${subtext}`);
+                                                })
+                                                .pauseFor(2500)
+                                                .start();
+
+                                            }
+                                           
+                                        }}
+                                    /> */}
+                                    {/* <TypewriterContent content={`${subtext}`}>
+                                        subtext
+                                    </TypewriterContent> */}
+
+
+                                
+
+
+
+
+
+
+
+                            </MotionBTTContainer>
+                        </PageTitle>
+                    </div>
+
+                    <Link type="button" className="text-black font-bold bg-white px-10 py-3 hover:bg-orange hover:text-black" href={href} passHref={true}>
+                  
+
+                  Read More
+              
+                  
+              </Link>
+                    
+                    {/* <Button variant="black" radius="100" className="relative text-white">Read More</Button> */}
+
+                </div>
                 <div>
-                    <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+                    {/* <div className="inset-0 bg-black  z-10 mt-20 md:mt-0"></div> */}
                     <Image
-                        className="object-scale-down m-0 p-0 bg-blend-darken"
+                        className="object-scale-down  m-0 p-0 bg-blend-darken"
                         src={image}
                         width={1920}
                         height={780}

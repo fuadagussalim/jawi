@@ -153,7 +153,7 @@ export default function ClientPage() {
 
     return (
         <Layout preview={""} className="">
-            <div className="hidden md:block">
+            <div className=" md:block">
                 <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
                     <HomeBanner href='#about' image='/DEF_7207.JPG' maintext='Javan Wildlife Institute' subtext='Menjadi mitra rujukan sains konservasi di Indonesia' align="left" />
                     <SectionContainer id="home" className="components--container grid gap-8 sm:gap-24 mx-0 px-0">
@@ -166,11 +166,11 @@ export default function ClientPage() {
                                         <CardBody className="sm:w-full md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] p-12">
                                             <div className="flex flex-col  p-10 pr-10  h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-black sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">ABOUT JAWI</h3>
-                                                <p className="text-black sm:font-normal pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
+                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
                                             </div>
                                         </CardBody>
                                     </Card>
-                                    <CardGroup className="grid scroll-m-24 lg:mt-20 lg:pr-24 grid-cols-1 mx-auto md:grid-cols-2">
+                                    <CardGroup className="grid scroll-m-24 mt-0 lg:mt-20 lg:pr-24 grid-cols-1 mx-auto md:grid-cols-2">
 
                                         <Card className="bg-[#F3F5F8] p-10 lg:px-0 col-span-1">
                                             <CardBody className="w-full bg-[#F3F5F8] p-0">
