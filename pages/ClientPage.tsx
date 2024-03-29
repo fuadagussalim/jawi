@@ -423,13 +423,42 @@ export default function ClientPage({ allPosts}) {
 
                                     </div>
                                 </div>
-                                <CardGroup className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 m-20 mt-0 mx-auto p-10 w-2/3">
+                                
+                                {/* <CardGroup className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 m-20 mx-auto p-10 w-full">
+                                <Maps address={"Jawi (Javan Wildlife Institute"} />
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7704356898225!2d110.35142947476626!3d-7.81410799220644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af61d0254a0db%3A0xc44af8788fff1217!2sJawi%20(Javan%20Wildlife%20Institute)!5e0!3m2!1sid!2sid!4v1711173804931!5m2!1sid!2sid" width="1400" height="450"></iframe>
+                            </CardGroup> */}
 
 
+
+
+
+
+                            </SectionContainer>
+                        </MotionBTTContainer>
+                        {/* <MyVideo sources={"https://www.youtube.com/embed/LBCGzeuQkHc?si=Ar2YAA2zzCoN3rjK"} height="720" width="1000" classNames={""} ></MyVideo> */}
+
+
+
+                        {/* <Images folder={"sosmed"}></Images> */}
+                        {/* <ImageCarousel >
+
+                    </ImageCarousel> */}
+
+
+
+                    </SectionContainer>
+                </div>
+            </div>
+            <div className="sm:px-5">
+                
+            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto md:m-20 sm:mb-20 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full w-2/3">
+
+                            
                                     <CardImage src='/product.jpeg' className='gridcol-span-1 h-full' imageClassName={'object-cover objet-bottom'} alt={''} />
 
-                                    <Card className="grid col-span-1 align-middle ml-10 text-primary-400">
-                                        <CardBody className="flex align-middle h-full items-center rounded-0 align-top bg-[#F3F5F8] my-0 pt-0">
+                                    <Card className="grid col-span-1 align-middle sm:ml-0 sm:mt-5 md:mt-0 md:p-0 md:ml-10 text-primary-400">
+                                        <CardBody className="flex align-middle h-full items-center rounded-0 align-top my-0 pt-0">
                                             <div className="w-full">
                                                 <div>
                                                     <h1 className="text-black text-left m-0 max-w-xs text-2xl font-bold sm:max-w-full">SUPPORT US!</h1>
@@ -466,38 +495,13 @@ export default function ClientPage({ allPosts}) {
                                         </CardBody>
                                     </Card>
                                 </CardGroup>
-                                {/* <CardGroup className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 m-20 mx-auto p-10 w-full">
-                                <Maps address={"Jawi (Javan Wildlife Institute"} />
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7704356898225!2d110.35142947476626!3d-7.81410799220644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af61d0254a0db%3A0xc44af8788fff1217!2sJawi%20(Javan%20Wildlife%20Institute)!5e0!3m2!1sid!2sid!4v1711173804931!5m2!1sid!2sid" width="1400" height="450"></iframe>
-                            </CardGroup> */}
-
-
-
-
-
-
-                            </SectionContainer>
-                        </MotionBTTContainer>
-                        {/* <MyVideo sources={"https://www.youtube.com/embed/LBCGzeuQkHc?si=Ar2YAA2zzCoN3rjK"} height="720" width="1000" classNames={""} ></MyVideo> */}
-
-
-
-                        {/* <Images folder={"sosmed"}></Images> */}
-                        {/* <ImageCarousel >
-
-                    </ImageCarousel> */}
-
-
-
-                    </SectionContainer>
-                </div>
             </div>
             <ImageCarousel carouselPosts={carouselPosts}/>
 
         
 {/* 
             <div className="md:hidden h-[440px]">
-                
+            
 
                 Mohon maaaf.. Tampilan mobile masih dalam tahap penegembangan
             </div> */}
