@@ -72,13 +72,13 @@ export default function ClientPage({ allPosts}) {
       });
     }):(
         
-    )    
+    
       carouselPosts.push({
         title: "Tidak dapat terkoneksi dengan server",
         image: "Tidak dapat terkoneksi dengan server",
         
         date: "Tidak dapat terkoneksi dengan server",
-      });
+      }));
    
     console.log(carouselPosts)
 
