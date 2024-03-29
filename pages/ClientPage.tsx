@@ -202,8 +202,8 @@ export default function ClientPage({ allPosts}) {
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
                                             </CardBody> */}
-                                            <CardBody className="sm:w-full md:w-[400px] sm:p-0 md:p-12 my-auto h-full mx-auto bg-[#F3F5F8] p-12">
-                                            <div className="flex flex-col  p-10 pr-10  h-full px-auto justify-center content-center align-center">
+                                            <CardBody className="sm:w-full md:w-[400px]  md:p-12 my-auto h-full mx-auto bg-[#F3F5F8] md:p-12">
+                                            <div className="flex flex-col sm:p-5  md:p-10 md:pr-10  h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">OUR STORY</h3>
                                                 <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
                                             </div>
@@ -219,8 +219,8 @@ export default function ClientPage({ allPosts}) {
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
                                             </CardBody> */}
-                                            <CardBody className="sm:w-full md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] p-12">
-                                            <div className="flex flex-col  p-10 pr-10  h-full px-auto justify-center content-center align-center">
+                                            <CardBody className=" md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] sm:p-0 md:p-12">
+                                            <div className="flex flex-col sm:p-5  md:p-10 w-full  h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">MISSION</h3>
                                                 <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
                                             </div>
@@ -236,13 +236,14 @@ export default function ClientPage({ allPosts}) {
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
                                             </CardBody> */}
-                                            <CardBody className="sm:w-full md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] p-12">
-                                            <div className="flex flex-col  p-10 pr-10  h-full px-auto justify-center content-center align-center">
+                                            <CardBody className="sm:w-full md:w-[400px]  md:p-12 my-auto h-full mx-auto bg-[#F3F5F8] md:p-12">
+                                            <div className="flex flex-col sm:p-5  md:p-10 md:pr-10  h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">TEAM</h3>
                                                 <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
                                             </div>
                                         </CardBody>
                                         </Card>
+                                        
                              
                                        
 
