@@ -71,8 +71,6 @@ export default function ClientPage({ allPosts}) {
         date: format((postDate), "MMMM dd, yyyy HH:mm:ss"),
       });
     }):(
-        
-    
       carouselPosts.push({
         title: "Tidak dapat terkoneksi dengan server",
         image: "Tidak dapat terkoneksi dengan server",
