@@ -9,7 +9,7 @@ import Image from "next/image";
 import Typewriter from "react-simple-typewriter";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
-import MyVideo from "../VideoPlayer";
+
 import clsx from "clsx";
 import StarField from '../AnimatedAttribute/StarField'
 import './stars.module.scss'
@@ -169,7 +169,7 @@ export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = tru
 
                 </div>
                 <div>
-                    {/* <div className="inset-0 bg-black  z-10 mt-20 md:mt-0"><StarField/></div> */}
+                    <div className="absolute hidden inset-0 bg-black bg-opacity-50  md:block z-22 mt-20 md:mt-0"><StarField/></div>
                     <Image
                         className="object-scale-down  m-0 p-0 bg-blend-darken"
                         src={image}

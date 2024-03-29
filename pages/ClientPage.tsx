@@ -29,7 +29,7 @@ import Footer from "../components/footer";
 import Images from "../components/ImageLoop/ImageLoop";
 // import '../styles/globals.scss'
 import ImageCarousel from "../components/Carousel/ImageCarousel";
-import VideoPlayer from "../components/VideoPlayer";
+
 import Post from "./posts/[slug]";
 // import Link from "next/link";
 import { NavLink } from "../components/Nav/NavLinks";
