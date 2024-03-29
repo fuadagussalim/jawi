@@ -33,8 +33,8 @@ const ImageCarousel = ({carouselPosts}) => {
     }
 
     return (
-        <div className="mb-10">
-            <h4 className="text-center mx-auto w-max font-bold mb-0">
+        <div className="sm:mb-10 md:mb-10">
+            <h4 className="text-center text-orange mx-auto w-max font-bold mb-0">
                 JAWI MAGAZINE
                 <hr className="bg-black h-[2px] mb-5" />
             </h4>
