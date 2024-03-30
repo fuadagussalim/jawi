@@ -18,8 +18,8 @@ export default function HeroPost({
           <CoverImage title={title} coverImage={coverImage} slug={slug} />
         )}
       </div>
-      <div className="md:grid md:grid-cols-3 md:gap-x-25 lg:gap-x-30  md:px-40">
-        <div className="md:grid col-span1 pr-10">
+      <div className="md:grid md:grid-cols-3 md:gap-x-25 lg:gap-x-30 sm:px-10 md:px-40">
+        <div className="md:grid col-span1  md:pr-10">
           <hr className="h-1 font-bold bg-orange " />
           <h3 className="mb-4 text-l lg:text-4xl lg:font-semibold mt-3">
             <Link
@@ -34,7 +34,7 @@ export default function HeroPost({
           </div>
           <hr className="h-1 font-bold bg-orange mt-2 " />
         </div>
-        <div className="grid md:col-span-2">
+        <div className="grid md:col-span-2 sm:mt-10">
           <div
             className="text-lg mb-4 text-justify"
             dangerouslySetInnerHTML={{ __html: excerpt }}

@@ -20,11 +20,11 @@ export default function MoreStories({ posts }) {
 
 
   return (
-    <section className="mb-20">
-      <h2 className="my-10 text-6xl md:text-7xl font-bold tracking-tighter">
+    <section className="mb-20 sm:p-10 sm:py-0">
+      <h2 className="sm:my-5 md:my-10 text-3xl md:text-7xl font-bold tracking-tighter">
         More Stories
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-5 gap-y-10 md:gap-y-10">
+      <div className="grid grid-cols-1 gap-y-2 md:grid-cols-2 md:gap-x-5 gap-y-10 md:gap-y-10">
         {
          
             

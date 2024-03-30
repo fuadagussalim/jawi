@@ -7,7 +7,7 @@ export default function Author({ author, classNames="" }) {
     : author.node.name || null;
 
   return (
-    <div className="flex items-left">
+    <div className="flex sm:items-left md:inline">
       <div className={classNames}>{name}</div>
     </div>
   );

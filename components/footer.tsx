@@ -394,7 +394,7 @@ export default function Footer() {
             height={400}
             objectFit="cover"
             alt="Process Banner 1"
-            className="inline-block drop-shadow-m w-[120px] p-2 ml-5 pt-6 offset-t-10 offset-y-0 offset-x-8  blur-16 bg-white"
+            className="inline-block drop-shadow-m w-[128px] p-2 ml-5 pt-6 offset-t-10 offset-y-0 offset-x-8  blur-16 bg-white"
             />
             </div>
             </div>
@@ -447,7 +447,7 @@ export default function Footer() {
             </div>
             <div className="grid col-span-1 mb-5 h-2/3">
             <hr className="w-full bg-[#ffa01a]" />
-            <p className="text-white text-xs font-thin text-justify pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam. <span className="text-white font-bold">Read more..</span></p>
+            <p className="text-white text-xs font-thin text-justify pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam. </p>
 
             </div>
 
@@ -455,10 +455,13 @@ export default function Footer() {
         </div>
 
         <div>
-        <p className="text-white text-left grid col-span-3 font-thin align-middle pt-0 pl-5 text-xs ">
-              © {year} Lembaga Jawi Indonesia
-              <br />
-              Javan Wildlife Institute (JAWI)
+        <p className="text-white text-left grid col-span-3 font-thin align-middle w-[150px] pt-0 pl-5 text-xs ">
+              © {year} Lembaga Jawi 
+              <br/>
+              Indonesia - 
+              Javan Wildlife 
+              <br/>
+              Institute (JAWI)
         </p>
         </div>
         <p className="text-white pl-5 font-bold mb-0">Our Partners</p>
