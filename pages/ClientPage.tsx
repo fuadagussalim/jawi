@@ -57,6 +57,7 @@ export default function ClientPage({ allPosts}) {
         title: string;
         image: string;
         date: string;
+        slug: string;
       }
       
     const carouselPosts: CarouselPost[] = [];
@@ -66,6 +67,7 @@ export default function ClientPage({ allPosts}) {
         const postDate = new Date(node.node.date);
       carouselPosts.push({
         title: node.node.title,
+        slug: node.node.slug,
         image: node.node.featuredImage.node.sourceUrl,
         
         date: format((postDate), "MMMM dd, yyyy HH:mm:ss"),
@@ -74,11 +76,13 @@ export default function ClientPage({ allPosts}) {
       carouselPosts.push({
         title: "Tidak dapat terkoneksi dengan server",
         image: "Tidak dapat terkoneksi dengan server",
+        slug: "Tidak dapat terkoneksi dengan server",
         
         date: "Tidak dapat terkoneksi dengan server",
       }));
    
-    console.log(carouselPosts)
+    console.log(carouselPosts);
+    console.log(carouselPosts[0].slug)
 
    
 
