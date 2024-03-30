@@ -52,37 +52,39 @@ export default function ClientPage({ allPosts}) {
     // const morePosts = edges.slice(1);
     // console.log(allPosts);
     // console.log(allPosts)
-    console.log('print post', allPosts);
-    interface CarouselPost {
-        title: string;
-        image: string;
-        date: string;
-        slug: string;
-      }
-      
-    const carouselPosts: CarouselPost[] = [];
-      
-    allPosts?allPosts.map((node) => {
-        console.log({ node });
-        const postDate = new Date(node.node.date);
-      carouselPosts.push({
-        title: node.node.title,
-        slug: node.node.slug,
-        image: node.node.featuredImage.node.sourceUrl,
-        
-        date: format((postDate), "MMMM dd, yyyy HH:mm:ss"),
-      });
-    }):(
-      carouselPosts.push({
-        title: "Tidak dapat terkoneksi dengan server",
-        image: "Tidak dapat terkoneksi dengan server",
-        slug: "Tidak dapat terkoneksi dengan server",
-        
-        date: "Tidak dapat terkoneksi dengan server",
-      }));
    
-    console.log(carouselPosts);
-    console.log(carouselPosts[0].slug)
+   // Ini method yang fix
+    // console.log('print post', allPosts);
+    // interface CarouselPost {
+    //     title: string;
+    //     image: string;
+    //     date: string;
+    //     slug: string;
+    //   }
+      
+    // const carouselPosts: CarouselPost[] = [];
+      
+    // allPosts?allPosts.map((node) => {
+    //     console.log({ node });
+    //     const postDate = new Date(node.node.date);
+    //   carouselPosts.push({
+    //     title: node.node.title,
+    //     slug: node.node.slug,
+    //     image: node.node.featuredImage.node.sourceUrl,
+        
+    //     date: format((postDate), "MMMM dd, yyyy HH:mm:ss"),
+    //   });
+    // }):(
+    //   carouselPosts.push({
+    //     title: "Tidak dapat terkoneksi dengan server",
+    //     image: "Tidak dapat terkoneksi dengan server",
+    //     slug: "Tidak dapat terkoneksi dengan server",
+        
+    //     date: "Tidak dapat terkoneksi dengan server",
+    //   }));
+   
+    // console.log(carouselPosts);
+    // console.log(carouselPosts[0].slug)
 
    
 
