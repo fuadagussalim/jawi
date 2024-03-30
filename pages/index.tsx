@@ -26,6 +26,10 @@ export default function Index({ allPosts: { edges }, preview, allPages: { edgesP
     // const pages = edgesPages[0]?.node;
     return (
       <ClientPage allPosts={morePosts}></ClientPage>
+      // <div className="text-center h-[400px]">Web Sedang dalam proses Upgrade
+      // <br />
+      // Stay tune
+      // </div>
 
     );
   } else {
