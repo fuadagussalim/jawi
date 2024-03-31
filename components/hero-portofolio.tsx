@@ -3,8 +3,7 @@ import Date from "./date";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 
-import Image from "next/image";
-
+import {Image} from "@nextui-org/react"
 
 export default function HeroPortofolio({
   title,

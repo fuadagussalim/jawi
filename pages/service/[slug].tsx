@@ -82,10 +82,9 @@ export const getStaticProps: GetStaticProps = async ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allPosts = await getAllServicesWithSlug();
-  console.log('services:', allPosts);
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/service/${node.slug}`) || [],
+    paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
     fallback: true,
   };
 };

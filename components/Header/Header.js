@@ -2,7 +2,7 @@
 
 // import React, { useEffect, useState } from 'react';
 import { NavLink } from '../Nav/NavLinks'
-import Image from 'next/image';
+import {Image} from "@nextui-org/react"
 import { Button } from '../Button';
 import { MotionBTTContainer } from '../Motion';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -122,7 +122,7 @@ export const Header = () => {
 
 
 
-            <Link href="/about">
+            <Link href="/gallery">
               GALLERY
             </Link>
           </li>

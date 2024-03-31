@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import {Image} from "@nextui-org/react"
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {Button} from "../Button";

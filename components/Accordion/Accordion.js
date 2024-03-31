@@ -3,34 +3,45 @@ import { Icon } from "@iconify/react"
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import clsx from "clsx";
+import {Image} from "@nextui-org/react"
+import Link from "next/link";
+import { Button } from "../Button";
 
-const accordionData = [
+const accordionDataDefault = [
     {
         id: uuid(),
         title: "Apa itu JAWI?",
         isOpen: true,
         content:
-            "Jawi adalah..."
+            <div></div>,
+        image: "/DSC00013_11zon-1024x768.jpg",
+        slug: "",
     },
     {
         id: uuid(),
         title: "Untuk siapa?",
         isOpen: false,
         content:
-            "lorem  "
+            <div></div>,
+        image: "/DSC00013_11zon-1024x768.jpg",
+        slug: "",
     },
     {
         id: uuid(),
         title: "Bagaimana model bisnisnya?",
         isOpen: false,
-        content: "blabla."
+        content: <div />,
+        image: "/DSC00013_11zon-1024x768.jpg",
+        slug: "",
     },
     {
         id: uuid(),
         title: "DImana ...?",
         isOpen: false,
         content:
-            "Blabalbls"
+            <div></div>,
+        image: "/DSC00013_11zon-1024x768.jpg",
+        slug: "",
     }
 ];
 
@@ -40,15 +51,22 @@ const accordionItemType = {
     bottom: "border border-t-0 rounded-b-lg"
 };
 
-export const Accordion = () => {
+// { accordionData={ accordionData}}
+export const Accordion = ({ accordionDataParam = accordionDataDefault }) => {
+    // console.log('UUID apa sih: ', accordionDataParam[0].id)
     const [activeAccordion, setActiveAccordion] = useState(null);
 
     const accordionClickHandle = (id) => {
         setActiveAccordion(id === activeAccordion ? null : id);
     };
 
+    const accordionData = accordionDataParam;
+
+
+
+
     return (
-        <SectionContainer className="accordion--container my-16 drop-shadow-xl max-w-3xl mx-auto offset-y-0 offset-x-8">
+        <SectionContainer className="accordion--container my-16 mt-0 drop-shadow-xl max-w-3xl mx-auto offset-y-0 offset-x-8">
             {accordionData.map((accordionItem, index) => (
                 <div
                     key={accordionItem.id}
@@ -82,7 +100,7 @@ export const Accordion = () => {
                     </h2>
                     <div
                         className={clsx(
-                            "accordion-item--content py-4 px-5 text-base",
+                            "accordion-item--content py-4 px-5 text-base w-full",
                             {
                                 hidden: activeAccordion !== accordionItem.id, // Use hidden class to animate height to 0
                                 "!visibility block":
@@ -90,8 +108,27 @@ export const Accordion = () => {
                             }
                         )}
                     >
-                        <p>{accordionItem.content}</p>
+                        <div>
+                            {/* <Link href={`/service/${accordionItem.slug}`}> */}
+                                <Image src={accordionItem.image} width={4000} height={3000} className="w-full pb-5">
+
+                                </Image>
+                            {/* </Link> */}
+                            {/* {accordionItem.content} */}
+                            <div className="text-justify" dangerouslySetInnerHTML={{ __html: accordionItem.content }}>
+
+                            </div>
+                            
+                        </div>
+                        {/* <div className="mx-auto flex justify-center pt-5">
+
+                            <Button variant="orange" className=" w-[150px]" href={`/service/${accordionItem.slug}`}>
+
+                                Read More
+                            </Button>
+                        </div> */}
                     </div>
+
                 </div>
             ))}
         </SectionContainer>

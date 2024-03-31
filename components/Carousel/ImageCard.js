@@ -3,6 +3,7 @@ import { LeftIcon, RightIcon } from '../../assets/Icons';
 import { getNextId, getPrevId } from '../../lib/imageIds';
 import React from 'react';
 import '../../styles/core/components/carousel.scss'
+
 const ImageCard = ({ children, id, size }) => {
 	/**
      * Destructuring children prop

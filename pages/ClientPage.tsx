@@ -483,7 +483,7 @@ export default function ClientPage({ allPosts}) {
 
                                                     </div>
 
-                                                    <p className="text-black text-sm my-0 text-justify">Dipersembahkan dari alam yang subur di Kemuning, Temanggung, kopi robusta kami adalah pencitraan penuh kasih sayang dan kepedulian terhadap lingkungan. Dipetik secara selektif dari kebun-kebun yang terpelihara dengan baik melalui sistem kopi di bawah tegakan. Setiap butiran biji kopi memiliki cerita konservasi yang menyentuh hati.
+                                                    <p className="text-black text-sm my-0 md:pr-40 text-justify">Dipersembahkan dari alam yang subur di Kemuning, Temanggung, kopi robusta kami adalah pencitraan penuh kasih sayang dan kepedulian terhadap lingkungan. Dipetik secara selektif dari kebun-kebun yang terpelihara dengan baik melalui sistem kopi di bawah tegakan. Setiap butiran biji kopi memiliki cerita konservasi yang menyentuh hati.
                                                         <br />
                                                         <br />
                                                         Dengan setiap tegukan kopi kami, Anda juga turut berkontribusi pada pelestarian lingkungan dan kehidupan satwa liar yang langka. Mari bersama-sama menikmati kenikmatan kopi yang berkualitas sambil menjaga keberlanjutan alam kita.</p>

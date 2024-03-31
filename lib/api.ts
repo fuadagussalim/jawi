@@ -61,6 +61,33 @@ export async function getAllPostsWithSlug() {
   `);
   return data?.posts;
 }
+export async function getAllPhotos() {
+  const data = await fetchAPI(`
+  query Gallery {
+    gallery {
+      edges {
+        node {
+          content
+          galleryAttachment {
+            caption
+            socialMedia
+            socialMediaPlatform
+            image {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `);
+
+  return data?.gallery;
+}
+
+
 export async function getAllPortofoliosWithSlug() {
   const data = await fetchAPI(`
   query portofolios {
@@ -413,6 +440,107 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug);
   // If there are still 3 posts, remove the last one
   if (data.posts.edges.length > 2) data.posts.edges.pop();
+
+  return data;
+}
+export async function getServiceAndMoreServices(slug, preview, previewData) {
+  const servicePreview = preview && previewData?.service;
+  // The slug may be the id of an unpublished service
+  const isId = Number.isInteger(Number(slug));
+  const isSameService = isId
+    ? Number(slug) === servicePreview.id
+    : slug === servicePreview.slug;
+  const isDraft = isSameService && servicePreview?.status === "draft";
+  const isRevision = isSameService && servicePreview?.status === "publish";
+  const data = await fetchAPI(
+    `
+    fragment serviceFields on service {
+      title
+      excerpt
+      slug
+      date
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      author {
+        node {
+          ...AuthorFields
+        }
+      }
+      categories {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      tags {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+    query serviceBySlug($id: ID!, $idType: serviceIdType!) {
+      service(id: $id, idType: $idType) {
+        ...serviceFields
+        content
+        ${
+          // Only some of the fields of a revision are considered as there are some inconsistencies
+          isRevision
+            ? `
+        revisions(first: 1, where: { orderby: { field: MODIFIED, order: DESC } }) {
+          edges {
+            node {
+              title
+              excerpt
+              content
+              author {
+                node {
+                  ...AuthorFields
+                }
+              }
+            }
+          }
+        }
+        `
+            : ""
+        }
+      }
+      services(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+        edges {
+          node {
+            ...serviceFields
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        id: isDraft ? servicePreview.id : slug,
+        idType: isDraft ? "DATABASE_ID" : "SLUG",
+      },
+    },
+  );
+
+  // Draft services may not have an slug
+  if (isDraft) data.service.slug = servicePreview.id;
+  // Apply a revision (changes in a published service)
+  if (isRevision && data.service.revisions) {
+    const revision = data.service.revisions.edges[0]?.node;
+
+    if (revision) Object.assign(data.service, revision);
+    delete data.service.revisions;
+  }
+
+  // Filter out the main service
+  data.services.edges = data.services.edges.filter(({ node }) => node.slug !== slug);
+  // If there are still 3 services, remove the last one
+  if (data.services.edges.length > 2) data.services.edges.pop();
 
   return data;
 }

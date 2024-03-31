@@ -1,6 +1,6 @@
 import { SectionContainer } from "../Section";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
+import {Image} from "@nextui-org/react"
 import { v4 as uuid } from "uuid";
 
 const ContentImageData = [

@@ -13,7 +13,7 @@ const { protocol, hostname, port, pathname } = new URL(
 module.exports = {
  
   images: {
-    domains: ['blog.jawi.or.id', 'secure.gravatar.com'],
+    domains: ['blog.jawi.or.id', 'secure.gravatar.com', 'picsum.photos'],
     remotePatterns: [
       {
         protocol: 'http',

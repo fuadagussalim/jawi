@@ -17,6 +17,7 @@ import Footer from "../../components/footer";
 export default function Post({ post, posts, preview }) {
   const router = useRouter();
   const morePosts = posts?.edges;
+  console.log('post itu apa',post)
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -69,6 +70,8 @@ export const getStaticProps: GetStaticProps = async ({
   previewData,
 }) => {
   const data = await getPostAndMorePosts(params?.slug, preview, previewData);
+  console.log('params itu apa',params)
+  console.log('data post itu apa',data.post)
 
   return {
     props: {
