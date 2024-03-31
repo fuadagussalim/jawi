@@ -26,7 +26,7 @@ export default function PostPreviewTiga({
         <div className="my-auto">
         <h3 className="sm:text-sm md:text-3xl font-semibold mb-3">
           <Link
-            href={`/posts/${slug}`}
+            href={`${slug}`}
             className="hover:underline"
             dangerouslySetInnerHTML={{ __html: title }}
             ></Link>

@@ -175,27 +175,68 @@ export async function getPortofolioFront() {
   return null;
   
 }
+export async function getServicesFront() {
+  const data = await fetchAPI(`
+  query services {
+    pages(where: {title: "services"}) {
+      edges {
+        node {
+          front {
+            banner {
+              node {
+                sourceUrl
+              }
+            }
+            judul
+            subjudul
+          }
+          content
+        }
+      }
+    }
+  }
+  `);
+  console.log('fungsi terpanggil, data:', data);
+
+  if (data?.pages.edges[0]?.node?.front) {
+    // console.log(data.pages.edges[0].node.portofoliosFront)
+    console.log('api services front' ,data.pages.edges[0]);
+    return data.pages.edges[0];
+  } else {
+    return null;
+
+  }
+
+  
+  
+}
 
 
 
 
 export async function getAllServicesWithSlug() {
   const data = await fetchAPI(
-    `query Services {
+    `
+    query services {
       services {
-        nodes {
-          slug
-          title
-          featuredImage {
-            node {
-              sourceUrl
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              node {
+                sourceUrl
+              }
             }
+            content
           }
         }
       }
-    }`
+    }
+    `
   );
-  return data?.posts;
+  console.log('all services',data.services)
+  return data?.services;
 }
 
 export async function getAllPostsForHome(preview) {

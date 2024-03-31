@@ -22,7 +22,7 @@ export default function HeroPortofolio({
       </div>
       <h3 className="text-base md:text-3xl mb-3 font-semibold md:font-bold">
         <Link
-          href={`/posts/${slug}`}
+          href={`/service/${slug}`}
           className="hover:underline"
           dangerouslySetInnerHTML={{ __html: title }}
         ></Link>
