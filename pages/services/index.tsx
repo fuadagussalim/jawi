@@ -15,8 +15,8 @@ import { OtherpageBanner } from "../../components/Banner";
 export default function Index({ allServices: { edges },servicesFront: {node}, preview }) {
   console.log(edges)
   if (edges){
-    const heroService = edges[0]?.node;
-    const moreServices = edges.slice(1);
+    // const heroService = edges[0]?.node;
+    // const moreServices = edges.slice(1);
     const front = node.front;
     return (
         <Layout preview={preview}>
@@ -28,7 +28,7 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
             <title>{`JAWI | Javan Wildlife`}</title>
           </Head> */}
           {/* <Container> */}
-            <Intro />
+            {/* <Intro /> */}
             {/* {heroService && (
               <HeroPost
                 title={heroService.title}
