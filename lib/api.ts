@@ -61,6 +61,124 @@ export async function getAllPostsWithSlug() {
   `);
   return data?.posts;
 }
+export async function getAllPortofoliosWithSlug() {
+  const data = await fetchAPI(`
+  query portofolios {
+    portofolios {
+      edges {
+        node {
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+          title
+          slug
+          attachment {
+            facebookUrl
+            instagramUrl
+            judulPostYoutube
+            linkedInUrl
+            youtubeUrl
+            partners {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `);
+  return data?.portofolios;
+}
+export async function getPortofolioFront() {
+  const data = await fetchAPI(`
+  query portofolioFront {
+    pages(where: {title: "portofolio"}) {
+      edges {
+        node {
+          portofoliosFront {
+            gambarKeahlian1 {
+              node {
+                sourceUrl
+              }
+            }
+            gambarKeahlian2 {
+              node {
+                sourceUrl
+              }
+            }
+            gambarKeahlian3 {
+              node {
+                sourceUrl
+              }
+            }
+            gambarKeahlian4 {
+              node {
+                sourceUrl
+              }
+            }
+            gambarKeahlian5 {
+              node {
+                sourceUrl
+              }
+            }
+            gambarKeahlian6 {
+              node {
+                sourceUrl
+              }
+            }
+            gambarKeahlian7 {
+              node {
+                sourceUrl
+              }
+            }
+            keahlian1
+            keahlian2
+            keahlian3
+            keahlian4
+            keahlian5
+            keahlian7
+            keahlian6
+            ketaranganKeahlian1
+            ketaranganKeahlian2
+            ketaranganKeahlian3
+            ketaranganKeahlian4
+            ketaranganKeahlian5
+            ketaranganKeahlian6
+            ketaranganKeahlian7
+          }
+          front {
+            banner {
+              node {
+                sourceUrl
+              }
+            }
+            judul
+            subjudul
+          }
+        }
+      }
+    }
+  }
+  `);
+  console.log('fungsi terpanggil, data:', data);
+
+  if (data?.pages.edges[0]?.node?.portofoliosFront) {
+    // console.log(data.pages.edges[0].node.portofoliosFront)
+    console.log('api' ,data.pages.edges[0]);
+    return data.pages.edges[0];
+  }
+
+  return null;
+  
+}
+
+
+
+
 export async function getAllServicesWithSlug() {
   const data = await fetchAPI(
     `query Services {
@@ -73,7 +191,6 @@ export async function getAllServicesWithSlug() {
               sourceUrl
             }
           }
-          content
         }
       }
     }`
@@ -285,4 +402,21 @@ export async function getAllPages(preview) {
   );
 
   return data?.pages;
+}
+
+
+function convertUndefinedToNull(obj) {
+  if (typeof obj !== "object" || obj === null) {
+    return obj;
+  }
+
+  const newObj = {};
+  for (const key in obj) {
+    if (obj[key] === undefined) {
+      newObj[key] = null;
+    } else {
+      newObj[key] = convertUndefinedToNull(obj[key]);
+    }
+  }
+  return newObj;
 }

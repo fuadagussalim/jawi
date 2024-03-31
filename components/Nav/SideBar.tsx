@@ -41,7 +41,7 @@ const Sidebar = ({
           </li>
           <li className="m-5">
 
-            <Link className="my-auto " onClick={toggle} href="/portofolio">
+            <Link className="my-auto " onClick={toggle} href="/portofolios">
               PORTOFOLIO
             </Link>
           </li>

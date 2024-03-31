@@ -1,11 +1,13 @@
-.content {
+/* .content {
   @apply text-lg overflow-hidden;
 }
 .wp-caption img[class*="wp-image-"]{
 
-  @apply w-1/2;
+  @apply w-[100px] !important;
 }
-
+.wp-caption figure{
+  @apply w-[100px] !important;
+}
 .content p,
 .content ul,
 .content ol,
@@ -86,4 +88,4 @@
   position: fixed;
   top: 0;
   left: 0;
-}
+} */

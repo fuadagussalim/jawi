@@ -101,7 +101,7 @@ export const Header = () => {
           </li>
           <li>
 
-            <Link href="/portofolio">
+            <Link href="/portofolios">
               PORTOFOLIO
             </Link>
           </li>

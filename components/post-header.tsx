@@ -3,7 +3,8 @@ import Date from "./date";
 import CoverImage from "./cover-image";
 import PostTitle from "./post-title";
 import Categories from "./categories";
-
+import { OtherpageBanner } from "./Banner";
+import { parseISO, format } from "date-fns";
 export default function PostHeader({
   title,
   coverImage,
@@ -11,9 +12,10 @@ export default function PostHeader({
   author,
   categories,
 }) {
+  console.log('coverimage:',coverImage.node.sourceUrl)
   return (
-    <>
-      <PostTitle>{title}</PostTitle>
+    <div className="pt-1">
+      {/* <PostTitle>{title}</PostTitle>
       <div className="hidden md:block md:mb-12">
         <Avatar author={author} />
       </div>
@@ -23,12 +25,13 @@ export default function PostHeader({
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">
           <Avatar author={author} />
-        </div>
-        <div className="mb-6 text-lg">
+        </div> */}
+        <OtherpageBanner maintextclass="font-base pt-0" image={coverImage.node.sourceUrl} maintext={title} type='default' subtext={format(parseISO(date), "LLLL	d, yyyy")}/>
+        {/* <div className="mb-6 text-lg">
           Posted <Date dateString={date} />
           <Categories categories={categories} />
-        </div>
-      </div>
-    </>
+        </div> */}
+   
+    </div>
   );
 }
