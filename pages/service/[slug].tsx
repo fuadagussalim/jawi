@@ -85,7 +85,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   console.log('services:', allPosts);
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
+    paths: allPosts.edges.map(({ node }) => `/service/${node.slug}`) || [],
     fallback: true,
   };
 };
