@@ -5,7 +5,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 
 
-const ImageCarousel = ({carouselPosts}) => {
+const ImageCarousel = ({carouselPosts, className=""}) => {
     const posts = carouselPosts;
 
     const [currentImageIndex, setCurrentImageIndex] = useState(1);
@@ -35,18 +35,20 @@ const ImageCarousel = ({carouselPosts}) => {
     }
 
     return (
-        <div className="sm:mb-10 md:mb-10">
-            <h4 className="text-center text-orange mx-auto w-max font-bold mb-0">
+        <div id="magazine" className={`sm:mb-10 md:mb-10 ${className}`}>
+            <Link href={'/blog'}>
+            <h4 className="text-center drop-shadow-lg text-orange mx-auto w-max font-bold mb-0">
                 JAWI MAGAZINE
                 <hr className="bg-black h-[2px] mb-5" />
             </h4>
+            </Link>
             <div className="relative w-full">
                 <button className="absolute top-1/2 transform -translate-y-1/2 left-0 z-10 p-2 bg-black text-white font-bold" onClick={handlePrevClick}>
                     ←
                 </button>
                 <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
                         <Link href={`/posts/${posts[previousImageIndex].slug}`}>
-                    <div className="relative hidden md:show grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
+                    <div className="hover:shadow-xl relative hidden md:show grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
                         <h5 className="absolute font-bold text-shadow text-white z-20 bottom-[30px] m-5">
                             {posts[previousImageIndex].title}
                         </h5>
@@ -56,7 +58,7 @@ const ImageCarousel = ({carouselPosts}) => {
                     </div>
                         </Link>
                         <Link href={`/posts/${posts[currentImageIndex].slug}`}>
-                    <div className="relative grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
+                    <div className="hover:shadow-xl relative grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
                         <h5 className="absolute font-bold drop-shadow-lg text-white z-20 bottom-[30px] m-5">{posts[currentImageIndex].title}</h5>
                         <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{posts[currentImageIndex].date}</p>
                         
@@ -64,7 +66,7 @@ const ImageCarousel = ({carouselPosts}) => {
                     </div>
                         </Link>
                         <Link href={`/posts/${posts[afterImageIndex].slug}`}>
-                    <div className="relative hidden md:show grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
+                    <div className="hover:shadow-xl relative hidden md:show grid col-span-1 w-[400] h-96 grid col-span-1 overflow-hidden">
                         <h5 className="absolute font-bold text-white z-20 bottom-[30px] m-5">
                             {posts[afterImageIndex].title}
                         </h5>

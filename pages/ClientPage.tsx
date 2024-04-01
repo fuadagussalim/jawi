@@ -169,15 +169,15 @@ export default function ClientPage({ allPosts}) {
 
 
     return (
-        <Layout preview={""} className="">
+        <Layout preview={""} className="bg-[#F3F5F8]">
             <div className=" md:block">
                 <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
-                    <HomeBanner href='#about' image='/DEF_7207.JPG' maintext='Javan Wildlife Institute' subtext='Menjadi mitra rujukan sains konservasi di Indonesia' align="left" />
+                    <HomeBanner href='#about-jawi' image='/DEF_7207.JPG' maintext='Javan Wildlife Institute' subtext='Menjadi mitra rujukan sains konservasi di Indonesia' align="left" />
                     <SectionContainer id="home" className="components--container grid gap-8 sm:gap-24 mx-0 px-0">
                         <MotionBTTContainer
                             transition={{ delay: 0.2, duration: 0.5 }}
                         >
-                            <SectionContainer id="portofolio" className="feature-tabs ">
+                            <SectionContainer id="about-jawi" className="feature-tabs ">
                                 <CardGroup className=" sm:grid-cols-1 md:grid-cols-2  divide-y  divide-black-100">
                                     
                                     <Card className="align-baseline h-full col-span-1 md:text-primary-900  bg-[#F3F5F8]">
@@ -487,9 +487,9 @@ Survei Keanekaragaman Hayati di Kawasan Ekosistem Esensial Pantai Taman Kili-kil
                     </SectionContainer>
                 </div>
             </div>
-            <div className="sm:px-5">
+            <div className="sm:px-5 pt-5 bg-[#F3F5F8]">
                 
-            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-10 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full w-2/3">
+            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-10 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full md:w-2/3">
 
                             
                                     <CardImage src='/product.jpeg' className='gridcol-span-1 h-full' imageClassName={'object-cover objet-bottom'} alt={''} />
@@ -506,7 +506,7 @@ Survei Keanekaragaman Hayati di Kawasan Ekosistem Esensial Pantai Taman Kili-kil
 
                                                     </div>
 
-                                                    <p className="text-black text-sm my-0 md:pr-40 text-justify">Dipersembahkan dari alam yang subur di Kemuning, Temanggung, kopi robusta kami adalah pencitraan penuh kasih sayang dan kepedulian terhadap lingkungan. Dipetik secara selektif dari kebun-kebun yang terpelihara dengan baik melalui sistem kopi di bawah tegakan. Setiap butiran biji kopi memiliki cerita konservasi yang menyentuh hati.
+                                                    <p className="text-black text-sm my-0  text-justify">Dipersembahkan dari alam yang subur di Kemuning, Temanggung, kopi robusta kami adalah pencitraan penuh kasih sayang dan kepedulian terhadap lingkungan. Dipetik secara selektif dari kebun-kebun yang terpelihara dengan baik melalui sistem kopi di bawah tegakan. Setiap butiran biji kopi memiliki cerita konservasi yang menyentuh hati.
                                                         <br />
                                                         <br />
                                                         Dengan setiap tegukan kopi kami, Anda juga turut berkontribusi pada pelestarian lingkungan dan kehidupan satwa liar yang langka. Mari bersama-sama menikmati kenikmatan kopi yang berkualitas sambil menjaga keberlanjutan alam kita.</p>
@@ -533,7 +533,7 @@ Survei Keanekaragaman Hayati di Kawasan Ekosistem Esensial Pantai Taman Kili-kil
                                     </Card>
                                 </CardGroup>
             </div>
-            {allPosts && allPosts.length > 2 ?  <ImageCarousel carouselPosts={carouselPosts}/>: (
+            {allPosts && allPosts.length > 2 ?  <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/>: (
         <p>No posts found.</p>
       )}
           

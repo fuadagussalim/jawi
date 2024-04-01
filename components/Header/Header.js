@@ -138,7 +138,7 @@ export const Header = () => {
 
 
 
-        <Button variant='orange' href="/blog" className='button w-25 text-sm bg-orange text-black hover:text-white rounded-none'>
+        <Button variant='orange' href="/#magazine" className='button w-25 text-sm bg-orange text-black hover:text-white rounded-none'>
           MAGAZINE
         </Button>
 
