@@ -72,8 +72,8 @@ export const getStaticProps: GetStaticProps = async ({
   // const data = await getPostAndMorePosts(params?.slug, preview, previewData);
   // console.log('params itu apa',params)
   // console.log('data post itu apa',data.post)
-  const slug = params?.slug
-  const data = await getPortofolioPage(slug);
+  const slug = typeof params?.slug === 'string' ? params.slug : '';
+const data = await getPortofolioPage(slug);
   console.log('slug', slug)
   console.log(data)
   return {
