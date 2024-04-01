@@ -18,7 +18,7 @@ import PortofolioHeader from "../../components/portofolio-header";
 export default function Poortofolio({ portofolio, preview }) {
   const router = useRouter();
   // const morePortofolios = portofolios?.edges;
-  console.log('post itu apa',portofolio)
+  // console.log('post itu apa',portofolio)
 
   if (!router.isFallback && !portofolio?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -44,7 +44,7 @@ export default function Poortofolio({ portofolio, preview }) {
               </Head>
               <PortofolioHeader
                 title={portofolio.title}
-                coverImage={portofolio?.featuredImage}
+                coverImage={portofolio?.featuredImage??"/hero.jpg"}
                 // date={portofolio.date}
               
               />
