@@ -99,7 +99,8 @@ export default function Footer() {
           </div>
             <div className="grid col-span-1 h-2/3">
             <hr className="w-full bg-[#ffa01a]" />
-            <p className="text-white text-xs font-thin text-justify pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?</p>
+            <p className="text-white text-xs font-thin text-justify pt-5">Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta,
+Indonesia</p>
 
             </div>
           </div>
@@ -447,7 +448,8 @@ export default function Footer() {
             </div>
             <div className="grid col-span-1 mb-5 h-2/3">
             <hr className="w-full bg-[#ffa01a]" />
-            <p className="text-white text-xs font-thin text-justify pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam. </p>
+            <p className="text-white text-xs font-thin text-justify pt-5">Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta,
+Indonesia </p>
 
             </div>
 

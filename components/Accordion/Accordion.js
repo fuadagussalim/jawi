@@ -10,7 +10,7 @@ import { Button } from "../Button";
 const accordionDataDefault = [
     {
         id: uuid(),
-        title: "Apa itu JAWI?",
+        title: "OUR MISSION",
         isOpen: true,
         content:
             <div></div>,
@@ -19,7 +19,7 @@ const accordionDataDefault = [
     },
     {
         id: uuid(),
-        title: "Untuk siapa?",
+        title: "OUR STORY?",
         isOpen: false,
         content:
             <div></div>,
@@ -28,7 +28,7 @@ const accordionDataDefault = [
     },
     {
         id: uuid(),
-        title: "Bagaimana model bisnisnya?",
+        title: "OUR PROGRAM",
         isOpen: false,
         content: <div />,
         image: "/DSC00013_11zon-1024x768.jpg",
@@ -36,7 +36,7 @@ const accordionDataDefault = [
     },
     {
         id: uuid(),
-        title: "DImana ...?",
+        title: "TEAM",
         isOpen: false,
         content:
             <div></div>,
@@ -66,7 +66,7 @@ export const Accordion = ({ accordionDataParam = accordionDataDefault }) => {
 
 
     return (
-        <SectionContainer className="accordion--container my-16 mt-0 drop-shadow-xl max-w-3xl mx-auto offset-y-0 offset-x-8">
+        <SectionContainer className="accordion--container my-16 mt-0 drop-shadow-xl md:w-[700px]  md:mx-auto offset-y-0 ">
             {accordionData.map((accordionItem, index) => (
                 <div
                     key={accordionItem.id}

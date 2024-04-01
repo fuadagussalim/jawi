@@ -36,6 +36,7 @@ import { NavLink } from "../components/Nav/NavLinks";
 import {format} from "date-fns";
 import CoverImage from "../components/cover-image";
 import YouTubePlayer from "../components/YoutubePlayer";
+import { Gallery } from "next-gallery";
 
 // export async function getStaticProps({ preview = false }) {
 //     const posts = await getAllPostsForHome(preview);
@@ -177,16 +178,24 @@ export default function ClientPage({ allPosts}) {
                             transition={{ delay: 0.2, duration: 0.5 }}
                         >
                             <SectionContainer id="portofolio" className="feature-tabs ">
-                                <CardGroup className=" sm:grid-cols-1 md:grid-cols-2 divide-y  divide-black-100">
+                                <CardGroup className=" sm:grid-cols-1 md:grid-cols-2  divide-y  divide-black-100">
+                                    
                                     <Card className="align-baseline h-full col-span-1 md:text-primary-900  bg-[#F3F5F8]">
                                         <CardBody className="sm:w-full md:my-auto h-full mx-auto bg-[#F3F5F8] p-12">
-                                            <div className="flex flex-col  p-10 pr-10  h-full px-auto justify-center content-center align-center">
-                                                <h3 className="text-black sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">ABOUT JAWI</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
+                                            <div className="flex flex-col  p-10 pr-10 max-2-[300px] h-full px-auto justify-center content-center align-center">
+                                                <h3 className="text-black sm:text-3xl sm:text-center sm:px-auto text-justify mb-3 font-bold sm:font-bold my-0">ABOUT JAWI</h3>
+                                                <p className="text-black sm:text-xl sm:font-emibold md:w-[700px] mx-auto  text-justify max-w-xs sm:max-w-full"> organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.
+
+Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang memiliki arah serupa dengan ranah gerak dan visi misi organisasi kami, dan tidak terbatas hanya di Pulau Jawa. </p>
                                             </div>
                                         </CardBody>
                                     </Card>
-                                    <CardGroup className="grid divide-x scroll-m-24 mt-0 pr-0 divide-y lg:mt-20 lg:pr-24 grid-cols-2 md:mx-auto md:grid-cols-2">
+                                    <div className="md:hidden">
+
+                                    <Accordion/>
+                                    </div>
+                                                                      
+                                    <CardGroup className="hidden md:block grid divide-x scroll-m-24 mt-0 pr-0 divide-y lg:mt-20 lg:pr-24 grid-cols-2 md:mx-auto md:grid-cols-2">
 
                                         <Card className="bg-[#F3F5F8]  md:w-full lg:px-0 col-span-1">
                                             {/* <CardBody className="w-full bg-[#F3F5F8] p-0">
@@ -201,7 +210,7 @@ export default function ClientPage({ allPosts}) {
                                             <CardBody className=" md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] sm:p-0 md:p-12">
                                             <div className="flex flex-col sm:p-5  md:p-10 w-full  h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">MISSION</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
+                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Mengarusutamakan sains konservasi yang inklusif di Indonesia </p>
                                             </div>
                                         </CardBody>
                                         </Card>
@@ -215,13 +224,14 @@ export default function ClientPage({ allPosts}) {
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
                                                 </p>
                                             </CardBody> */}
-                                            <CardBody className="sm:w-full md:w-[400px]  md:p-12 my-auto h-full mx-auto bg-[#F3F5F8] md:p-12">
-                                            <div className="flex flex-col sm:p-5  md:p-10 md:pr-10  h-full px-auto justify-center content-center align-center">
+                                            <CardBody className=" md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] sm:p-0 md:p-12">
+                                            <div className="flex flex-col sm:p-5  md:p-10 w-full  h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">OUR STORY</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
+                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Jawa adalah sebuah pulau di Indonesia dan merupakan terluas ke-13 di dunia. Jumlah penduduk Pulau Jawa pada 2018 diperkirakan mencapai 149,6 juta jiwa dan pada 2035 bakal tumbuh 11,82% menjadi 167,3 juta jiwa.. </p>
                                             </div>
                                         </CardBody>
                                         </Card>
+                                        
                                         <Card className="bg-[#F3F5F8]  md:w-full lg:px-0 col-span-2">
                                             {/* <CardBody className="w-full bg-[#F3F5F8] p-0">
 
@@ -235,7 +245,14 @@ export default function ClientPage({ allPosts}) {
                                             <CardBody className=" md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] sm:p-0 md:p-12">
                                             <div className="flex flex-col sm:p-5  md:p-10 w-full  h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">PROGRAM</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
+                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> 
+                                                Survei Keanekaragaman Hayati di Kawasan Mangrove Nusakambangan
+Inventarisasi Flora dan Fauna di Kawasan Hutan Dengan Tujuan Khusus (KHDTK) Getas
+Kajian Keanekaragaman Hayati pada Hutan yang Tersisa di Taman Nasional Tesso Nilo
+Survei Keanekaragaman Hayati pada Wilayah Kehati Tinggi di Provinsi Jawa Timur
+Survei Keanekaragaman Hayati di Kawasan Ekosistem Esensial Pantai Taman Kili-kili Trenggalek, Ujung Pangkah Gresik, dan Teluk Pangpang Banyuwangi Jawa Timur
+
+                                                 </p>
                                             </div>
                                         </CardBody>
                                         </Card>
@@ -263,6 +280,12 @@ export default function ClientPage({ allPosts}) {
 
                                     </CardGroup>
 
+
+                                    
+                                    
+
+
+  
 
                                 </CardGroup>
 
@@ -335,7 +358,7 @@ export default function ClientPage({ allPosts}) {
                                                             <div className="flex justify-center pt-5">
                                                                 {/* <Link type="button" className="uppercase text-[#faa51a] uppercase font-bold px-4 py-2 hover:bg-[#faa51a] hover:text-white " href="/detail/site-projek" passHref={true}> */}
 
-                                                                    <Button variant="orange" >
+                                                                    <Button href="" variant="orange" >
                                                                          Read More
                                                                     </Button>
 
