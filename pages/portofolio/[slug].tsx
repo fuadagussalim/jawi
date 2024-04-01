@@ -39,7 +39,7 @@ export default function Poortofolio({ portofolio, preview }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={portofolio.featuredImage?.node.sourceUrl}
+                  content={portofolio.featuredImage?.node.sourceUrl??"/hero.jpg"}
                 />
               </Head>
               <PortofolioHeader
