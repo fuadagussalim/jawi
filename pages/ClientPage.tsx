@@ -235,14 +235,15 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                     </div> */}  
 
                                     <div className="p-10 py-auto pl-0">
-
+                                    <Link href={"/about"}>
                                     <table className="grid col-span-1 h-full ">
                                        
                                     
                                         <tbody className="max-w-[600px] ">
                                             <tr>
                                                 <th className="w-[300px] pb-0">
-                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">OUR PROGRAM</h5> 
+                                                
+                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">PROGRAM</h5> 
                                                 </th>
                                                 <th className="w-[300px] pb-0">
                                                 <h5 className="text-left pb-2 text-orange  mb-0 my-5">OUR STORY</h5> 
@@ -250,11 +251,13 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                             </tr>
                                             <tr>
                                                 <td className="">
-                                                    <p className="text-justify min-h-[150px]  pr-10">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, rerum. Ipsa vero pariatur blanditiis tempora officia a! Doloribus aperiam quam eos enim rerum ex id, dicta fugiat quos aut sit?</p>
+                                                    <p className="text-justify min-h-[150px]  pr-10">Menciptakan keselarasan antara manusia, alam, dan satwa liar melalui penerapan ilmu pengetahuan dan teknologi dengan berasaskan konservasi sumber daya alam dengan prinsip pembangunan yang berkelanjutan</p>
                                                    
+                                                    <Button variant="orange" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Program</Button>
                                                 </td>
                                                 <td className="">
-                                                    <p className="text-justify min-h-[150px]  pr-10">ADFA</p>
+                                                    <p className="text-justify min-h-[150px]  pr-10">Pertumbuhan demografi yang semakin meningkat membuat persingungan antara aktivitas masyarakat dengan habitat satwa liar tentu tidak dapat terelakkan. Selain itu juga masih sedikit NGO bidang satwa ...</p>
+                                                    <Button variant="orange" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Story</Button>
                                                     
                                                 </td>
                                                 
@@ -262,20 +265,54 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                             <tr>
                                                 <th className="w-[300px] pr-10  pb-0">
                                             <hr className="mt-5 h-px my-8 bg-black-400 border-0 dark:bg-gray-700"></hr>
-                                                <h5 className="text-left  pb-2 text-orange  mb-0 my-5">OUR PROGRAM</h5> 
+                                                <h5 className="text-left  pb-2 text-orange  mb-0 my-5">MISSION</h5> 
                                                 </th>
                                                 <th className="w-[300px]  pr-10 pb-0">
                                             <hr className="mt-5 h-px my-8 bg-black-400 border-0 dark:bg-gray-700"></hr>
-                                                <h5  className="text-left  pb-2 text-orange  mb-0 my-5">OUR STORY</h5> 
+                                                <h5  className="text-left  pb-2 text-orange  mb-0 my-5">TEAM</h5> 
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <td>
-                                                    <p className="text-justify min-h-[150px]  pr-10 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, rerum. Ipsa vero pariatur blanditiis tempora officia a! Doloribus aperiam quam eos enim rerum ex id, dicta fugiat quos aut sit?</p>
+                                                <td className="align-top">
+                                                    {/* <p className="text-justify min-h-[150px]  pr-10 ">Mengarusutamakan sains konservasi yang inklusif di Indonesia
+                                                    <br/> */}
+                                                    {/* <span>See</span> */}
+                                                    <Button variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Mission</Button>
+
+
+{/* 
+</p> */}
                                                   
                                                 </td>
                                                 <td>
-                                                    <p className="text-justify min-h-[150px]  pr-10">ADFA</p>
+                                                    {/* <p className="text-justify min-h-[150px]  pr-10">
+<span className="font-bold">
+    Supervisory Board
+    </span>
+<br>
+</br>
+
+Dr. Muhammad Ali Imron
+
+<br>
+</br>
+Ryan Adi Satria
+
+<br>
+</br>
+Fikri Al Mubarok
+
+<br>
+</br>
+Stephanus Argo Yan
+
+<br>
+</br>
+Wiwit Prayoga ...
+
+
+                                                    </p> */}
+<Button variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Team</Button>
                                                 </td>
                                             </tr>
                                           
@@ -285,6 +322,7 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                        
 
                                     </table>
+                                    </Link>
                                     </div>
                                                  
                                     
@@ -367,7 +405,7 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                             <div className="flex justify-center pt-5">
                                                                 {/* <Link type="button" className="uppercase text-[#faa51a] uppercase font-bold px-4 py-2 hover:bg-[#faa51a] hover:text-white " href="/detail/site-projek" passHref={true}> */}
 
-                                                                    <Button href="" variant="orange" >
+                                                                    <Button href="/portofolio/survei-biodiversitas" variant="orange" >
                                                                          Read More
                                                                     </Button>
 
@@ -387,14 +425,14 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                         <div className="w-full sm:pt-5  rounded-0">
                                                             <div>
 
-                                                                <h3 className="text-black w-full text-center m-0 text-base font-extrabold">SURVEI BIODIVERSITAS</h3>
-                                                                <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">Hutan Kemuning,</p>
+                                                                <h3 className="text-black w-full text-center m-0 text-base font-extrabold">MANAJEMEN DATA</h3>
+                                                                <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full"></p>
                                                             </div>
 
                                                             <div className="flex justify-center pt-5">
                                                                 {/* <Link type="button" className="uppercase text-[#faa51a] uppercase font-bold px-4 py-2 hover:bg-[#faa51a] hover:text-white " href="/detail/site-projek" passHref={true}> */}
 
-                                                                    <Button variant="orange" >
+                                                                    <Button href="/portofolio/manajemen-data" variant="orange" >
                                                                          Read More
                                                                     </Button>
 
@@ -415,14 +453,14 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                         <div className="w-full sm:pt-5  rounded-0">
                                                             <div>
 
-                                                                <h3 className="text-black w-full text-center m-0 text-base font-extrabold">SURVEI BIODIVERSITAS</h3>
-                                                                <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">Hutan Kemuning,</p>
+                                                                <h3 className="text-black w-full text-center m-0 text-base font-extrabold">PPEMODELAN SPASIAL</h3>
+                                                                <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full"></p>
                                                             </div>
 
                                                             <div className="flex justify-center pt-5">
                                                                 {/* <Link type="button" className="uppercase text-[#faa51a] uppercase font-bold px-4 py-2 hover:bg-[#faa51a] hover:text-white " href="/detail/site-projek" passHref={true}> */}
 
-                                                                    <Button variant="orange" >
+                                                                    <Button href="/portofolio/pemetaan-dan-pemodelan-spasial" variant="orange" >
                                                                          Read More
                                                                     </Button>
 
@@ -442,14 +480,14 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                         <div className="w-full sm:pt-5  rounded-0">
                                                             <div>
 
-                                                                <h3 className="text-black w-full text-center m-0 text-base font-extrabold">SURVEI BIODIVERSITAS</h3>
-                                                                <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">Hutan Kemuning,</p>
+                                                                <h3 className="text-black w-full text-center m-0 text-base font-extrabold">PENYUSUNAN DOKUMEN PENGELOLAAN/ KEBIJAKAN</h3>
+                                                                <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full"></p>
                                                             </div>
 
                                                             <div className="flex justify-center pt-5">
                                                                 {/* <Link type="button" className="uppercase text-[#faa51a] uppercase font-bold px-4 py-2 hover:bg-[#faa51a] hover:text-white " href="/detail/site-projek" passHref={true}> */}
 
-                                                                    <Button variant="orange" >
+                                                                    <Button href="/portofolio/penyusunan-dokumen-pengelolaan-kebijakan" variant="orange" >
                                                                          Read More
                                                                     </Button>
 

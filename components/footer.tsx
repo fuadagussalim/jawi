@@ -59,14 +59,17 @@ export default function Footer() {
             <p className="text-white grid font-thin  mr-auto h-full col-span-1 items-end flex items-center">Social Media</p>
             </div>
             <div className="grid justify-evenly col-span-1 gap-0 w-auto  md:items-center md:grid-cols-4">
+              
+            <Link href={"https://web.facebook.com/jawi.or.id/?_rdc=1&_rdr"} target="_blank">
               <Image
                 className="flex col-span-1  mx-auto"
                 src="/sosmed/fb w.png"
                 height={25}
                 width={25}
                 alt="">
-
               </Image>
+              </Link>
+              <Link href={"https://id.linkedin.com/company/javan-wildlife-institute"} target="_blank">
               <Image
                 src="/sosmed/link w.png"
                 height={25}
@@ -75,6 +78,8 @@ export default function Footer() {
                 className="flex col-span-1  mx-auto">
 
               </Image>
+              </Link>
+              <Link href={"https://www.instagram.com/javanwildlife/?hl=en"} target="_blank">
               <Image
                 src="/sosmed/ig w.png"
                 height={25}
@@ -83,6 +88,8 @@ export default function Footer() {
                 className="flex col-span-1  mx-auto">
 
               </Image>
+                  </Link>
+              <Link href={"https://youtu.be/LBCGzeuQkHc?si=4yTUEFNJuX5IRprv"} target="_blank">
               <Image
                 src="/sosmed/yt w.png"
                 height={25}
@@ -91,6 +98,7 @@ export default function Footer() {
                 className="flex col-span-1  mx-auto">
 
               </Image>
+                  </Link>
 
             </div>
         
@@ -157,6 +165,7 @@ Indonesia</p>
                 className="flex col-span-1 ]  mx-0 mt-2">
 
               </Image>
+
               <Image
                 src="/Logo UGM Baru.png"
                 height={35*1.5}
@@ -165,6 +174,7 @@ Indonesia</p>
                 className="flex col-span-1  mx-0 mt-2">
 
               </Image>
+
               <Image
                 src="/Logo Temanggung Baru.png"
                 height={25*1.5}
@@ -173,6 +183,7 @@ Indonesia</p>
                 className="flex col-span-1   mx-0 mt-2">
 
               </Image>
+
               <Image
                 src="/Logo PBNF.png"
                 height={50*1.5}
@@ -181,6 +192,7 @@ Indonesia</p>
                 className="flex col-span-2  mx-0 mt-2">
 
               </Image>
+
               <Image
                 src="/Logo LFP.png"
                 height={80*1.5}
@@ -189,6 +201,7 @@ Indonesia</p>
                 className="flex col-span-2 pt-2  mx-0 mt-2">
 
               </Image>
+
                <Image
                 src="/international-elephant-project.png"
                 height={45*1.5}
