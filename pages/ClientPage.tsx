@@ -287,7 +287,7 @@ export default function ClientPage({ allPosts}) {
                                                     {/* <Button className="self-auto bg-black text-white rounded-5 items-center mt-5"> */}
                                                     {/* <Link type="button" className="text-white  font-bold bg-black px-10 py-3 hover:bg-[#faa51a] hover:text-black " href="/detail/site-projek" passHref={true}> */}
 
-                                                        <Button className="hover:bg-orange w-[150px] hover:text-white " href="/portofolio/site-projek">
+                                                        <Button className="hover:bg-orange w-[150px]  " href="/portofolio/site-project-hutan-kemuning-temanggung-jawa-tengah">
 
                                                         Read More
                                                         </Button>

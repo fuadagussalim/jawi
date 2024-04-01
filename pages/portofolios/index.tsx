@@ -10,6 +10,7 @@ import { getAllPortofoliosWithSlug, getPortofolioFront } from "../../lib/api";
 import TabMenu from "../../components/Tab/TabMenu";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
 import { OtherpageBanner } from "../../components/Banner";
+import MorePortofolios from "../../components/more-portofolios";
 
 
 export default function Index({ allPortofolios: { edges }, portoFolioFront: { node } }) {
@@ -23,7 +24,7 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
 
     const heroPortofolio = edges[0]?.node;
     // console.log(heroPortofolio);
-    const morePosts = edges.slice(1);
+    const morePosts = edges;
     // console.log(heroPortofolio);
 
     return (
@@ -44,16 +45,16 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
 
 
 
-        {heroPortofolio && (
+        {/* {heroPortofolio && (
           <HeroPortofolio
             title={heroPortofolio.title}
             coverImage={heroPortofolio.featuredImage}
             slug={heroPortofolio.slug}
             excerpt={heroPortofolio.excerpt}
           />
-        )}
+        )} */}
         <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <MorePortofolios posts={morePosts} />}
         </Container>
 
         {/* </Container> */}

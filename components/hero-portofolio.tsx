@@ -1,5 +1,4 @@
-import Avatar from "./avatar";
-import Date from "./date";
+
 import CoverImage from "./cover-image";
 import Link from "next/link";
 

@@ -100,15 +100,15 @@ export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = tru
 
                 </div>
                 <div className={`bg-black md:hidden z-20 stroke-black items-start  text-white top-1/3 left-14 text-${align} w-full p-10 `}>
-                    <div class="stars h-full absolute z-25">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
+                    <div className="stars h-full absolute z-25">
+                        <div className="star"></div>
+                        <div className="star"></div>
+                        <div className="star"></div>
+                        <div className="star"></div>
+                        <div className="star"></div>
+                        <div className="star"></div>
+                        <div className="star"></div>
+                        <div className="star"></div>
 
                     </div>
                     <div className="w-full grid grid-cols-1 ">
