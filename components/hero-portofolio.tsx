@@ -16,12 +16,12 @@ export default function HeroPortofolio({
       <div className="bg-black sm:grid-cols-2 sm:drop-shadow-xl md:m-0">
       <div className="mb-5">
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} />
+          <CoverImage title={title} coverImage={coverImage} slug={`/portofolio/${slug}`} />
         )}
       </div>
       <h3 className="text-base md:text-3xl mb-3 font-semibold md:font-bold">
         <Link
-          href={`/service/${slug}`}
+          href={`/portofolio/${slug}`}
           className="hover:underline"
           dangerouslySetInnerHTML={{ __html: title }}
         ></Link>

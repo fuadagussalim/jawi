@@ -11,15 +11,16 @@ import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
 import PostTitle from "../../components/post-title";
 import Tags from "../../components/tags";
-import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
+import { getAllPortofoliosWithSlug, getPortofolioBySlug, getPostAndMorePosts, getPortofolioPage } from "../../lib/api";
 import { CMS_NAME } from "../../lib/constants";
 import Footer from "../../components/footer";
-export default function Post({ post, posts, preview }) {
+import PortofolioHeader from "../../components/portofolio-header";
+export default function Poortofolio({ portofolio, preview }) {
   const router = useRouter();
-  const morePosts = posts?.edges;
-  console.log('post itu apa',post)
+  // const morePortofolios = portofolios?.edges;
+  console.log('post itu apa',portofolio)
 
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !portofolio?.slug) {
     return <ErrorPage statusCode={404} />;
   }
 
@@ -34,28 +35,27 @@ export default function Post({ post, posts, preview }) {
             <article>
               <Head>
                 <title>
-                  {`${post.title} | JAWI Magazine`}
+                  {`${portofolio.title} | JAWI Magazine`}
                 </title>
                 <meta
                   property="og:image"
-                  content={post.featuredImage?.node.sourceUrl}
+                  content={portofolio.featuredImage?.node.sourceUrl}
                 />
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage}
-                date={post.date}
-                author={post.author}
-                categories={post.categories}
+              <PortofolioHeader
+                title={portofolio.title}
+                coverImage={portofolio.featuredImage}
+                // date={portofolio.date}
+              
               />
-              <PostBody content={post.content} />
-              <footer>
-                {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
-              </footer>
+              <PostBody content={portofolio.content} />
+              {/* <footer>
+                {portofolio.tags.edges.length > 0 && <Tags tags={portofolio.tags} />}
+              </footer> */}
             </article>
 
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            {/* <SectionSeparator /> */}
+            {/* {morePortofolios.length > 0 && <MoreStories posts={morePortofolios} />} */}
           </>
         )}
       {/* </Container> */}
@@ -69,25 +69,33 @@ export const getStaticProps: GetStaticProps = async ({
   preview = false,
   previewData,
 }) => {
-  const data = await getPostAndMorePosts(params?.slug, preview, previewData);
+  // const data = await getPostAndMorePosts(params?.slug, preview, previewData);
   // console.log('params itu apa',params)
   // console.log('data post itu apa',data.post)
-
+  const slug = params?.slug
+  const data = await getPortofolioPage(slug);
+  console.log('slug', slug)
+  console.log(data)
   return {
     props: {
       preview,
-      post: data.post,
-      posts: data.posts,
+      portofolio: data.nodes[0]
+      
     },
     revalidate: 10,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allPosts = await getAllPostsWithSlug();
+  const allPortofolio = await getAllPortofoliosWithSlug();
+  console.log(allPortofolio.edges)
+
+  const paths = allPortofolio.edges.map(({ node }) => ({
+    params: { slug: node.slug },
+  }));
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
+    paths,
     fallback: true,
   };
 };

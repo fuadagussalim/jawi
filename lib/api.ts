@@ -443,6 +443,32 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
 
   return data;
 }
+
+
+
+// export async function getPortofolioBySlug(slug) {
+//   const data = await fetchAPI(
+//     `
+//     query PortfolioItemBySlug($slug: ID!) {
+//       portofolio(id: $slug, idType: DATABASE_ID) {
+//         id
+//         title
+       
+//       }
+//     }
+//   `,
+//     {
+//       variables: {
+//         id: slug,
+//         idType: "SLUG",
+//       },
+//     },
+//   );
+
+ 
+//   return data?.portofolio;
+// }
+
 export async function getServiceAndMoreServices(slug, preview, previewData) {
   const servicePreview = preview && previewData?.service;
   // The slug may be the id of an unpublished service
@@ -588,4 +614,72 @@ function convertUndefinedToNull(obj) {
     }
   }
   return newObj;
+}
+
+export async function getPortofolioBySlug(slug: string) {
+  const data = await fetchAPI(
+    `query GetPortofolio($id: ID = "") {
+    portofolio(id: $id, idType: SLUG) {
+      content
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      slug
+      title
+    }
+  }`,
+    {
+      variables: {
+        id: slug,
+      },
+    }
+  );
+
+  return data?.post;
+}
+export async function getPortofolioPage(slug: string) {
+  const data = await fetchAPI(
+    `
+    query PortofolioPage{
+      portofolios(where: {name: "${slug}"}) {
+        nodes {
+          slug
+          title
+          attachment {
+            facebookUrl
+            instagramUrl
+            judulPostYoutube
+            linkedInUrl
+            youtubeUrl
+            partners {
+              node {
+                sourceUrl
+              }
+            }
+            image {
+              node {
+                sourceUrl
+              }
+            }
+          }
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+          content
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        slug: slug,
+      },
+    }
+  );
+
+  return data?.portofolios;
 }

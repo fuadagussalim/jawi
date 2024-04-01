@@ -5,7 +5,7 @@ import ImageWithWidth from "../components/ImageWithWidth";
 export default function PostBody({ content }) {
   // Add this CSS to your stylesheet
   const figureStyles = {
-    maxWidth: "100%",
+    width: "100%",
     margin: "0 auto",
   };
 
@@ -18,9 +18,9 @@ export default function PostBody({ content }) {
   );
 
   return (
-    <div className="max-w-2xl p-10 mx-auto text-justify">
+    <div className=" p-10 mx-auto text-justify">
       <div
-        className={styles.content}
+        className={`${styles.content} md:px-20`}
         dangerouslySetInnerHTML={{ __html: parsedContent }}
       />
     </div>

@@ -128,7 +128,7 @@ export const Header = () => {
           </li>
           <li>
 
-            <Link href="/Contact Us">
+            <Link href="/contact-us">
               CONTACT US
             </Link>
 
