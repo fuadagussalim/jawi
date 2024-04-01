@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import Container from "../../components/container";
-import MoreStories from "../../components/more-stories";
+import MorePortofolios from "../../components/more-stories";
 import HeroPortofolio from "../../components/hero-portofolio";
 import Intro from "../../components/intro";
 import Footer from "../../components/footer"
@@ -32,7 +32,7 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
   
         </ClientPage> */}
         <Head>
-          <title>{`JAWI's Portofolio | Javan Wildlife INstititu`}</title>
+          <title>{`JAWI's Portofolio | Javan Wildlife Institute`}</title>
         </Head>
         <OtherpageBanner maintext={portofolioFrontData.front.judul}
           image={portofolioFrontData.front.banner.node.sourceUrl}
@@ -43,7 +43,7 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
 
 
 
-
+{/* 
         {heroPortofolio && (
           <HeroPortofolio
             title={heroPortofolio.title}
@@ -51,10 +51,10 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
             slug={heroPortofolio.slug}
             excerpt={heroPortofolio.excerpt}
           />
-        )}
-        <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+        )} */}
+        {/* <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
+          {morePosts.length > 0 && <MorePortofolios posts={morePosts} />}
+        </Container> */}
 
         {/* </Container> */}
         {/* 

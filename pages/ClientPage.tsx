@@ -182,9 +182,9 @@ export default function ClientPage({ allPosts}) {
                                     
                                     <Card className="align-baseline h-full col-span-1 md:text-primary-900  bg-[#F3F5F8]">
                                         <CardBody className="sm:w-full md:my-auto h-full mx-auto bg-[#F3F5F8] p-12">
-                                            <div className="flex flex-col  p-10 pr-10 max-2-[300px] h-full px-auto justify-center content-center align-center">
-                                                <h3 className="text-black sm:text-3xl sm:text-center sm:px-auto text-justify mb-3 font-bold sm:font-bold my-0">ABOUT JAWI</h3>
-                                                <p className="text-black sm:text-xl sm:font-emibold md:w-[700px] mx-auto  text-justify max-w-xs sm:max-w-full"> organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.
+                                            <div className="flex flex-col shadow-xl  p-10 md:px-20 pr-10 max-w-[600px] mx-auto h-full px-auto justify-center content-center align-center">
+                                                <h3 className="text-black sm:text-3xl sm:text-center sm:px-auto text-justify md:text-left mb-3 font-bold sm:font-bold my-0">ABOUT JAWI</h3>
+                                                <p className="text-black sm:text-xl sm:font-emibold md:w-full mx-auto  text-justify max-w-xs sm:max-w-full"> Organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.
 
 Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang memiliki arah serupa dengan ranah gerak dan visi misi organisasi kami, dan tidak terbatas hanya di Pulau Jawa. </p>
                                             </div>
@@ -194,91 +194,100 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
 
                                     <Accordion/>
                                     </div>
-                                                                      
-                                    <CardGroup className="hidden md:block grid divide-x scroll-m-24 mt-0 pr-0 divide-y lg:mt-20 lg:pr-24 grid-cols-2 md:mx-auto md:grid-cols-2">
 
-                                        <Card className="bg-[#F3F5F8]  md:w-full lg:px-0 col-span-1">
-                                            {/* <CardBody className="w-full bg-[#F3F5F8] p-0">
+                                   
+                                    {/* <div className="hidden lg:block">
+                                        <CardGroup className="grid grid-cols-2 w-3/4">
+                                            <Card className={"grid grid-col-1"}>
+                                                <CardHeader className={""} hasBadge={false}>
+                                                "TES"
+                                            </CardHeader>
+                                            <CardBody className={""}>
+                                                Tes body
+                                            </CardBody>
+                                                </Card>
+                                            <Card className={"grid grid-col-1"}>
+                                                <CardHeader className={""} hasBadge={false}>
+                                                "TES"
+                                            </CardHeader>
+                                            <CardBody className={""}>
+                                                Tes body
+                                            </CardBody>
+                                                </Card>
+                                            <Card className={"grid grid-col-1"}>
+                                                <CardHeader className={""} hasBadge={false}>
+                                                "TES"
+                                            </CardHeader>
+                                            <CardBody className={""}>
+                                                Tes body
+                                            </CardBody>
+                                                </Card>
+                                            <Card className={"grid grid-col-1"}>
+                                                <CardHeader className={""} hasBadge={false}>
+                                                "TES"
+                                            </CardHeader>
+                                            <CardBody className={""}>
+                                                Tes body
+                                            </CardBody>
+                                                </Card>
+                                      
+                                        </CardGroup>
+                                    </div> */}  
 
-                                                <CardHeader hasBadge={""} className="!text-2xl !font-bold text-[#faa51a]">
-                                                    PROGRAM
-                                                </CardHeader>
-                                                <p className="text-black text">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
-                                                </p>
-                                            </CardBody> */}
-                                            <CardBody className=" md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] sm:p-0 md:p-12">
-                                            <div className="flex flex-col sm:p-5  md:p-10 w-full  h-full px-auto justify-center content-center align-center">
-                                                <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">MISSION</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Mengarusutamakan sains konservasi yang inklusif di Indonesia </p>
-                                            </div>
-                                        </CardBody>
-                                        </Card>
-                                        <Card className="bg-[#F3F5F8]  md:w-full lg:px-0 col-span-1">
-                                            {/* <CardBody className="w-full bg-[#F3F5F8] p-0">
+                                    <div className="p-10 py-auto pl-0">
 
-                                                <CardHeader hasBadge={""} className="!text-2xl !font-bold text-[#faa51a]">
-                                                    PROGRAM
-                                                </CardHeader>
-                                                <p className="text-black text">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
-                                                </p>
-                                            </CardBody> */}
-                                            <CardBody className=" md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] sm:p-0 md:p-12">
-                                            <div className="flex flex-col sm:p-5  md:p-10 w-full  h-full px-auto justify-center content-center align-center">
-                                                <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">OUR STORY</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Jawa adalah sebuah pulau di Indonesia dan merupakan terluas ke-13 di dunia. Jumlah penduduk Pulau Jawa pada 2018 diperkirakan mencapai 149,6 juta jiwa dan pada 2035 bakal tumbuh 11,82% menjadi 167,3 juta jiwa.. </p>
-                                            </div>
-                                        </CardBody>
-                                        </Card>
-                                        
-                                        <Card className="bg-[#F3F5F8]  md:w-full lg:px-0 col-span-2">
-                                            {/* <CardBody className="w-full bg-[#F3F5F8] p-0">
+                                    <table className="grid col-span-1 h-full ">
+                                       
+                                    
+                                        <tbody className="max-w-[600px] ">
+                                            <tr>
+                                                <th className="w-[300px] pb-0">
+                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">OUR PROGRAM</h5> 
+                                                </th>
+                                                <th className="w-[300px] pb-0">
+                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">OUR STORY</h5> 
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <td className="">
+                                                    <p className="text-justify min-h-[150px]  pr-10">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, rerum. Ipsa vero pariatur blanditiis tempora officia a! Doloribus aperiam quam eos enim rerum ex id, dicta fugiat quos aut sit?</p>
+                                                   
+                                                </td>
+                                                <td className="">
+                                                    <p className="text-justify min-h-[150px]  pr-10">ADFA</p>
+                                                    
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <th className="w-[300px] pr-10  pb-0">
+                                            <hr className="mt-5 h-px my-8 bg-black-400 border-0 dark:bg-gray-700"></hr>
+                                                <h5 className="text-left  pb-2 text-orange  mb-0 my-5">OUR PROGRAM</h5> 
+                                                </th>
+                                                <th className="w-[300px]  pr-10 pb-0">
+                                            <hr className="mt-5 h-px my-8 bg-black-400 border-0 dark:bg-gray-700"></hr>
+                                                <h5  className="text-left  pb-2 text-orange  mb-0 my-5">OUR STORY</h5> 
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p className="text-justify min-h-[150px]  pr-10 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, rerum. Ipsa vero pariatur blanditiis tempora officia a! Doloribus aperiam quam eos enim rerum ex id, dicta fugiat quos aut sit?</p>
+                                                  
+                                                </td>
+                                                <td>
+                                                    <p className="text-justify min-h-[150px]  pr-10">ADFA</p>
+                                                </td>
+                                            </tr>
+                                          
 
-                                                <CardHeader hasBadge={""} className="!text-2xl !font-bold text-[#faa51a]">
-                                                    PROGRAM
-                                                </CardHeader>
-                                                <p className="text-black text">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
-                                                </p>
-                                            </CardBody> */}
-                                            <CardBody className=" md:w-[400px] my-auto h-full mx-auto bg-[#F3F5F8] sm:p-0 md:p-12">
-                                            <div className="flex flex-col sm:p-5  md:p-10 w-full  h-full px-auto justify-center content-center align-center">
-                                                <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">PROGRAM</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> 
-                                                Survei Keanekaragaman Hayati di Kawasan Mangrove Nusakambangan
-Inventarisasi Flora dan Fauna di Kawasan Hutan Dengan Tujuan Khusus (KHDTK) Getas
-Kajian Keanekaragaman Hayati pada Hutan yang Tersisa di Taman Nasional Tesso Nilo
-Survei Keanekaragaman Hayati pada Wilayah Kehati Tinggi di Provinsi Jawa Timur
-Survei Keanekaragaman Hayati di Kawasan Ekosistem Esensial Pantai Taman Kili-kili Trenggalek, Ujung Pangkah Gresik, dan Teluk Pangpang Banyuwangi Jawa Timur
-
-                                                 </p>
-                                            </div>
-                                        </CardBody>
-                                        </Card>
-                                        <Card className="bg-[#F3F5F8]  md:w-full lg:px-0 col-span-2">
-                                            {/* <CardBody className="w-full bg-[#F3F5F8] p-0">
-
-                                                <CardHeader hasBadge={""} className="!text-2xl !font-bold text-[#faa51a]">
-                                                    PROGRAM
-                                                </CardHeader>
-                                                <p className="text-black text">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut?
-                                                </p>
-                                            </CardBody> */}
-                                            <CardBody className="sm:w-full md:w-[400px]  md:p-12 my-auto h-full mx-auto bg-[#F3F5F8] md:p-12">
-                                            <div className="flex flex-col sm:p-5  md:p-10 md:pr-10  h-full px-auto justify-center content-center align-center">
-                                                <h3 className="text-orange sm:text-xl sm:text-center sm:px-auto text-justify font-bold sm:font-bold my-0">TEAM</h3>
-                                                <p className="text-black sm:font-normal md:pr-10 text-justify max-w-xs sm:max-w-full"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia enim inventore autem maxime veniam consequuntur alias architecto quas. Temporibus nobis error rem vero incidunt, nemo ad unde quidem ut? </p>
-                                            </div>
-                                        </CardBody>
-                                        </Card>
-                                        
-                             
+                                        </tbody>
+                                      
                                        
 
-
-                                    </CardGroup>
+                                    </table>
+                                    </div>
+                                                 
+                                    
 
 
                                     
