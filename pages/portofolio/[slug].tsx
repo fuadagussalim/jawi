@@ -44,7 +44,7 @@ export default function Poortofolio({ portofolio, preview }) {
               </Head>
               <PortofolioHeader
                 title={portofolio.title}
-                coverImage={portofolio.featuredImage}
+                coverImage={portofolio?.featuredImage}
                 // date={portofolio.date}
               
               />
