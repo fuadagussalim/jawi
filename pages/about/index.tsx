@@ -22,6 +22,8 @@ export default function Index(
   ) {
     const contentCuk = <>
     Blaslndiae</>
+
+    console.log(contentCuk)
   // const router = useRouter();
   // // const morePortofolios = portofolios?.edges;
   // // console.log('post itu apa',portofolio)
@@ -32,9 +34,9 @@ export default function Index(
 
   return (
     <Layout preview={false}>
-      <OtherpageBanner image="/hero.jpg" maintext={"About Us"} subtext={""}>
+      <OtherpageBanner image="/hero.jpg" maintext={"About Us"} subtext={""}/>
 
-      </OtherpageBanner>
+  
       <AboutBody content={contentCuk}>
 
       </AboutBody>

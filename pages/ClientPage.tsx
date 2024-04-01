@@ -234,7 +234,7 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                         </CardGroup>
                                     </div> */}  
 
-                                    <div className="p-10 py-auto pl-0">
+                                    <div className="p-10 py-auto pl-0 hidden md:block">
                                     <Link href={"/about"}>
                                     <table className="grid col-span-1 h-full ">
                                        

@@ -3,6 +3,7 @@ import styles from "./post-body.module.css";
 import ImageWithWidth from "../components/ImageWithWidth";
 
 export default function PostBody({ content }) {
+  console.log("tipe", content);
   // Add this CSS to your stylesheet
   const figureStyles = {
     width: "100%",
