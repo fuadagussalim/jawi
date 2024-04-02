@@ -11,9 +11,10 @@ interface Props {
     };
   };
   slug?: string;
+  titleClassname?: string;
 }
 
-export default function CoverImage({ title, coverImage, slug}: Props) {
+export default function CoverImage({ title, coverImage, slug, titleClassname }: Props, ) {
   const image = (
     <Image
     as={NextImage}
@@ -29,7 +30,7 @@ export default function CoverImage({ title, coverImage, slug}: Props) {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`${slug}`} aria-label={title}>
+        <Link href={`${slug}`} aria-label={title} className={`${titleClassname}`}>
           {image}
         </Link>
       ) : (

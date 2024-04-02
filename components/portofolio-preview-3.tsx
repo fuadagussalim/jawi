@@ -16,7 +16,7 @@ export default function PortofolioPreviewTiga({
       <div className="grid col-span1 bg-black">
 
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} />
+          <CoverImage title={title} coverImage={coverImage} slug={slug} titleClassname="text-center" />
         )}
 
       </div>

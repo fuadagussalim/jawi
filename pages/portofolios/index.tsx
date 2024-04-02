@@ -53,6 +53,8 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
             excerpt={heroPortofolio.excerpt}
           />
         )} */}
+        <br></br>
+        <br></br>
         <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
           {morePosts.length > 0 && <MorePortofolios posts={morePosts} />}
         </Container>
