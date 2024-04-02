@@ -15,7 +15,7 @@ import ServicesBody from "../../components/services-body";
 import { Accordion } from "../../components/Accordion";
 import { v4 as uuid } from "uuid";
 import { JsxElement } from "typescript";
-
+import { useRouter } from "next/router";
 export default function Index({ allServices: { edges },servicesFront: {node}, preview }) {
     console.log(node);
     console.log('allServices ', edges);
