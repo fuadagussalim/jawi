@@ -252,13 +252,17 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                             <tr>
                                                 <td className="">
                                                     <p className="text-justify min-h-[150px]  pr-10">Menciptakan keselarasan antara manusia, alam, dan satwa liar melalui penerapan ilmu pengetahuan dan teknologi dengan berasaskan konservasi sumber daya alam dengan prinsip pembangunan yang berkelanjutan</p>
-                                                   
-                                                    <Button variant="orange" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Program</Button>
+                                                    <Link href={'/about'}>
+                                                        <Button variant="orange"  className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Program</Button>
+                                                    </Link>
                                                 </td>
                                                 <td className="">
                                                     <p className="text-justify min-h-[150px]  pr-10">Pertumbuhan demografi yang semakin meningkat membuat persingungan antara aktivitas masyarakat dengan habitat satwa liar tentu tidak dapat terelakkan. Selain itu juga masih sedikit NGO bidang satwa ...</p>
+                                                    
+                                                    <Link href={'/about'}>
                                                     <Button variant="orange" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Story</Button>
                                                     
+                                                    </Link>
                                                 </td>
                                                 
                                             </tr>
@@ -277,9 +281,11 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                     {/* <p className="text-justify min-h-[150px]  pr-10 ">Mengarusutamakan sains konservasi yang inklusif di Indonesia
                                                     <br/> */}
                                                     {/* <span>See</span> */}
+                                                    <Link href={'/about'}>
                                                     <Button variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Mission</Button>
 
 
+                                                        </Link>
 {/* 
 </p> */}
                                                   
@@ -287,8 +293,8 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                 <td>
                                                     {/* <p className="text-justify min-h-[150px]  pr-10">
 <span className="font-bold">
-    Supervisory Board
-    </span>
+Supervisory Board
+</span>
 <br>
 </br>
 
@@ -311,8 +317,10 @@ Stephanus Argo Yan
 Wiwit Prayoga ...
 
 
-                                                    </p> */}
+</p> */}
+<Link href={'/about'}>
 <Button variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Team</Button>
+</Link>
                                                 </td>
                                             </tr>
                                           
