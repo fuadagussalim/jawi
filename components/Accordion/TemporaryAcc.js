@@ -13,9 +13,10 @@ const accordionDataDefault = [
         title: "OUR MISSION",
         isOpen: true,
         content:
-            <div></div>,
+        <p className="text-justify min-h-[150px]  pr-10 ">Mengarusutamakan sains konservasi yang inklusif di Indonesia</p>
         image: "/DSC00013_11zon-1024x768.jpg",
         slug: "",
+        
     },
     {
         id: uuid(),

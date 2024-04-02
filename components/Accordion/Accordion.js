@@ -19,7 +19,7 @@ const accordionDataDefault = [
     },
     {
         id: uuid(),
-        title: "OUR STORY?",
+        title: "OUR STORY",
         isOpen: false,
         content:
             <div></div>,
