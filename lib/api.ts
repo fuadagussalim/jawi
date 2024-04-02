@@ -226,7 +226,7 @@ export async function getPortofolioFront() {
 export async function getServicesFront() {
   const data = await fetchAPI(`
   query services {
-    pages(where: {title: "services"}) {
+    pages(where: {title: "service"}) {
       edges {
         node {
           front {

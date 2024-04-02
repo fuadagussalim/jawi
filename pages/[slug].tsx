@@ -326,21 +326,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // console.log('ini adalah slug stuan: ',allPages.edges[0
   // ].node.slug)
 
-  const paths = allPages.edges.map(({ node }) => {
-    if (node.slug != 'services'){
-      {
+  const paths = allPages.edges.map(({ node }) => (
     
-        params: { slug: node.slug }
-      }
-      
-
-    } else {
-      params: {"/"}
-    }
+    {
     
-   
-  
-});
+    params: { slug: node.slug },
+  }
+  ));
 
   return {
     paths,
