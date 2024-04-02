@@ -283,9 +283,9 @@ export default function Index({page:{node}}
   return (
     <Layout preview={false}>
       <OtherpageBanner image={node?.front.banner.node.sourceUrl??"/hero.jpg"} maintext={node.front?.judul??"About"} subtext={node.front?.subjudul??"Kenali lebih dalam tentang kami"}/>
-      <PostBody content={node?.content??"Tidak dapat memperoleh data :("}>
+      <PostBody content={node?.content??"Tidak dapat memperoleh data :("}/>
 
-      </PostBody>
+  
   
       {/* <AboutBody content={contentCuk.props.children}> */}
 
