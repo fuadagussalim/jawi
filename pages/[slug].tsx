@@ -322,17 +322,15 @@ const data = await getPageBySlug(slug);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allPages = await getAllPagesWithSlug();
-  // console.log('halaman by slug', allPages);
-  // console.log('ini adalah slug stuan: ',allPages.edges[0
-  // ].node.slug)
+  console.log('halaman by slug', allPages);
+  console.log(allPages)
 
   const paths = allPages.edges.map(({ node }) => (
     
     {
     
     params: { slug: node.slug },
-  }
-  ));
+  }));
 
   return {
     paths,
