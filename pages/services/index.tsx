@@ -25,7 +25,7 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
   // const morePortofolios = portofolios?.edges;
   // console.log('post itu apa',portofolio)
 
-  if (!router.isFallback && !portofolio?.slug) {
+  if (!router.isFallback && !edges?.slug && !node?.slug) {
     interface accData {
         id: string,
         title: string,
