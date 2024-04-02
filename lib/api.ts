@@ -120,6 +120,27 @@ export async function getAllPortofoliosWithSlug() {
   `);
   return data?.portofolios;
 }
+export async function getAllPagesWithSlug() {
+  const data = await fetchAPI(`
+  query portofolios {
+    pages {
+      edges {
+        node {
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+          title
+          slug
+          }
+        }
+      }
+    }
+  
+  `);
+  return data?.pages;
+}
 export async function getPortofolioFront() {
   const data = await fetchAPI(`
   query portofolioFront {
@@ -637,8 +658,56 @@ export async function getPortofolioBySlug(slug: string) {
     }
   );
 
+
   return data?.post;
 }
+
+
+
+export async function getPageBySlug(slug: string) {
+  console.log('slug dari function',slug);
+  const data = await fetchAPI(
+    `
+    query About {
+      pages(where: {name: "${slug}"}) {
+        edges {
+          node {
+            content
+            title
+            slug
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            front {
+              banner {
+                node {
+                  sourceUrl
+                }
+              }
+              judul
+              subjudul
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        id: slug,
+      },
+    }
+  );
+
+  
+  console.log('page by slug:', data)
+  return data?.pages;
+}
+
+
 export async function getPortofolioPage(slug: string) {
   const data = await fetchAPI(
     `
