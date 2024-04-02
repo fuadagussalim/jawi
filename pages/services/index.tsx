@@ -100,14 +100,14 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
       );
 
   } else {
-    return <>
-    Server Error</>
+    return 
+    <> Server Error</>
   }
   
   // console.log(heroService);
 
  
-}
+}}
 
 export const getStaticProps: GetStaticProps = async () => {
   const allServices = await getAllServicesWithSlug();
@@ -119,4 +119,4 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { allServices, servicesFront },
     revalidate: 10,
   };
-};
+}
