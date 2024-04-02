@@ -21,7 +21,11 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
     console.log('allServices ', edges);
     console.log('isi konten',node.content);
     
+  const router = useRouter();
+  // const morePortofolios = portofolios?.edges;
+  // console.log('post itu apa',portofolio)
 
+  if (!router.isFallback && !portofolio?.slug) {
     interface accData {
         id: string,
         title: string,

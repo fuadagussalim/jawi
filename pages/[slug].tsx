@@ -279,6 +279,14 @@ export default function Index({page:{node}}
   // if (!router.isFallback && !portofolio?.slug) {
   //   return <ErrorPage statusCode={404} />;
   // }
+  const router = useRouter();
+  // const morePortofolios = portofolios?.edges;
+  // console.log('post itu apa',portofolio)
+
+  if (!router.isFallback && !node?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+
 
   return (
     <Layout preview={false}>
@@ -323,7 +331,6 @@ const data = await getPageBySlug(slug);
 export const getStaticPaths: GetStaticPaths = async () => {
   const allPages = await getAllPagesWithSlug();
   console.log('halaman by slug', allPages);
-  console.log(allPages)
 
   const paths = allPages.edges.map(({ node }) => (
     
