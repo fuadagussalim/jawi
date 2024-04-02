@@ -21,9 +21,13 @@ export default function Index(
   // { portofolio, preview }
   ) {
     const contentCuk = <>
-    Blaslndiae</>
+    Blaslndiae
+    
+    
+    
+    </>
 
-    console.log(contentCuk)
+    console.log("about ",contentCuk.props.children)
   // const router = useRouter();
   // // const morePortofolios = portofolios?.edges;
   // // console.log('post itu apa',portofolio)
@@ -37,7 +41,7 @@ export default function Index(
       <OtherpageBanner image="/hero.jpg" maintext={"About Us"} subtext={""}/>
 
   
-      <AboutBody content={contentCuk}>
+      <AboutBody content={contentCuk.props.children}>
 
       </AboutBody>
  
