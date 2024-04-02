@@ -5,11 +5,7 @@ import Link from "next/link";
 
 interface Props {
   title: string;
-  coverImage: {
-    node: {
-      sourceUrl: string;
-    };
-  };
+  coverImage: string;
   slug?: string;
   titleClassname?: string;
 }
@@ -21,7 +17,7 @@ export default function CoverImage({ title, coverImage, slug, titleClassname }: 
       width={8000}
       height={4000}
       alt={`Cover Image for ${title}`}
-      src={coverImage?.node.sourceUrl}
+      src={coverImage}
       className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow mb-0 duration-200 object-cover sm:h-[200px] md:h-[500px] w-fulll": slug,
       })}

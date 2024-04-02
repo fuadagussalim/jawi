@@ -25,7 +25,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         <title>{`JAWI | Javan Wildlife`}</title>
       </Head>
       {/* <Container> */}
-        <Intro />
+        {/* <Intro /> */}
         {heroPost && (
           <HeroPost
             title={heroPost.title}

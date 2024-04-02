@@ -35,7 +35,7 @@ export default function MorePortofolios({ posts }) {
             // {console.log(index)};
             <PortofolioPreview3
               title={node.title}
-              coverImage={node.featuredImage}
+              coverImage={node.featuredImage?.node.sourceUrl}
               // date={node.date}
               // author={node.author}
               slug={`/portofolio/${node.slug}`}
@@ -44,7 +44,7 @@ export default function MorePortofolios({ posts }) {
           ) : (
             <PortofolioPreview
               title={node.title}
-              coverImage={node.featuredImage}
+              coverImage={node.featuredImage?.node.sourceUrl}
               // date={node.date}
               // author={node.author}
               slug={`/portofolio/${node.slug}`}

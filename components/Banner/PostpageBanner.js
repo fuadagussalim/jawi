@@ -9,13 +9,13 @@ import Image from "next/image";
 import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
-
+import Intro from "../intro";
 import clsx from "clsx";
 // import { useWindowSize } from '../../utils/hooks/useWindowSize';
 import Link from "next/link";
 import Video from 'next-video';
 import { CardBody, CardGroup, CardHeader, Card } from "../Card";
-export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", maintext, subtext, typeAnimation = true, type="xheavy", maintextclass = "", subtextclass = "", align = "center", motionClass = "", className="" }) => {
+export const PostpageBanner = ({ href = "", image = "/portofolio-default.jpg", maintext, subtext, typeAnimation = true, type="xheavy", maintextclass = "", subtextclass = "", align = "center", motionClass = "", className="" }) => {
 
     var visibility = 'awal'
     if (typeAnimation) {
@@ -39,9 +39,11 @@ export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", 
             {/* <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}> */}
 
             <div className="page-banner--image relative m-0 p-0">
-                <div className={`absolute  md:block lg:block z-20 stroke-black  text-white sm:top-1/4 md:top-1/4 left-0 right-0 text-${align} w-full md:p-10  px-0 mx-0 `}>
+                <div className={`absolute lg:block z-20 stroke-black  text-white sm:top1/5 md:top-1/4 left-0 right-0 text-${align} w-full p-10 px-0 mx-0 `}>
                     <div className="w-full">
-                        <PageTitle className={`${maintextclass} relative sm:text-4xl font-extrabold w-full`} type={type}>
+                    <Intro className="relative mt-0 shadow-xl font-black"/>
+{/*                     
+                        <PageTitle className={`${maintextclass} relative font-extrabold w-full`} type={type}>
                             <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}>
 
                                 {maintext}
@@ -52,7 +54,7 @@ export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", 
                         <PageTitle className={`${subtextclass}  relative w-full mx-auto px-auto text-center  font-extrabold mt-0`} type="xsmall">
 
                             <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
-                                {/* <Typewriter 
+                                <Typewriter 
                                         onInit={(typewriter) => {
                                             if (typeAnimation){
                                                 typewriter.typeString(`${subtext}`)
@@ -65,11 +67,14 @@ export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", 
                                             }
                                            
                                         }}
-                                    /> */}
+                                    />
                                 {subtext}
 
                             </MotionBTTContainer>
-                        </PageTitle>
+                        </PageTitle> */}
+
+
+
                     </div>
 {/* 
                     <Link type="button" className="text-white font-bold bg-black px-10 py-3 hover:bg-white hover:text-black" href={href} passHref={true}>

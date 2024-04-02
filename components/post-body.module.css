@@ -13,6 +13,7 @@
 .content ol,
 .content blockquote {
   @apply my-6;
+  @apply font-postbody tracking-wide;
 }
 
 .content a {

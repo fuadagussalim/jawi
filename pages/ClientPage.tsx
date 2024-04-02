@@ -386,7 +386,7 @@ Wiwit Prayoga ...
                                 </CardGroup>
 
                                 <div className="w-full h-full mt-20">
-                                    <div className="relative sm:h-[1700px] md:h-[1250px]">
+                                    <div className="relative sm:h-[1800px] md:h-[1580px]">
                                         <div className="absolute z-1 w-full h-[250px] bg-[#faa51a]">
 
                                         </div>
@@ -395,10 +395,10 @@ Wiwit Prayoga ...
 
                                             <h3 className="text-white w-full text-center m-0 text-2xl font-extrabold">EXPERIENCES</h3>
                                             <p className="text-white text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">Our Capability</p>
-                                            <CardGroup className="absolute h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 my-20 mt-0 mx-auto left-0 right-0 sm:p-5  sm:w-full md:drop-shadow-none sm:drop-shadow-lg md:p-10 md:w-2/3">
+                                            <CardGroup className="absolute h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 my-20 mt-0 mx-auto left-0 right-0 sm:p-5  sm:w-full md:drop-shadow-none sm:drop-shadow-lg md:p-10 md:w-11/12">
 
 
-                                                <CardImage src='/survey-biodibersitas-crop.png' className='gridcol-span-1  md:sm-0 h-64' imageClassName={'object-cover objet-bottom'} alt={''} />
+                                                <CardImage src='/survey-biodibersitas-crop.png' className='gridcol-span-1  md:sm-0 h-[330px]' imageClassName={'object-cover objet-bottom'} alt={''} />
 
                                                 <Card className="grid h-full rounded-none  sm:mb-10 md:mb-0 col-span-1 align-middle text-primary-400">
                                                     <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] m-10">
@@ -450,11 +450,11 @@ Wiwit Prayoga ...
 
 
                                                         </div>
-
+ h-[330px]
                                                     </CardBody>
                                                 </Card>
-                                                <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64 sm:hidden md:block' imageClassName={' object-cover objet-bottom'} alt={''} />
-                                                <CardImage src='/model-OU-17052023-1.jpg' className='gridcol-span-1 h-64' imageClassName={'object-cover objet-bottom'} alt={''} />
+                                                <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64 sm:hidden md:block h-[330px]' imageClassName={' object-cover objet-bottom'} alt={''} />
+                                                <CardImage src='/model-OU-17052023-1.jpg' className='gridcol-span-1 h-64 h-[330px]' imageClassName={'object-cover objet-bottom'} alt={''} />
                                                 <Card className="grid h-full rounded-none  sm:mb-10 md:mb-0 col-span-1 align-middle text-primary-400">
                                                     <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] m-10">
                                                         <div className="w-full sm:pt-5  rounded-0">
@@ -508,7 +508,7 @@ Wiwit Prayoga ...
 
                                                     </CardBody>
                                                 </Card>
-                                                <CardImage src='/penyusunan-dokumen-pengelolaan-JAWI.png' className='gridcol-span-1 h-64 sm:hidden md:block' imageClassName={'object-cover objet-bottom'} alt={''} />
+                                                <CardImage src='/penyusunan-dokumen-pengelolaan-JAWI.png' className='gridcol-span-1 h-64 sm:hidden md:block h-[330px]' imageClassName={'object-cover objet-bottom'} alt={''} />
                                             </CardGroup>
                                         </div>
 
@@ -543,7 +543,7 @@ Wiwit Prayoga ...
             </div>
             <div className="sm:px-5 pt-5 bg-[#F3F5F8]">
                 
-            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-10 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full md:w-2/3">
+            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-20 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full md:w-2/3">
 
                             
                                     <CardImage src='/product.jpeg' className='gridcol-span-1 h-full' imageClassName={'object-cover objet-bottom'} alt={''} />

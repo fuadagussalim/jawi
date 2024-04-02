@@ -29,7 +29,8 @@ module.exports = {
     extend: {
       fontFamily: {
         body: ["Inter", "Sans Serif"],
-        title: ["Inter", "Sans Serif"]
+        title: ["Inter", "Sans Serif"],
+        postbody: ["Lora", "Sans Serif"]
       },
       fontSize: {
         body: [

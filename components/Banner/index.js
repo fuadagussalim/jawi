@@ -8,4 +8,5 @@
 
 export * from "./HomeBanner";
 export * from "./OtherpageBanner";
+export * from "./PostpageBanner";
 export * from "./DetailpageBanner";

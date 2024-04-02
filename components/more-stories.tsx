@@ -20,7 +20,7 @@ export default function MoreStories({ posts }) {
 
 
   return (
-    <section className="mb-20 sm:p-10 sm:py-0">
+    <section className="mb-20 sm:p-10 md:p-0 sm:py-0">
       <h2 className="sm:my-5 md:my-10 text-3xl md:text-7xl font-bold tracking-tighter">
         More Stories
       </h2>
@@ -37,7 +37,7 @@ export default function MoreStories({ posts }) {
             // {console.log(index)};
             <PostPreview3
               title={node.title}
-              coverImage={node.featuredImage}
+              coverImage={node.featuredImage?.node.sourceUrl}
               date={node.date}
               author={node.author}
               slug={`/posts/${node.slug}`}
@@ -46,7 +46,7 @@ export default function MoreStories({ posts }) {
           ) : (
             <PostPreview
               title={node.title}
-              coverImage={node.featuredImage}
+              coverImage={node.featuredImage?.node.sourceUrl}
               date={node.date}
               author={node.author}
               slug={`/posts/${node.slug}`}

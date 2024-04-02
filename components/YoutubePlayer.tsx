@@ -2,6 +2,9 @@
 import { he } from 'date-fns/locale';
 import React from 'react';
 import YouTube, { YouTubeProps } from 'react-youtube';
+import LiteYouTubeEmbed from "react-lite-youtube-embed"
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
+
 
 function YouTubePlayer({id, width, height}) {
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
@@ -18,7 +21,15 @@ function YouTubePlayer({id, width, height}) {
     },
   };
 
-  return <YouTube videoId={id} opts={opts} onReady={onPlayerReady} />;
+  return ( 
+    <LiteYouTubeEmbed
+  aspectHeight={9}
+  aspectWidth={16}
+  id={id}
+  title="Site Projek"
+/>
+  // <YouTube videoId={id} opts={opts} onReady={onPlayerReady} />
+  );
 }
 
 export default YouTubePlayer;
