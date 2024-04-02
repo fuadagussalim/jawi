@@ -35,7 +35,7 @@ export default function Poortofolio({ portofolio, preview }) {
             <article>
               <Head>
                 <title>
-                  {`${portofolio.title} | JAWI Magazine`}
+                  {`${portofolio.title} | JAWI's Portofolio`}
                 </title>
                 <meta
                   property="og:image"

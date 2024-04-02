@@ -1,4 +1,4 @@
-/* .content {
+.content {
   @apply text-lg overflow-hidden;
 }
 .wp-caption img[class*="wp-image-"]{
@@ -88,4 +88,4 @@
   position: fixed;
   top: 0;
   left: 0;
-} */
+}
