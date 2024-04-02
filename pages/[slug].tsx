@@ -20,6 +20,7 @@ import { title } from "process";
 import PostBody from "../components/post-body";
 export default function Index({ page }) {
   const { node } = page ?? {};
+  console.log("prop dari page",page)
 
   if (!node || !node.slug) {
     return <ErrorPage statusCode={404} />;
@@ -46,11 +47,11 @@ export const getStaticProps: GetStaticProps = async ({
   const slug = typeof params?.slug === 'string' ? params.slug : '';
 const data = await getPageBySlug(slug);
   console.log('slug', slug)
-  console.log('data halaman',data.edges[0]?.node)
+  console.log('data halaman',data.edges)
   return {
     props: {
     
-      page: data?.edges[0]
+      page: data?.edges[0]??[]
       
     },
     revalidate: 10,
