@@ -34,7 +34,7 @@ const Sidebar = ({
                         <Link href="/services" onClick={toggle}><p>Services</p></Link>
                     </li>
                     <li>
-                        <Link href="/contacts" onClick={toggle}><p>Contacts</p></Link>
+                        <Link href="/contact-us" onClick={toggle}><p>Contacts</p></Link>
                     </li>
                 </ul>
             </div>

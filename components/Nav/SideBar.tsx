@@ -68,7 +68,7 @@ const Sidebar = ({
           </li>
           <li>
 
-            <Link className="my-auto " onClick={toggle} href="/Contact Us">
+            <Link className="my-auto " onClick={toggle} href="/contact-us">
               CONTACT US
             </Link>
 
