@@ -252,17 +252,16 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                             <tr>
                                                 <td className="">
                                                     <p className="text-justify min-h-[150px]  pr-10">Menciptakan keselarasan antara manusia, alam, dan satwa liar melalui penerapan ilmu pengetahuan dan teknologi dengan berasaskan konservasi sumber daya alam dengan prinsip pembangunan yang berkelanjutan</p>
-                                                    {/* <Link href={'/about'}> */}
+                                            
                                                         <Button href="/about" variant="orange"  className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Program</Button>
-                                                    {/* </Link> */}
+                                             
                                                 </td>
                                                 <td className="">
                                                     <p className="text-justify min-h-[150px]  pr-10">Pertumbuhan demografi yang semakin meningkat membuat persingungan antara aktivitas masyarakat dengan habitat satwa liar tentu tidak dapat terelakkan. Selain itu juga masih sedikit NGO bidang satwa ...</p>
                                                     
-                                                    {/* <Link href={'/about'}> */}
-                                                    <Button href="/about" variant="orange" href="/about" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Story</Button>
+                                                    <Button href="/about" variant="orange" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Story</Button>
                                                     
-                                                    {/* </Link> */}
+                                       
                                                 </td>
                                                 
                                             </tr>
@@ -281,11 +280,11 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                     {/* <p className="text-justify min-h-[150px]  pr-10 ">Mengarusutamakan sains konservasi yang inklusif di Indonesia
                                                     <br/> */}
                                                     {/* <span>See</span> */}
-                                                    {/* <Link href={'/about'}> */}
+                                             
                                                     <Button href="/about" variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Mission</Button>
 
 
-                                                        {/* </Link> */}
+                                                  
 {/* 
 </p> */}
                                                   
