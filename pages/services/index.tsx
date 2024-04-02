@@ -34,7 +34,7 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
         image: string,
         slug: string,
       }
-
+    
 
     const accDatas:accData[]=[];
     edges?.map((node)=>{
