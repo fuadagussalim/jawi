@@ -6,6 +6,7 @@ import  Footer from "../components/footer";
 // import { Header} from "../components/Header/Header"
 import {Header} from "./Header/Header"
 import { motion } from "framer-motion";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Layout({preview, className = "", children } ) {
   return (
