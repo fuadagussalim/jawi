@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 
 import Alert from "./alert";
 // import Footer from "./footer";
@@ -9,6 +10,14 @@ import { motion } from "framer-motion";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Layout({preview, className = "", children } ) {
+
+  const router = useRouter();
+  
+  // Check if the current route matches the desired patterns
+  const isHideOnRoutes = router.pathname.startsWith('/posts/') || 
+                        
+                         router.pathname.startsWith('/portofolio/');
+
   return (
     <>
       <Meta />
@@ -32,9 +41,24 @@ export default function Layout({preview, className = "", children } ) {
       damping: 20,
     }}
   >
-    <div className="h-[80px] md:hidden">
+    {/* <div className="h-[80px] md:hidden">
 
-    </div>
+    </div> */}
+
+{!isHideOnRoutes && (
+          <motion.div
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 300, opacity: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+          >
+            <div className="h-[80px] md:hidden"></div>
+          </motion.div>
+        )}
 
           {children}
   </motion.div>
