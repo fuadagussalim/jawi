@@ -106,7 +106,7 @@ export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = tru
 
                 
                 <div>
-                    <div className="absolute inset-0 bg-black bg-opacity-60  md:block z-22 md:mt-0"><StarField/></div>
+                    <div className="absolute inset-0 bg-black bg-opacity-55  md:block z-22 md:mt-0"><StarField/></div>
                     <Image
                         className="object-scale-down  m-0 p-0 bg-blend-darken"
                         src={image}
