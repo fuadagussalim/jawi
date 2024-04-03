@@ -52,7 +52,7 @@ export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = tru
 
                             </MotionBTTContainer>
                         </PageTitle>
-                        <PageTitle className={`${subtextclass} grid sm:text-sm sm:w-3/4 sm:mx-auto  relative capitalize font-light mt-0`} type="xsmall">
+                        <PageTitle className={`${subtextclass} grid sm:text-sm sm:w-3/4 sm:mx-auto  relative drop-shadow-xl capitalize font-light mt-0`} type="xsmall">
 
                             <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
 
@@ -106,7 +106,7 @@ export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = tru
 
                 
                 <div>
-                    <div className="absolute hidden inset-0 bg-black bg-opacity-50  md:block z-22 mt-20 md:mt-0"><StarField/></div>
+                    <div className="absolute hidden inset-0 bg-black bg-opacity-65  md:block z-22 mt-20 md:mt-0"><StarField/></div>
                     <Image
                         className="object-scale-down  m-0 p-0 bg-blend-darken"
                         src={image}
