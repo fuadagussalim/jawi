@@ -15,6 +15,7 @@ export default function Layout({preview, className = "", children } ) {
   
   // Check if the current route matches the desired patterns
   const isHideOnRoutes = router.pathname.startsWith('/posts/') || 
+                         router.pathname.startsWith('/gallery') || 
                         
                          router.pathname.startsWith('/portofolio/');
 

@@ -66,7 +66,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     
     {
     
-    params: { slug: node?.slug??'about' },
+    params: { slug: node?.slug??'contact-us' },
   }));
 
   return {

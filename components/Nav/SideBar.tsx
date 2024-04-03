@@ -11,6 +11,7 @@ const Sidebar = ({
   toggle: () => void;
 }): JSX.Element => {
   const router = useRouter();
+  const activePath = router.pathname || window.location.pathname;
 
   return (
     <>
@@ -25,42 +26,42 @@ const Sidebar = ({
         <ul className={"sidebar-nav text-center h-auto align-middle font-bold text-xl"}>
           <li className="m-5">
             <Link href="/">
-              <span className={router.pathname === "/" ? "text-orange" : ""} onClick={toggle}>
+              <span className={activePath === "/" ? "text-orange" : ""} onClick={toggle}>
                 HOME
               </span>
             </Link>
           </li>
           <li className="m-5">
             <Link href="/services">
-              <span className={router.pathname === "/services" ? "text-orange" : ""} onClick={toggle}>
+              <span className={activePath === "/services" ? "text-orange" : ""} onClick={toggle}>
                 SERVICES
               </span>
             </Link>
           </li>
           <li className="m-5">
             <Link href="/portofolios">
-              <span className={router.pathname === "/portofolios" ? "text-orange" : ""} onClick={toggle}>
+              <span className={activePath === "/portofolios"|| activePath === "/portofolio" ? "text-orange" : ""} onClick={toggle}>
                 PORTOFOLIO
               </span>
             </Link>
           </li>
           <li className="m-5">
-            <Link href="/about">
-              <span className={router.pathname === "/about" ? "text-orange" : ""} onClick={toggle}>
+            <Link href="/[slug]" as="/about">
+              <span className={activePath === "/[slug]" || activePath === "/about" ? "text-orange" : ""} onClick={toggle}>
                 ABOUT
               </span>
             </Link>
           </li>
           <li className="m-5">
-            <Link href="/about">
-              <span className={router.pathname === "/about" ? "text-orange" : ""} onClick={toggle}>
+            <Link href="/gallery">
+              <span className={activePath === "/gallery" ? "text-orange" : ""} onClick={toggle}>
                 GALLERY
               </span>
             </Link>
           </li>
           <li>
             <Link href="/contact-us">
-              <span className={router.pathname === "/contact-us" ? "text-orange" : ""} onClick={toggle}>
+              <span className={activePath === "/contact-us" ? "text-orange" : ""} onClick={toggle}>
                 CONTACT US
               </span>
             </Link>
