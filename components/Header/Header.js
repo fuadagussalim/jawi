@@ -9,6 +9,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import Sidebar from '../Nav/SideBar';
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
 
 
 
@@ -70,7 +71,10 @@ export const Header = () => {
 
   return (
 
-    <header className={`header  md:visible shadow-lg pb-20 md:pb-0 ${transparent ? 'md:transparent text-white' : 'solid text-black'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <header >
+      <div className={`header  hidden md:block shadow-lg pb-20 md:pb-0 ${transparent ? 'md:transparent text-white' : 'solid text-black'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+
+    
       <nav className="hidden justify-evenly  md:flex items-baseline h-16 mb-5">
         <div className='inline-block content-center bg-white mr-10'>
           {/* <div className='inline-block'>
@@ -153,18 +157,39 @@ export const Header = () => {
 
       {/* <>
 
+</> */}
+
+{/* 
         <div onClick={() => { setIsActive(!isActive) }} className={styles.button}>
 
           <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
 
+        </div> */}
+
+
+
+
+</div>
+
+
+<div className='md:hidden '>
+  
+    <div className={`${styles.main} `}>
+
+      <div className={`${styles.header} bg-white w-full flex ${isActive ? "shadow-sm" : "shadow-xl "}`}>
+        <div className='my-auto px-auto ml-5 w-full'>
+
+        <div className="my-auto mx-auto">
+        <Image
+                src="/Logo Jawi PNG.png"
+                height={60}
+                width={60}
+                alt=""
+                className="flex col-span-1 py-auto -drop-shadow-xl  mx-auto">
+
+              </Image>
         </div>
-
-      </> */}
-
-<div className='md:hidden'>
-    <div className={styles.main}>
-
-      <div className={styles.header}>
+                  </div>
         <div onClick={() => {setIsActive(!isActive)}} className={styles.button}>
           <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""} ${transparent ? styles.burgerTransparent: ''}`}></div>
         </div>
@@ -174,16 +199,12 @@ export const Header = () => {
     <AnimatePresence mode="wait">
       {isActive && <Sidebar isOpen={isActive}/>}
     </AnimatePresence>
+    
     </div>
-
-
-
-
-
-
 
       {/* {menuOpen && <Menu />} */}
     </header>
+
   );
 };
 

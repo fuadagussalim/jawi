@@ -32,6 +32,9 @@ export default function Layout({preview, className = "", children } ) {
       damping: 20,
     }}
   >
+    <div className="h-[80px] md:hidden">
+
+    </div>
 
           {children}
   </motion.div>

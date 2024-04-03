@@ -290,30 +290,30 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                   
                                                 </td>
                                                 <td>
-                                                    {/* <p className="text-justify min-h-[150px]  pr-10">
-<span className="font-bold">
-Supervisory Board
-</span>
-<br>
-</br>
+                                                                                            {/* <p className="text-justify min-h-[150px]  pr-10">
+                                        <span className="font-bold">
+                                        Supervisory Board
+                                        </span>
+                                        <br>
+                                        </br>
 
-Dr. Muhammad Ali Imron
+                                        Dr. Muhammad Ali Imron
 
-<br>
-</br>
-Ryan Adi Satria
+                                        <br>
+                                        </br>
+                                        Ryan Adi Satria
 
-<br>
-</br>
-Fikri Al Mubarok
+                                        <br>
+                                        </br>
+                                        Fikri Al Mubarok
 
-<br>
-</br>
-Stephanus Argo Yan
+                                        <br>
+                                        </br>
+                                        Stephanus Argo Yan
 
-<br>
-</br>
-Wiwit Prayoga ...
+                                        <br>
+                                        </br>
+                                        Wiwit Prayoga ...
 
 
 </p> */}

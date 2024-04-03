@@ -16,7 +16,7 @@ export default function HeaderMobile() {
 
   return (
     <>
-    <div className={styles.main}>
+    {/* <div className={styles.main}>
 
       <div className={styles.header}>
         <div onClick={() => {setIsActive(!isActive)}} className={styles.button}>
@@ -27,7 +27,7 @@ export default function HeaderMobile() {
     </div>
     <AnimatePresence mode="wait">
       {isActive && <Nav />}
-    </AnimatePresence>
+    </AnimatePresence> */}
     </>
   )
 }
