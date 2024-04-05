@@ -349,16 +349,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                                     </table>
                                     </Link>
                                     </div>
-                                                 
-                                    
-
-
-                                    
-                                    
-
-
-  
-
+                
                                 </CardGroup>
 
                                 <CardGroup className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-20 mx-auto">
@@ -468,7 +459,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
 
 
                                                         </div>
- h-[330px]
+
                                                     </CardBody>
                                                 </Card>
                                                 <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64 sm:hidden md:block h-[330px]' imageClassName={' object-cover objet-bottom'} alt={''} />
