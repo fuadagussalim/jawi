@@ -39,9 +39,6 @@ import CoverImage from "../components/cover-image";
 import YouTubePlayer from "../components/YoutubePlayer";
 import { Gallery } from "next-gallery";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-
 // import {faAngleRight} from '@fortawesome/react-fontawesome'
 
 // export async function getStaticProps({ preview = false }) {
