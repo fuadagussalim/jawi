@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "components/Typewriter/Typewriter.jsx", "components/ImageWithWidth.js"  ],
+, "components/Typewriter/Typewriter.jsx", "components/ImageWithWidth.js", "components/Header/NavMenu.jsx"  ],
   "exclude": [
     "node_modules"
   ]

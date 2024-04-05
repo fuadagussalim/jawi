@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link';
 import { LeftIcon, RightIcon } from '../../assets/Icons';
 import { getNextId, getPrevId } from '../../lib/imageIds';

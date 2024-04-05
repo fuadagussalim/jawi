@@ -29,6 +29,7 @@ import Footer from "../components/footer";
 import Images from "../components/ImageLoop/ImageLoop";
 // import '../styles/globals.scss'
 import ImageCarousel from "../components/Carousel/ImageCarousel";
+import TeamCarousel from "../components/Carousel/TeamCarousel";
 
 import Post from "./posts/[slug]";
 // import Link from "next/link";
@@ -37,6 +38,11 @@ import {format} from "date-fns";
 import CoverImage from "../components/cover-image";
 import YouTubePlayer from "../components/YoutubePlayer";
 import { Gallery } from "next-gallery";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+
+// import {faAngleRight} from '@fortawesome/react-fontawesome'
 
 // export async function getStaticProps({ preview = false }) {
 //     const posts = await getAllPostsForHome(preview);
@@ -172,7 +178,7 @@ export default function ClientPage({ allPosts}) {
         <Layout preview={""} className="bg-[#F3F5F8]">
             <div className=" md:block">
                 <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
-                    <HomeBanner href='#about-jawi' image='/DEF_7207.JPG' maintext='Javan Wildlife Institute' subtext='Menjadi mitra rujukan sains konservasi di Indonesia' align="left" />
+                    <HomeBanner href='#about-jawi' image='/DEF_7207.JPG' maintext='Javan Wildlife Institute' subtextclass="md:text-normal lg:text-sm" subtext='Menjadi mitra rujukan sains konservasi di Indonesia' align="left" />
                     <SectionContainer id="home" className="components--container grid gap-8 sm:gap-24 mx-0 px-0">
                         <MotionBTTContainer
                             transition={{ delay: 0.2, duration: 0.5 }}
@@ -184,7 +190,7 @@ export default function ClientPage({ allPosts}) {
                                         <CardBody className="sm:w-full md:my-auto h-full mx-auto bg-[#F3F5F8] p-12">
                                             <div className="flex flex-col shadow-xl  p-10 md:px-20 pr-10 max-w-[600px] mx-auto h-full px-auto justify-center content-center align-center">
                                                 <h3 className="text-black sm:text-3xl sm:text-center sm:px-auto text-justify md:text-left mb-3 font-bold sm:font-bold my-0">ABOUT JAWI</h3>
-                                                <p className="text-black sm:text-xl sm:font-emibold md:w-full mx-auto  text-justify max-w-xs sm:max-w-full"> Organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.
+                                                <p className="text-black sm:text-xl font-postbody md:text-base md:w-full mx-auto  text-justify max-w-xs sm:max-w-full"> Organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.
 
 Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang memiliki arah serupa dengan ranah gerak dan visi misi organisasi kami, dan tidak terbatas hanya di Pulau Jawa. </p>
                                             </div>
@@ -243,23 +249,23 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                             <tr>
                                                 <th className="w-[300px] pb-0">
                                                 
-                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">PROGRAM</h5> 
+                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">PROGRAM <span className="text-[#808080] text-xs  align-middle h-full">{'>'}</span></h5> 
                                                 </th>
                                                 <th className="w-[300px] pb-0">
-                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">OUR STORY</h5> 
+                                                <h5 className="text-left pb-2 text-orange  mb-0 my-5">OUR STORY <span className="text-[#808080] text-xs  align-middle h-full">{'>'}</span></h5> 
                                                 </th>
                                             </tr>
                                             <tr>
                                                 <td className="">
-                                                    <p className="text-justify min-h-[150px]  pr-10">Menciptakan keselarasan antara manusia, alam, dan satwa liar melalui penerapan ilmu pengetahuan dan teknologi dengan berasaskan konservasi sumber daya alam dengan prinsip pembangunan yang berkelanjutan</p>
+                                                    <p className="text-justify min-h-[50px] font-postbody hover:text-[#808080] md:text-sm  pr-10">Menciptakan keselarasan antara manusia, alam, dan satwa liar melalui penerapan ilmu pengetahuan dan teknologi ...</p>
                                             
-                                                        <Button href="/about" variant="orange"  className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Program</Button>
+                                                        {/* <Button href="/about" variant="orange"  className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Program</Button> */}
                                              
                                                 </td>
                                                 <td className="">
-                                                    <p className="text-justify min-h-[150px]  pr-10">Pertumbuhan demografi yang semakin meningkat membuat persingungan antara aktivitas masyarakat dengan habitat satwa liar tentu tidak dapat terelakkan. Selain itu juga masih sedikit NGO bidang satwa ...</p>
+                                                    <p className="text-justify min-h-[50px] font-postbody hover:text-[#808080] md:text-sm pr-10">Pertumbuhan demografi yang semakin meningkat membuat persingungan antara aktivitas masyarakat dengan habitat ...</p>
                                                     
-                                                    <Button href="/about" variant="orange" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Story</Button>
+                                                    {/* <Button href="/about" variant="orange" className="mt-5 bg-orange text-black hover:text-white mt-0">See Our Story</Button> */}
                                                     
                                        
                                                 </td>
@@ -267,21 +273,28 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                             </tr>
                                             <tr>
                                                 <th className="w-[300px] pr-10  pb-0">
-                                            <hr className="mt-5 h-px my-8 bg-black-400 border-0 dark:bg-gray-700"></hr>
-                                                <h5 className="text-left  pb-2 text-orange  mb-0 my-5">MISSION</h5> 
+                                            <hr className="mt-5 h-px my-8 bg-black-100 border-0 dark:bg-gray-700"></hr>
+                                                <h5 className="text-left  pb-2 text-orange  mb-0 my-5">MISSION <span className="text-[#808080] text-xs  align-middle h-full">{'>'}</span>
+                                                </h5> 
                                                 </th>
                                                 <th className="w-[300px]  pr-10 pb-0">
-                                            <hr className="mt-5 h-px my-8 bg-black-400 border-0 dark:bg-gray-700"></hr>
-                                                <h5  className="text-left  pb-2 text-orange  mb-0 my-5">TEAM</h5> 
+                                            <hr className="mt-5 h-px my-8 bg-black-100 border-0 dark:bg-gray-700"></hr>
+                                                <h5  className="text-left  pb-2 text-orange  mb-0 my-5">TEAM <span className="text-[#808080] text-xs  align-middle h-full">{'>'}</span></h5> 
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <td className="align-top">
+                                                <td className="align-top ">
+                                                <p className="text-justify min-h-[50px]  hover:text-[#808080] font-postbody md:text-sm pr-10">
+                                                Bekerja untuk menjamin masa depan keanekaragaman hayati Indonesia melalui ilmu konservasi
+                                                </p>
+                                                {/* <TeamCarousel className="bg-[#F3F5F8] p-5" carouselPosts={carouselPosts}/> */}
+
+
                                                     {/* <p className="text-justify min-h-[150px]  pr-10 ">Mengarusutamakan sains konservasi yang inklusif di Indonesia
                                                     <br/> */}
                                                     {/* <span>See</span> */}
                                              
-                                                    <Button href="/about" variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Mission</Button>
+                                                    {/* <Button href="/about" variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Mission</Button> */}
 
 
                                                   
@@ -317,9 +330,14 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
 
 
 </p> */}
-{/* <Link href={'/about'}> */}
-<Button href="/about" variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Team</Button>
-{/* </Link> */}
+<Link className="font-postbody" href={'/about'}>
+    <p className="md:text-sm text-justify pr-10 hover:text-[#808080]">
+
+{/* <Button href="/about" variant="orange" className="bg-orange text-black hover:text-white mt-0">See Our Team</Button> */}
+Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan berpengalaman pada bidangnya. 
+{/* Jawi juga berkolaborasi dengan peneliti lintas negara dalam pelaksanaan project. */}
+    </p>
+</Link>
                                                 </td>
                                             </tr>
                                           
@@ -356,9 +374,9 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                         <CardBody className="flex align-middle items-center align-center h-full bg-[#F3F5F8]">
                                             <div className="w-full items-center align-center py-auto">
                                                 <h3 className="text-black w-full text-center m-0 font-extrabold">SITE PROJECT</h3>
-                                                <p className="text-black text-center m-0 max-w-xs mt-2 sm:max-w-full">Hutan Kemuning,</p>
-                                                <p className="text-black text-center m-0 max-w-xs sm:max-w-full">Temanggung,</p>
-                                                <p className="text-black text-center m-0 max-w-xs sm:max-w-full">Jawa Tengah.</p>
+                                                <p className="text-black text-center font-postbody m-0 max-w-xs mt-2 sm:max-w-full">Hutan Kemuning,</p>
+                                                <p className="text-black text-center font-postbody m-0 max-w-xs sm:max-w-full">Temanggung,</p>
+                                                <p className="text-black text-center font-postbody m-0 max-w-xs sm:max-w-full">Jawa Tengah.</p>
                                                 <div className="flex justify-center pt-5">
 
                                                     {/* <Button className="self-auto bg-black text-white rounded-5 items-center mt-5"> */}
@@ -406,7 +424,7 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                             <div>
 
                                                                 <h3 className="text-black w-full text-center m-0 text-base font-extrabold">SURVEI BIODIVERSITAS</h3>
-                                                                <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">Hutan Kemuning,</p>
+                                                                {/* <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">Hutan Kemuning,</p> */}
                                                             </div>
 
                                                             <div className="flex justify-center pt-5">
@@ -541,18 +559,18 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                     </SectionContainer>
                 </div>
             </div>
-            <div className="sm:px-5 pt-5 bg-[#F3F5F8]">
+            <div className="sm:px-5  pt-5 bg-[#F3F5F8]]">
                 
-            <CardGroup className="sm:shadow-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-20 md:mt-0 mx-auto sm:p-0 md:p-10 sm:w-full md:w-2/3">
+            <CardGroup className="sm:shadow-lg md:shadow-none grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-20 md:mt-0 mx-auto sm:p-0  sm:w-full  md:w-full">
 
                             
-                                    <CardImage src='/product.jpeg' className='gridcol-span-1 h-full' imageClassName={'object-cover objet-bottom'} alt={''} />
+                                    <CardImage src='/product.jpeg' className='gridcol-span-1 h-full md:pl-10 md:pr-10' imageClassName={'object-cover objet-bottom'} alt={''} />
 
-                                    <Card className="grid col-span-1 align-middle md:align-top sm:ml-0 sm:mt-5 md:mt-0 md:p-0 md:ml-10 text-primary-400">
+                                    <Card className="grid col-span-1 align-middle md:align-top sm:ml-0 sm:mt-5 md:mt-0 md:p-0 text-primary-400">
                                         <CardBody className="flex sm:align-middle md:align-top h-full sm:items-center md:items-top rounded-0 align-top my-0 pt-0">
-                                            <div className="w-full md:h-full">
+                                            <div className="w-full  md:pr-10 md:h-full">
                                                 <div>
-                                                    <h1 className="text-black text-left m-0 max-w-xs text-2xl font-bold sm:max-w-full">SUPPORT US!</h1>
+                                                    <h1 className="text-black text-left m-0 mb-2 max-w-xs text-2xl font-bold sm:max-w-full">SUPPORT US!</h1>
 
                                                     <div className="max-w-80 mb-2">
                                                         <hr className="h-1 bg-[#faa51a]" />
@@ -560,11 +578,11 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
 
                                                     </div>
 
-                                                    <p className="text-black text-sm my-0  text-justify">Dipersembahkan dari alam yang subur di Kemuning, Temanggung, kopi robusta kami adalah pencitraan penuh kasih sayang dan kepedulian terhadap lingkungan. Dipetik secara selektif dari kebun-kebun yang terpelihara dengan baik melalui sistem kopi di bawah tegakan. Setiap butiran biji kopi memiliki cerita konservasi yang menyentuh hati.
+                                                    <p className="text-black text-sm my-0 font-postbody md:text-base text-justify">Dipersembahkan dari alam yang subur di Kemuning, Temanggung, kopi robusta kami adalah pencitraan penuh kasih sayang dan kepedulian terhadap lingkungan. Dipetik secara selektif dari kebun-kebun yang terpelihara dengan baik melalui sistem kopi di bawah tegakan. Setiap butiran biji kopi memiliki cerita konservasi yang menyentuh hati.
                                                         <br />
                                                         <br />
                                                         Dengan setiap tegukan kopi kami, Anda juga turut berkontribusi pada pelestarian lingkungan dan kehidupan satwa liar yang langka. Mari bersama-sama menikmati kenikmatan kopi yang berkualitas sambil menjaga keberlanjutan alam kita.</p>
-                                                    <h1 className="text-[#FAA51A] w-full text-left m-0 mt-5 text-xl font-black">Rp 35.000</h1>
+                                                    {/* <h1 className="text-[#FAA51A] w-full text-left m-0 mt-5 text-xl font-black">Rp 35.000</h1> */}
                                                 </div>
 
                                                 <div className="flex justify-left">
@@ -587,9 +605,9 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                     </Card>
                                 </CardGroup>
             </div>
-            {allPosts && allPosts.length > 2 ?  <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/>: (
-        <p>No posts found.</p>
-      )}
+             <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/>
+    
+    
           
           
 

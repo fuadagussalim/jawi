@@ -8,13 +8,14 @@ export default function Footer() {
   const date = new Date();
   const year = date.getFullYear();
   var smFactor = 5;
+  var pnFactor = 3;
   return (
-    <footer className="bg-black border-t border-accent-2  ">
-      <Container classNames="hidden md:block">
+    <footer className="bg-black border-t border-accent-2  pb-10">
+      <Container classNames="hidden md:block mt-10">
         <div className="grid md:grid-cols-3 grid-rows-5">
         
           <div className="grid container col-span-1 ml-10 row-span-6">
-          <div className='inline-block content-top w-7/12 pr-2 md:mt-16'>
+          <div className='inline-block content-top w-7/12 pr-2'>
           <p className="text-white text-[11px] font-semibold my-0">
 
 © {year} Lembaga Jawi Indonesia - Javan Wildlife Institute (JAWI)
@@ -30,8 +31,8 @@ export default function Footer() {
 </span>
 </p>
 {/* <div className="grid col-span-1  h-2/3"> */}
-            <hr className="w-full pt-2/3 mt-5 bg-[#ffa01a]" />
-            <p className="text-white tracking-tighter text-[10px] font-thin text-justify pt-5">Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta,
+            <hr className="w-full pt-2/3 mt-2 bg-[#ffa01a]" />
+            <p className="text-white tracking-tighter text-[10px] font-thin text-justify pt-2">Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta,
 Indonesia</p>
 
             </div>
@@ -134,47 +135,53 @@ Indonesia</p>
             
           </div> */}
           </div>
-          <div className="grid row-span-1 md:mt-5 md:ml-0 lg:ml-10 text-white mx-0">Our Partners</div>
+          <div className="grid col-span-1 max-w-md md:pr-10 lg:pr-0 row-span-6">
 
-          <div className="grid col-span-1 p-0 mx-auto">
-          {/* <p className="text-white ">Our Partners</p> */}
-          <div className="grid grid-cols-7 h-[35px] gap-0 p-0 mx-0">
+        
+          <div className="grid md:grid-cols-2  col-span-1 mb-4 row-span-1">
+            <div className="items-bottom">
+
+            <p className="text-white grid font-thin text-xl text-right  mr-10 h-full col-span-1 items-end flex items-center">Our Partners</p>
+            </div>
+            <div className="grid justify-evenly col-span-1 gap-2 w-auto  md:items-center md:grid-cols-1 ">
+              
+            <div className="grid grid-cols-7 gap-0 my-auto p-0 mx-0 col-span-1">
           <Image
                 className="flex col-span-1  mx-0 mt-2"
                 src="/Logo ISI Baru.png"
-                height={35*1.5}
-                width={35*1.5}
+                height={35*pnFactor}
+                width={35*pnFactor}
                 alt="">
 
               </Image>
               <Image
                 src="/Logo TN Bukit Raya.png"
-                height={35*1.5}
-                width={35*1.5}
+                height={35*pnFactor}
+                width={35*pnFactor}
                 alt=""
                 className="flex col-span-1  mx-0 mt-2">
 
               </Image>
               <Image
                 src="/Logo_TN_Komodo (1).png"
-                height={35*1.5}
-                width={35*1.5}
+                height={35*pnFactor}
+                width={35*pnFactor}
                 alt=""
                 className="flex col-span-1  mx-0 mt-2">
 
               </Image>
               <Image
                 src="/logo arupa.jpg"
-                height={24*1.5}
-                width={24*1.5}
+                height={24*pnFactor}
+                width={24*pnFactor}
                 alt=""
                 className="flex col-span-1  mx-0 mt-2">
 
               </Image>
               <Image
                 src="/Logo IPS.jpg"
-                height={35*1.5}
-                width={35*1.5}
+                height={35*pnFactor}
+                width={35*pnFactor}
                 alt=""
                 className="flex col-span-1  mx-0 mt-2">
 
@@ -182,8 +189,8 @@ Indonesia</p>
              
               <Image
                 src="/Logo RISTEK-BRIN.png"
-                height={35*1.5}
-                width={35*1.5}
+                height={35*pnFactor}
+                width={35*pnFactor}
                 alt=""
                 className="flex col-span-1 ]  mx-0 mt-2">
 
@@ -191,8 +198,8 @@ Indonesia</p>
 
               <Image
                 src="/Logo UGM Baru.png"
-                height={35*1.5}
-                width={35*1.5}
+                height={35*pnFactor}
+                width={35*pnFactor}
                 alt=""
                 className="flex col-span-1  mx-0 mt-2">
 
@@ -200,8 +207,8 @@ Indonesia</p>
 
               <Image
                 src="/Logo Temanggung Baru.png"
-                height={25*1.5}
-                width={25*1.5}
+                height={25*pnFactor}
+                width={25*pnFactor}
                 alt=""
                 className="flex col-span-1   mx-0 mt-2">
 
@@ -209,8 +216,8 @@ Indonesia</p>
 
               <Image
                 src="/Logo PBNF.png"
-                height={50*1.5}
-                width={50*1.5}
+                height={50*pnFactor}
+                width={50*pnFactor}
                 alt=""
                 className="flex col-span-2  mx-0 mt-2">
 
@@ -218,8 +225,8 @@ Indonesia</p>
 
               <Image
                 src="/Logo LFP.png"
-                height={80*1.5}
-                width={80*1.5}
+                height={80*pnFactor}
+                width={80*pnFactor}
                 alt=""
                 className="flex col-span-2 pt-2  mx-0 mt-2">
 
@@ -227,8 +234,125 @@ Indonesia</p>
 
                <Image
                 src="/international-elephant-project.png"
-                height={45*1.5}
-                width={80*1.5}
+                height={45*pnFactor}
+                width={80*pnFactor}
+                alt=""
+                className="flex col-span-2   mx-0 mt-2">
+
+              </Image>
+
+          </div>
+
+            </div>
+        
+
+
+          </div>
+            {/* <div className="grid col-span-1 h-2/3">
+            <hr className="w-full bg-[#ffa01a]" />
+            <p className="text-white text-xs font-thin text-justify pt-5">Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta,
+            Indonesia</p>
+            
+          </div> */}
+          </div>
+         
+          {/* <div className="grid row-span-1 md:mt-5 md:ml-0 lg:ml-10 sm:text-white md:text-black mx-0">Our Partners</div>
+
+          <div className="grid col-span-1 grid-cols-2 p-0   mx-auto pr-10">
+          <div className=" grid row-span-1hidden md:block col-span-1  md:ml-0 md:text-right lg:mr-10 h-[70px] my-auto lg:ml-10 text-white mx-0">Our Partners</div> */}
+          {/* <p className="text-white ">Our Partners</p> */}
+          {/* 
+      <div className="grid grid-cols-7 h-[35px] gap-0 p-0 mx-0 col-span-1">
+          <Image
+                className="flex col-span-1  mx-0 mt-2"
+                src="/Logo ISI Baru.png"
+                height={35*pnFactor}
+                width={35*pnFactor}
+                alt="">
+
+              </Image>
+              <Image
+                src="/Logo TN Bukit Raya.png"
+                height={35*pnFactor}
+                width={35*pnFactor}
+                alt=""
+                className="flex col-span-1  mx-0 mt-2">
+
+              </Image>
+              <Image
+                src="/Logo_TN_Komodo (1).png"
+                height={35*pnFactor}
+                width={35*pnFactor}
+                alt=""
+                className="flex col-span-1  mx-0 mt-2">
+
+              </Image>
+              <Image
+                src="/logo arupa.jpg"
+                height={24*pnFactor}
+                width={24*pnFactor}
+                alt=""
+                className="flex col-span-1  mx-0 mt-2">
+
+              </Image>
+              <Image
+                src="/Logo IPS.jpg"
+                height={35*pnFactor}
+                width={35*pnFactor}
+                alt=""
+                className="flex col-span-1  mx-0 mt-2">
+
+              </Image>
+             
+              <Image
+                src="/Logo RISTEK-BRIN.png"
+                height={35*pnFactor}
+                width={35*pnFactor}
+                alt=""
+                className="flex col-span-1 ]  mx-0 mt-2">
+
+              </Image>
+
+              <Image
+                src="/Logo UGM Baru.png"
+                height={35*pnFactor}
+                width={35*pnFactor}
+                alt=""
+                className="flex col-span-1  mx-0 mt-2">
+
+              </Image>
+
+              <Image
+                src="/Logo Temanggung Baru.png"
+                height={25*pnFactor}
+                width={25*pnFactor}
+                alt=""
+                className="flex col-span-1   mx-0 mt-2">
+
+              </Image>
+
+              <Image
+                src="/Logo PBNF.png"
+                height={50*pnFactor}
+                width={50*pnFactor}
+                alt=""
+                className="flex col-span-2  mx-0 mt-2">
+
+              </Image>
+
+              <Image
+                src="/Logo LFP.png"
+                height={80*pnFactor}
+                width={80*pnFactor}
+                alt=""
+                className="flex col-span-2 pt-2  mx-0 mt-2">
+
+              </Image>
+
+               <Image
+                src="/international-elephant-project.png"
+                height={45*pnFactor}
+                width={80*pnFactor}
                 alt=""
                 className="flex col-span-2   mx-0 mt-2">
 
@@ -237,7 +361,7 @@ Indonesia</p>
           </div>
           
 
-          </div>
+          </div> */}
         </div>
       </Container>
       <Container classNames="md:hidden">

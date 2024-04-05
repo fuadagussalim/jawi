@@ -19,7 +19,7 @@ import Video from 'next-video';
 import Link from "next/link";
 import TypewriterContent from "../Typewriter/Typewriter";
 export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = true, maintextclass = "", subtextclass = "", align = "center", motionClass = "" }) => {
-
+    const smFactor =1;
     var visibility = 'awal'
     if (typeAnimation) {
         visibility = 'visible'
@@ -44,15 +44,15 @@ export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = tru
             <div className=" md:pt-0 page-banner--image relative m-0 p-0">
                 <div className={`absolute  lg:block z-20 stroke-black items-start  sm:top-1/5 w-full text-center sm:mt-5  text-white md:top-1/3  text-${align}  `}>
                     <div className="w-full grid grid-cols-1 ">
-                        <PageTitle className={`${maintextclass} grid mb-1 sm:capitalize md:uppercase sm:text-3xl   relative font-extrabold w-full sm:text-normal sm:font-bold sm:drop-shadow-xl sm:mt-5
-                        `} type="default">
+                        <PageTitle className={`${maintextclass} grid mb-1 sm:capitalize  sm:text-3xl md:mb-4    relative font-extrabold w-full sm:text-normal sm:font-bold sm:drop-shadow-xl sm:mt-5
+                        `} type="homemain">
                             <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}>
 
                                 {maintext}
 
                             </MotionBTTContainer>
                         </PageTitle>
-                        <PageTitle className={`${subtextclass} grid sm:text-sm sm:w-3/4 sm:mx-auto  relative drop-shadow-xl capitalize font-light mt-0`} type="xsmall">
+                        <PageTitle className={`${subtextclass} grid  lg:w-full sm:mx-auto  relative drop-shadow-xl capitalize font-light mt-0`} type="homexsmall">
 
                             <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
 
@@ -96,10 +96,63 @@ export const HomeBanner = ({ href, image, maintext, subtext, typeAnimation = tru
 
 
                     </Link>
+<div className="grid md:grid-cols-1 w-full hidden md:block lg:mt-40 mx-auto col-span-1 md:w-1/2 row-span-1 z-25">
+            <div className="items-bottom">
+
+            <p className="text-white grid font-thin text-xl  h-full col-span-1 items-end flex items-center">Social Media</p>
+            </div>
+            <div className="grid justify-evenly col-span-1 gap-2 w-1/5 mx-auto mt-5  md:items-center md:grid-cols-4">
+              
+            <Link href={"https://web.facebook.com/jawi.or.id/?_rdc=1&_rdr"} target="_blank">
+              <Image
+                className="flex col-span-1  mx-auto"
+                src="/sosmed/fb w.png"
+                height={25*smFactor}
+                width={25*smFactor}
+                alt="">
+              </Image>
+              </Link>
+              <Link href={"https://id.linkedin.com/company/javan-wildlife-institute"} target="_blank">
+              <Image
+                src="/sosmed/link w.png"
+                height={25*smFactor}
+                width={25*smFactor}
+                alt=""
+                className="flex col-span-1  mx-auto">
+
+              </Image>
+              </Link>
+              <Link href={"https://www.instagram.com/javanwildlife/?hl=en"} target="_blank">
+              <Image
+                src="/sosmed/ig w.png"
+                height={25*smFactor}
+                width={25*smFactor}
+                alt=""
+                className="flex col-span-1  mx-auto">
+
+              </Image>
+                  </Link>
+              <Link href={"https://youtu.be/LBCGzeuQkHc?si=4yTUEFNJuX5IRprv"} target="_blank">
+              <Image
+                src="/sosmed/yt w.png"
+                height={25*smFactor}
+                width={25*smFactor}
+                alt=""
+                className="flex col-span-1  mx-auto">
+
+              </Image>
+                  </Link>
+
+            </div>
+        
+
+
+          </div>
 
                     {/* <Button variant="black" radius="100" className="relative text-white">Read More</Button> */}
 
                 </div>
+               
           
             
                 
