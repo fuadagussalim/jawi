@@ -10,7 +10,7 @@ export default function Document() {
 
     
         <NextScript />
-        <SpeedInsights />
+  
       </body>
     </Html>
   );

@@ -25,7 +25,7 @@ export default function Index({ allPosts: { edges }, preview, allPages: { edgesP
     // console.log(heroPost);
     // const pages = edgesPages[0]?.node;
     return (
-      <ClientPage allPosts={morePosts}></ClientPage>
+      <ClientPage allPosts={morePosts}/>
       // <div className="text-center h-[400px]">Web Sedang dalam proses Upgrade
       // <br />
       // Stay tune

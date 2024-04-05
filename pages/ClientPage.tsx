@@ -29,7 +29,7 @@ import Footer from "../components/footer";
 import Images from "../components/ImageLoop/ImageLoop";
 // import '../styles/globals.scss'
 import ImageCarousel from "../components/Carousel/ImageCarousel";
-import TeamCarousel from "../components/Carousel/TeamCarousel";
+
 
 import Post from "./posts/[slug]";
 // import Link from "next/link";
@@ -39,24 +39,9 @@ import CoverImage from "../components/cover-image";
 import YouTubePlayer from "../components/YoutubePlayer";
 import { Gallery } from "next-gallery";
 
-// import {faAngleRight} from '@fortawesome/react-fontawesome'
-
-// export async function getStaticProps({ preview = false }) {
-//     const posts = await getAllPostsForHome(preview);
-
-//     return {
-//       props: {
-//         posts,
-//       },
-//     };
-//   }
 
 export default function ClientPage({ allPosts}) {
-  
-    // const morePosts = edges.slice(1);
-    // console.log(allPosts);
-    // console.log(allPosts)
-    console.log('print post', allPosts);
+
     interface CarouselPost {
         title: string;
         image: string;
@@ -84,95 +69,12 @@ export default function ClientPage({ allPosts}) {
         
         date: "Tidak dapat terkoneksi dengan server",
       }));
+      console.log('isi caro',carouselPosts)
    
-    console.log(carouselPosts);
-    console.log(carouselPosts[0].slug)
-
-   
-
-
-
-
-    // const posts = await getAllPostsForHome(false);
-    // console.log(posts.edges);
-
-    // // const blogMediaStringSpesifyId = 'https://blog.jawi.or.id/wp-json/wp/v2/media?id=';
-    // const blogMediaString = 'https://blog.jawi.or.id/wp-json/wp/v2/media/';
-    // const blogMediaStrings:string[] = []
-    // async function getWPPosts() {
-    //     const response = await fetch('https://blog.jawi.or.id/wp-json/wp/v2/posts');
-    //     const posts = await response.json();
-
-    //     // console.log(posts[0].featured_media
-    //         // .title.rendered
-    //         // );
-    //     // console.log(posts[0].features_image.id)
-    //     // const mediaId = posts[0].featured_media;
-    //     const mediaIds:string[] = []
-    //     for (var i = 0; i<posts.length;i++){
-    //         mediaIds.push(posts[i].featured_media);
-    //         blogMediaStrings.push(blogMediaString+mediaIds[i]);
-    //     };
-    //     console.log(blogMediaStrings);
-    //     console.log(mediaIds.length);
-
-    //     // console.log(blogMediaString+mediaId);
-    //     const mediaResponse = await fetch(blogMediaString);
-    //     // const mediaResponse = await fetch(blogMediaString+mediaId);
-    //     const media = await mediaResponse.json();
-    //     console.log(media.length);
-
-    //     // console.log(media[0].source_url)
-    //     // const images:string[]=[]
-    //     // for (var i=0; i<media.length; i++){
-    //     //     console.log("id media:" + media[i].id);
-    //     //     for (var j=0; j<mediaIds.length;j++){
-    //     //         console.log("id")
-
-    //     //         if (media[i].id == mediaIds[j]){
-
-    //     //             images.push(media[i].source_url)
-    //     //             console.log(media[i].id)
-    //     //            }
-
-    //     //     }
-
-    //     // }
-    //     // console.log(images)
-
-    // }
-
-    // getWPPosts();
-    // const images = {
-    //     "images": [
-
-    //         {
-    //             "url": "https://images.unsplash.com/photo-1602872030276-17d4d67bb130?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-    //             "heading": "Great design answers a question, offers a solution and solves a problem.",
-    //             "about": "Interior design is the art and science of enhancing the interior of a building to achieve a healthier and more aesthetically pleasing environment for the people using the space. An interior designer is someone who plans, researches, coordinates, and manages such enhancement projects."
-    //         },
-    //         {
-    //             "url": "https://images.unsplash.com/photo-1517963628607-235ccdd5476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
-    //             "heading": "Motivation is what gets you started. Habit is what keeps you going.",
-    //             "about": "There is no alternate to the health and fitness, we have to eat healthy food timely, do physical exercises daily, think positive and have patience and commitment towards good lifestyle. Being involved in physical activities on daily basis does something great to our body and mind."
-    //         },
-    //         {
-    //             "url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-    //             "heading": "Live with no excuses and travel with no regrets.",
-    //             "about": "Someone travels to gain knowledge and experience, someone travels for pleasure, someone travels for business purposes etc. It has much educative value. It is a part of education. Our education and book knowledge remain imperfect without travelling. We can learn many things from travelling."
-    //         },
-    //         {
-    //             "url": "https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-    //             "heading": "Tis an ill cook that cannot lick his own fingers.",
-    //             "about": "But it is only human beings who endeavour to transform food into something more. Several archaeologists and evolutionary biologists contend that cooking was, and still is, crucial to our evolution. Not only did it stimulate mastery over fire and necessitated innovation in tool making, but by eating cooked food, we were able to increase our energy output for other creative pursuits."
-    //         }
-    //     ]
-    // }
-
-
+  
 
     return (
-        <Layout preview={""} className="bg-[#F3F5F8]">
+        <Layout preview={false} className="bg-[#F3F5F8]">
             <div className=" md:block">
                 <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
                     <HomeBanner href='#about-jawi' image='/DEF_7207.JPG' maintext='Javan Wildlife Institute' subtextclass="md:text-normal lg:text-sm" subtext='Menjadi mitra rujukan sains konservasi di Indonesia' align="left" />
@@ -198,44 +100,7 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                     <Accordion/>
                                     </div>
 
-                                   
-                                    {/* <div className="hidden lg:block">
-                                        <CardGroup className="grid grid-cols-2 w-3/4">
-                                            <Card className={"grid grid-col-1"}>
-                                                <CardHeader className={""} hasBadge={false}>
-                                                "TES"
-                                            </CardHeader>
-                                            <CardBody className={""}>
-                                                Tes body
-                                            </CardBody>
-                                                </Card>
-                                            <Card className={"grid grid-col-1"}>
-                                                <CardHeader className={""} hasBadge={false}>
-                                                "TES"
-                                            </CardHeader>
-                                            <CardBody className={""}>
-                                                Tes body
-                                            </CardBody>
-                                                </Card>
-                                            <Card className={"grid grid-col-1"}>
-                                                <CardHeader className={""} hasBadge={false}>
-                                                "TES"
-                                            </CardHeader>
-                                            <CardBody className={""}>
-                                                Tes body
-                                            </CardBody>
-                                                </Card>
-                                            <Card className={"grid grid-col-1"}>
-                                                <CardHeader className={""} hasBadge={false}>
-                                                "TES"
-                                            </CardHeader>
-                                            <CardBody className={""}>
-                                                Tes body
-                                            </CardBody>
-                                                </Card>
-                                      
-                                        </CardGroup>
-                                    </div> */}  
+                            
 
                                     <div className="p-10 py-auto pl-0 hidden md:block">
                                     <Link href={"/about"}>
@@ -300,33 +165,7 @@ Kerjasama dapat dilakukan dengan instansi/pihak lain dalam rangka kegiatan yang 
                                                   
                                                 </td>
                                                 <td>
-                                                                                            {/* <p className="text-justify min-h-[150px]  pr-10">
-                                        <span className="font-bold">
-                                        Supervisory Board
-                                        </span>
-                                        <br>
-                                        </br>
-
-                                        Dr. Muhammad Ali Imron
-
-                                        <br>
-                                        </br>
-                                        Ryan Adi Satria
-
-                                        <br>
-                                        </br>
-                                        Fikri Al Mubarok
-
-                                        <br>
-                                        </br>
-                                        Stephanus Argo Yan
-
-                                        <br>
-                                        </br>
-                                        Wiwit Prayoga ...
-
-
-</p> */}
+                                
 <Link className="font-postbody" href={'/about'}>
     <p className="md:text-sm text-justify pr-10 hover:text-[#808080]">
 
@@ -350,10 +189,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                                 </CardGroup>
 
                                 <CardGroup className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-20 mx-auto">
-
-                                    {/* <CardImage src='/Picture2-1.png' className='grid md:col-span-2 lg:col-span-2 sm:col-span-1 ' imageClassName={''} alt={''} /> */}
-                                    {/* <CardImage src='/Picture2-1.png' className='grid md:col-span-2 lg:col-span-2 sm:col-span-1 ' imageClassName={''} alt={''} /> */}
-                                    <div className="grid md:col-span-2 lg:col-span-2 aspect-video sm:col-span-1">
+           <div className="grid md:col-span-2 lg:col-span-2 aspect-video sm:col-span-1">
                                        <YouTubePlayer id={"LBCGzeuQkHc"} width='100%' height='100%'/>
                                         {/* <iframe width="100%" height={16/9*width} src="https://www.youtube.com/embed/LBCGzeuQkHc?si=VxjCDXQbJBZQEBcj" title="Drone Emprite" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe> */}
                                     </div>
@@ -376,12 +212,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                                                         </Button>
 
 
-                                                    {/* </Link> */}
-                                                    {/* <NavLink href='/detail'>
-                                                    READ MORE
-
-                                                </NavLink> */}
-                                                    {/* </Button> */}
+                                                  
                                                 </div>
 
 
@@ -478,9 +309,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                                                                     </Button>
 
 
-                                                                {/* </Link> */}
-                                                                {/* <Button className="self-auto bg-[#F3F5F8] text-[#faa51a] rounded-5 items-center mt-5">READ MORE</Button> */}
-                                                                </div>
+                                             </div>
 
 
                                                         </div>
@@ -533,15 +362,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
 
                             </SectionContainer>
                         </MotionBTTContainer>
-                        {/* <MyVideo sources={"https://www.youtube.com/embed/LBCGzeuQkHc?si=Ar2YAA2zzCoN3rjK"} height="720" width="1000" classNames={""} ></MyVideo> */}
-
-
-
-                        {/* <Images folder={"sosmed"}></Images> */}
-                        {/* <ImageCarousel >
-
-                    </ImageCarousel> */}
-
+         
 
 
                     </SectionContainer>
@@ -593,32 +414,21 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                                     </Card>
                                 </CardGroup>
             </div>
-             <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/>
+                 {allPosts && allPosts.length > 2 ?  <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/>: (
+        <p>No posts found.</p>
+      )}
+             {/* <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/> */}
     
     
           
           
 
-        
-{/* 
-            <div className="md:hidden h-[440px]">
-            
 
-                Mohon maaaf.. Tampilan mobile masih dalam tahap penegembangan
-            </div> */}
         </Layout>
     );
 }
 
 
-// export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-//     const allPosts = await getAllPostsForHome(preview);
-  
-//     return {
-//       props: { allPosts, preview },
-//       revalidate: 10,
-//     };
-//   };
-  
+
 
 

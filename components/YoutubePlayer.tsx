@@ -5,6 +5,7 @@ import YouTube, { YouTubeProps } from 'react-youtube';
 import LiteYouTubeEmbed from "react-lite-youtube-embed"
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
 
+//Make youtube player autoplay when scroll meet
 
 function YouTubePlayer({id, width, height}) {
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
