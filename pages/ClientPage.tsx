@@ -1,4 +1,4 @@
-'use client'
+
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { BadgeMessage, BadgeGroup, BadgeIcon } from "../components/Badge";
