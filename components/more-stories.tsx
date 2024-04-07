@@ -2,21 +2,22 @@ import PostPreview from "./post-preview";
 import PostPreview3 from "./post-preview-3";
 import React from "react";
 export default function MoreStories({ posts }) {
-  // posts.map(({ node }, index) => {
-  //   console.log(node + " " +index);
-  //   if (index%3==0){
-  //          <PostPreview
-  //              key={node.slug}
-  //           title={node.title}
-  //           coverImage={node.featuredImage}
-  //           date={node.date}
-  //           author={node.author}
-  //           slug={node.slug}
-  //           excerpt={node.excerpt}
-  //         />
-  //     // console.log("ini kelipatan 3")
-  //   }
-  // })
+  posts.map(({ node }, index) => {
+    // console.log(node + " " +index);
+    console.log("isi node ", node);
+    // if (index%3==0){
+    //        <PostPreview
+    //            key={node.slug}
+    //         title={node.title}
+    //         coverImage={node.featuredImage}
+    //         date={node.date}
+    //         author={node.author}
+    //         slug={node.slug}
+    //         excerpt={node.excerpt}
+    //       />
+    //   // console.log("ini kelipatan 3")
+    // }
+  })
 
 
   return (

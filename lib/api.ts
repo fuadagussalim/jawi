@@ -335,6 +335,18 @@ export async function getAllPostsForHome(preview) {
                 sourceUrl
               }
             }
+            categories {
+          edges {
+            node {
+              children {
+                nodes {
+                  name
+                }
+              }
+              name
+            }
+          }
+        }
             author {
               node {
                 name
@@ -424,6 +436,11 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
       categories {
         edges {
           node {
+            children {
+                nodes {
+                  name
+                }
+              }
             name
           }
         }

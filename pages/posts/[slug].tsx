@@ -17,7 +17,7 @@ import Footer from "../../components/footer";
 export default function Post({ post, posts, preview }) {
   const router = useRouter();
   const morePosts = posts?.edges;
-  console.log('post itu apa',post)
+  console.log('posts itu apa',posts)
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
