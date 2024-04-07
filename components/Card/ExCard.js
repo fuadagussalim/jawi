@@ -6,13 +6,11 @@ import React from 'react'
 export  const ExCard= ({cardDatas})=>{
     console.log('cek data excard new: ',cardDatas)
     const cardDatasObject = cardDatas;
-    // cardDatas.map((cardData, index)=>{
-    //     console.log('cek satuan node cardData:', cardData.title, index)
-    // })
+  
 
     return (
 
-        // cardDatas.map((cardData, index)=>{
+   
             <CardGroup className="h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 my-20 mt-0 mx-auto left-0 right-0 sm:p-5  sm:w-full md:drop-shadow-none sm:drop-shadow-lg md:p-10 md:pt-0 md:w-11/12">
                     
 
@@ -25,7 +23,7 @@ export  const ExCard= ({cardDatas})=>{
 
           <React.Fragment key={cardData?.slug}>
           {(index+1) % 2 === 0 ? (
-            // {console.log(index)};
+         
             <>
                 <CardImage src={cardData?.image} className='gridcol-span-1 md:mt-20  md:sm-0 h-[330px]' imageClassName={'object-cover objet-bottom'} alt={''} />
                                 <Card className="grid h-full rounded-none  md:mt-20 md:py-10 sm:mb-10 md:mb-0 col-span-1 align-middle text-primary-400">
@@ -33,8 +31,7 @@ export  const ExCard= ({cardDatas})=>{
                                     <div className="w-full sm:pt-5  rounded-0">
                                         <div>
                                              <h3 className="text-black mb-5 w-full text-center m-0 text-base font-extrabold">{cardData?.title}</h3>
-                                                    {/* <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">
-                                                        {cardData.excerpt}</p> */}
+                                        
 
                                                         <div
                                                                 className={'text-black font-postbody sm:text-justify md:text-center sm:text-xs md:text-base w-2/3 mx-auto'}
