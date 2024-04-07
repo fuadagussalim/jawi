@@ -4,6 +4,7 @@ import Date from "./date";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import Author from "./author";
+import { MotionBTTContainer } from "./Motion";
 
 export default function PostPreviewTiga({
   title,
@@ -14,7 +15,9 @@ export default function PostPreviewTiga({
   slug,
 }) {
   return (
+    
     <div className="grid sm:grid-cols-1 sm:m-3 sm:drop-shadow-xl md:col-span-2 grid-cols-2">
+      <MotionBTTContainer className={""} transition={{ delay: 0.7, duration: 0.5 }}>
       <div className="grid col-span1 bg-black">
 
         {coverImage && (
@@ -47,7 +50,9 @@ export default function PostPreviewTiga({
       </div>
           </div>
 
+          </MotionBTTContainer>
     </div>
+
    
       // {/* <Avatar author={author} /> */ }
     // </div>
