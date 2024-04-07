@@ -193,7 +193,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
 
                                 <CardGroup className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-20 mx-auto">
            <div className="grid md:col-span-2 lg:col-span-2 aspect-video sm:col-span-1">
-                                       <YouTubePlayer id={"LBCGzeuQkHc"} width='100%' height='100%'/>
+                                       <YouTubePlayer id={"LBCGzeuQkHc"} />
                                         {/* <iframe width="100%" height={16/9*width} src="https://www.youtube.com/embed/LBCGzeuQkHc?si=VxjCDXQbJBZQEBcj" title="Drone Emprite" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe> */}
                                     </div>
                                     {/* <VideoPlayer/> */}
