@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 
 const navigation = [
     { name: "Services", to: "#services", href: "/#services" },
-    { name: "Portofolio", to: "#portofolio", href: "/#portofolio" },
+    { name: "Portofolios", to: "#portofolios", href: "/#portofolios" },
     { name: "FAQ?", to: "#faq", href: "/#faq" },
     {
         name: "Contact",
-        href: "/contact",
+        href: "/contact-us",
         isArrow: true,
         target: "_blank"
     }

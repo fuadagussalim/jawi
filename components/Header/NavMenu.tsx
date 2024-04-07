@@ -72,7 +72,7 @@ export function NavigationMenuCustom() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/portofolio" legacyBehavior passHref>
+          <Link href="/portofolios" legacyBehavior passHref>
             <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:text-orange`}>
               PORTOFOLIO
             </NavigationMenuLink>
