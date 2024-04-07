@@ -15,7 +15,7 @@ export default function PostPreview({
 }) {
   return (
             <MotionBTTContainer className={""} transition={{ delay: 0.7, duration: 0.5 }}>
-    <div className="bg-pastel sm:grid-cols-2 sm:drop-shadow-xl sm:m-2 sm:p-3 md:m-0 md:p-5">
+    <div className="bg-pastel sm:grid-cols-2 md:h-[780px] sm:drop-shadow-xl sm:m-2 sm:p-3 md:m-0 md:p-5">
 
       <div className="mb-5">
         {coverImage && (

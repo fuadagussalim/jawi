@@ -7,3 +7,4 @@
 **/
 
 export * from "./MotionBTTContainer";
+export * from "./MotionLeftBTTContainer";

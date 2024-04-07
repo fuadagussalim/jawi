@@ -1,36 +1,28 @@
-
-import { he } from 'date-fns/locale';
 import React from 'react';
-import YouTube, { YouTubeProps } from 'react-youtube';
-import LiteYouTubeEmbed from "react-lite-youtube-embed"
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
+import { MotionLeftBTTContainer } from './Motion';
 
-//Make youtube player autoplay when scroll meet
+function YouTubePlayer({ id }) {
+  const width = '100%'; // Adjust the width as needed
+  const height = '0'; // Height is initially set to 0
 
-function YouTubePlayer({id, width, height}) {
-  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }
+  return (
+<MotionLeftBTTContainer className={""} transition={{ delay: 0.7, duration: 0.5 }}>
 
-  const opts: YouTubeProps['opts'] = {
-    height: `${height}`,
-    width: `${width}`,
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
-
-  return ( 
-    <LiteYouTubeEmbed
-  aspectHeight={9}
-  aspectWidth={16}
-  id={id}
-  title="Site Projek"
-/>
-  // <YouTube videoId={id} opts={opts} onReady={onPlayerReady} />
+    <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+      <iframe
+        title="Site Projek"
+        width={width}
+        height={height}
+        src={`https://www.youtube.com/embed/${id}?enablejsapi=1&autoplay=1&mute=1&loop=1`}
+        frameBorder="0"
+        allowFullScreen
+        style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }}
+        />
+      
+    </div>
+        </MotionLeftBTTContainer>
   );
 }
+
 
 export default YouTubePlayer;
