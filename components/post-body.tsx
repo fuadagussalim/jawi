@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./post-body.module.css";
 import ImageWithWidth from "../components/ImageWithWidth";
-
+import { nextui } from "@nextui-org/react";
 export default function PostBody({ content }) {
   console.log("tipe", content);
   // Add this CSS to your stylesheet
