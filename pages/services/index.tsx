@@ -16,6 +16,8 @@ import { Accordion } from "../../components/Accordion";
 import { v4 as uuid } from "uuid";
 import { JsxElement } from "typescript";
 import { useRouter } from "next/router";
+import {ExCard, Card} from '../../components/Card'
+
 export default function Index({ allServices: { edges },servicesFront: {node}, preview }) {
     console.log(node);
     console.log('allServices ', edges);
@@ -33,6 +35,7 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
         content: ReactElement<any, any>,
         image: string,
         slug: string,
+        excerpt: string
       }
     
 
@@ -46,7 +49,8 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
                 isOpen: false,
                 content: node.node.content,
                 image: node.node.featuredImage.node.sourceUrl,
-                slug: node.node.slug
+                slug: node.node.slug,
+                excerpt: node.node.excerpt
             }
         )
         
@@ -64,8 +68,11 @@ export default function Index({ allServices: { edges },servicesFront: {node}, pr
                 <ServicesBody content={node.content}/>
 
 
+            <ExCard cardDatas={accDatas}/>
             </div>
-            <Accordion accordionDataParam={accDatas}/>
+
+
+            {/* <Accordion accordionDataParam={accDatas}/> */}
             {/* <Accordion/> */}
 
           {/* <ClientPage>

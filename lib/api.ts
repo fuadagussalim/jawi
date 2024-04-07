@@ -271,6 +271,7 @@ export async function getAllServicesWithSlug() {
           node {
             title
             slug
+            excerpt
             featuredImage {
               node {
                 sourceUrl

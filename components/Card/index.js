@@ -13,3 +13,4 @@ export * from "./CardGroup";
 export * from "./CardImage";
 export * from "./CardInliner";
 export * from "./CardPosts";
+export * from "./ExCard";
