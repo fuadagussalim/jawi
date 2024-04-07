@@ -286,6 +286,38 @@ export async function getAllServicesWithSlug() {
   console.log('all services',data.services)
   return data?.services;
 }
+export async function getTeams() {
+  const data = await fetchAPI(
+    `
+    query Teams {
+  teams (where: {}, first: 100) {
+    edges {
+      node {
+        content
+        teamMemberData {
+          group
+          facebook
+          instagram
+          jabatan
+          linkedIn
+          nama
+          x
+          foto {
+            node {
+              sourceUrl
+            }
+          }
+        }
+        title
+      }
+    }
+  }
+}
+    `
+  );
+  console.log('all team member', data?.teams)
+  return data?.teams;
+}
 
 export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(

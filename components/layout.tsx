@@ -28,11 +28,11 @@ export default function Layout({preview, className = "", children } ) {
           /> */}
            <Header />
         <main
-          className={`main relative overflow-hidden  ${
+          className={`main relative overflow-hidden scroll-smooth  ${
               className && className
           }`}
           >
-              <motion.div
+              {/* <motion.div
     initial={{ x: 300, opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
     exit={{ x: 300, opacity: 0 }}
@@ -41,11 +41,11 @@ export default function Layout({preview, className = "", children } ) {
       stiffness: 260,
       damping: 20,
     }}
-  >
+  > */}
     {/* <div className="h-[80px] md:hidden">
 
     </div> */}
-
+{/* 
 {!isHideOnRoutes && (
           <motion.div
             initial={{ x: 300, opacity: 0 }}
@@ -59,10 +59,10 @@ export default function Layout({preview, className = "", children } ) {
           >
             <div className="h-[80px] md:hidden"></div>
           </motion.div>
-        )}
-
+        )} */}
+  <div className="h-[80px] md:hidden"></div>
           {children}
-  </motion.div>
+  {/* </motion.div> */}
        
     
       </main>

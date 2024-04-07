@@ -85,20 +85,20 @@ export function NavigationMenuCustom() {
             <ul className={"bg-white p-5  pr-10 trackin-wide font-light  w-[170px]  font-bold text-sm  "}
             >
               <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
-                <Link href="/">
+                <Link href="/about#programs">
                   PROGRAM
                 </Link>
                 
               </li>
               <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
-                <Link href="/services">
+                <Link href="/about#our-story">
                   OUR STORY
                 </Link>
                 
               </li>
               <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
 
-                <Link href="/portofolios">
+                <Link href="/about#mission">
                   MISSION
                   
                 </Link>
@@ -106,7 +106,7 @@ export function NavigationMenuCustom() {
 
               <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
 
-                <Link href="/about">
+                <Link href="/about#team">
                   TEAM
                   
                 </Link>

@@ -6,6 +6,7 @@ import { SectionContainer } from "../components/Section";
 import { PageTitle } from "../components/Title";
 import Layout from "../components/layout";
 import Link from "next/link";
+import Timeline from "../components/Timeline/timeline";
 // import CarouselImage from '../components/Carousel/ImageCarousel'
 import { getAllPostsForHome } from '../lib/api'
 import { HomeBanner } from "../components/Banner";
@@ -38,6 +39,8 @@ import {format} from "date-fns";
 import CoverImage from "../components/cover-image";
 import YouTubePlayer from "../components/YoutubePlayer";
 import { Gallery } from "next-gallery";
+// import Timeline from "../components/Timeline/timeline";
+import AnimatedLine from "../components/Timeline/AnimatedLine";
 
 
 export default function ClientPage({ allPosts}) {
@@ -417,8 +420,13 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                  {allPosts && allPosts.length > 2 ?  <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/>: (
         <p>No posts found.</p>
       )}
+
+      {/* <Timeline/> */}
              {/* <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/> */}
-    
+             {/* <AnimatedLine/>
+     */}
+
+   
     
           
           
