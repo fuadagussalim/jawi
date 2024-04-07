@@ -73,10 +73,10 @@ export default function Index({ page ,teams}) {
     <Layout preview={false}>
       <OtherpageBanner image={front?.banner?.node?.sourceUrl ?? "/hero.jpg"} maintext={front?.judul ?? "About"} subtext={front?.subjudul ?? "Kenali lebih dalam tentang kami"} />
       <PostBody content={content ?? "Tidak dapat memperoleh data :("} />
-    <Timeline>
+    <Timeline/>
 
-     </Timeline>
-     <Team memberData={members}></Team>
+   
+     <Team memberData={members}/>
     </Layout>
   );
 }
