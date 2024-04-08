@@ -314,8 +314,7 @@ export default function ClientPage({ allPosts }) {
                     SHOP NOW
                   </Button>
 
-                  {/* </Button> */}
-                  {/* </a> */}
+   
                 </div>
                 <p className="text-black font-bold text-sm my-0 pt-2 text-justify">
                   Powered by <span className="text-[#FAA51A]">Shopee</span>
@@ -331,10 +330,6 @@ export default function ClientPage({ allPosts }) {
         <p>No posts found.</p>
       )}
 
-      {/* <Timeline/> */}
-      {/* <ImageCarousel className="bg-[#F3F5F8]" carouselPosts={carouselPosts}/> */}
-      {/* <AnimatedLine/>
-       */}
     </Layout>
   );
 }
