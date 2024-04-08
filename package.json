@@ -9,7 +9,7 @@
     "dev": "next",
     "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
     "start": "NODE_ENV=production node server.js",
-    "lint": "next lint",
+    "lint": "next lint"
 
   },
   "dependencies": {
