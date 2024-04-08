@@ -18,11 +18,13 @@ export default function ServicesBody({ content }) {
   // );
 
   return (
+
     <div className="max-w-2xl p-10 md:pb-0 mx-auto text-justify">
-      <div
-        className={`${styles.content} services`}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+    <div
+    className={`${styles.content} services`}
+    dangerouslySetInnerHTML={{ __html: content }}
+    />
     </div>
+
   );
 }

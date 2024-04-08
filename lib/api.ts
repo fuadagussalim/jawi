@@ -239,6 +239,10 @@ export async function getServicesFront() {
             subjudul
           }
           content
+          servicesFront {
+          heading
+          shortParagraph
+        }
         }
       }
     }
@@ -801,4 +805,33 @@ export async function getPortofolioPage(slug: string) {
   );
 
   return data?.portofolios;
+}
+export async function getServicePage(slug: string) {
+  const data = await fetchAPI(
+    `
+   query servicepage {
+  services(where: {name: "${slug}"}) {
+    nodes {
+      
+        title
+        slug
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        content
+      }
+    }
+  }
+
+  `,
+    {
+      variables: {
+        slug: slug,
+      },
+    }
+  );
+
+  return data?.services;
 }
