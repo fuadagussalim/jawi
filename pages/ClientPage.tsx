@@ -209,7 +209,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                 
                                 </CardGroup>
 
-                                <CardGroup className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-20 mx-auto">
+                                <CardGroup className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:mt-0 md:mt-20 mx-auto">
            <div className="grid md:col-span-2 lg:col-span-2 aspect-video sm:col-span-1">
                                        <YouTubePlayer id={"LBCGzeuQkHc"} />
                                         {/* <iframe width="100%" height={16/9*width} src="https://www.youtube.com/embed/LBCGzeuQkHc?si=VxjCDXQbJBZQEBcj" title="Drone Emprite" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe> */}
@@ -227,7 +227,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                                                     {/* <Button className="self-auto bg-black text-white rounded-5 items-center mt-5"> */}
                                                     {/* <Link type="button" className="text-white  font-bold bg-black px-10 py-3 hover:bg-[#faa51a] hover:text-black " href="/detail/site-projek" passHref={true}> */}
 
-                                                        <Button className="hover:bg-orange w-[150px]  " href="/portofolio/site-project-hutan-kemuning-temanggung-jawa-tengah">
+                                                        <Button className="hover:bg-orange w-[150px]" href="/portofolio/site-project-hutan-kemuning-temanggung-jawa-tengah">
 
                                                         Read More
                                                         </Button>
@@ -243,7 +243,7 @@ Tim jawi tersusun atas peneliti dari berbagai disiplin ilmu yang kompeten dan be
                                     </Card>
                                 </CardGroup>
 
-                                <div className="w-full h-full mt-20">
+                                <div className="w-full h-full sm:mt-10 md:mt-20">
                                     <div className="relative sm:h-[1800px] md:h-[1580px]">
                                         <div className="absolute z-1 w-full h-[250px] bg-[#faa51a]">
 
