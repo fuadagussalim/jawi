@@ -13,7 +13,7 @@ function YouTubePlayer({ id }) {
         title="Site Projek"
         width={width}
         height={height}
-        src={`https://www.youtube.com/embed/${id}?enablejsapi=1&autoplay=1&mute=1&loop=1`}
+        src={`https://www.youtube.com/embed/${id}?enablejsapi=1&autoplay=1&mute=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=${id}`}
         frameBorder="0"
         allowFullScreen
         style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }}
