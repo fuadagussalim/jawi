@@ -134,9 +134,7 @@ export default function ClientPage({ allPosts }) {
                                   Read More
                                 </Button>
 
-                                {/* </Link> */}
-                                {/* <Button className="self-auto bg-[#F3F5F8] text-[#faa51a] rounded-5 items-center mt-5">READ MORE</Button> */}
-                              </div>
+                                 </div>
                             </div>
                           </CardBody>
                         </Card>
