@@ -1,16 +1,10 @@
 {
-  "name": "jawi",
-  "version": "1.0.0",
-  "engines": {
-    "node": "18.17.1"
-  },
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
+    "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
-
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
