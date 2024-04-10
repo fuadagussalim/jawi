@@ -7,7 +7,7 @@ import Intro from "../../components/intro";
 import Footer from "../../components/footer";
 import Layout from "../../components/layout";
 
-import { getAllPostsForHome, Post } from "../../lib/api"; // Import the Post type if you have defined it
+import { getAllPostsForHome, } from "../../lib/api"; // Import the Post type if you have defined it
 import "./blog.style.module.css";
 import "./scroll.style.module.css";
 
@@ -15,9 +15,9 @@ import "./scroll.style.module.css";
 
 // HorizontalScrollIndicator component to display horizontal scroll indicator
 
-export default function Index({ allPosts }: { allPosts: Post[] }) {
+export default function Index({ allPosts } ) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [filteredPosts, setFilteredPosts] = useState<Post[]>(allPosts);
+  const [filteredPosts, setFilteredPosts] = useState(allPosts);
   const [filteredCategory, setFilteredCategory] = useState("all"); // Define filteredCategory state
   const pageSize = 10; // Number of posts per page
   const [searchTerm, setSearchTerm] = useState("");
