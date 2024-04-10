@@ -12,7 +12,14 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  categories,
+  handleCategoryClick
 }) {
+ 
+   const maxCharacters = 200;
+const maxLines = 2; // Maximum number of lines for the title
+  // Trim the excerpt to the maximum number of characters
+  const trimmedExcerpt = excerpt.length > maxCharacters ? `${excerpt.substring(0, maxCharacters)}...` : excerpt;
   return (
             <MotionBTTContainer className={""} transition={{ delay: 0.7, duration: 0.5 }}>
     <div className="bg-pastel sm:grid-cols-2 md:h-[780px] sm:drop-shadow-xl sm:m-2 sm:p-3 md:m-0 md:p-5">
@@ -22,7 +29,18 @@ export default function PostPreview({
           <CoverImage title={title} coverImage={coverImage} slug={slug} />
         )}
       </div>
-      <h3 className="text-base md:text-3xl mb-3 font-semibold md:font-bold">
+      <div className="flex mb-4 ">
+              {categories.map((category, index) => (
+                <button
+                  key={index}
+                   onClick={() => handleCategoryClick(category.node.name)}
+                  className="sm:text-[7px] md:text-sm sm:whitespace-nowrap  p-2 bg-orange md:hover:text-white-400 text-white md:text-gray-500 focus:outline-none mr-2"
+                >
+                  {category.node.name}
+                </button>
+              ))}
+            </div>
+      <h3 className="text-base md:text-3xl line-clamp-[2] mb-3 font-semibold md:font-bold">
         <Link
           href={`${slug}`}
           className="hover:underline"
@@ -39,8 +57,8 @@ export default function PostPreview({
         </div>
       </div>
       <div
-        className="sm:text-sm md:text-sm tracking-normal sm:font-light md:font-base leading-relaxed  mb-4 text-justify"
-        dangerouslySetInnerHTML={{ __html: excerpt }}
+        className="sm:text-sm md:text-sm tracking-normal sm:font-light md:font-base leading-relaxed overflow-hidden  mb-4 text-justify"
+        dangerouslySetInnerHTML={{ __html: trimmedExcerpt }}
       />
       {/* <Avatar author={author} /> */}
     </div>

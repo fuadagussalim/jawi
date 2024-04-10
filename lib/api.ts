@@ -322,13 +322,11 @@ export async function getTeams() {
   );
   console.log('all team member', data?.teams)
   return data?.teams;
-}
-
-export async function getAllPostsForHome(preview) {
+}export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
     query AllPosts {
-      posts(where: { orderby: { field: DATE, order: DESC } }) {
+      posts(first: 20000, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             title
@@ -341,17 +339,17 @@ export async function getAllPostsForHome(preview) {
               }
             }
             categories {
-          edges {
-            node {
-              children {
-                nodes {
+              edges {
+                node {
+                  children {
+                    nodes {
+                      name
+                    }
+                  }
                   name
                 }
               }
-              name
             }
-          }
-        }
             author {
               node {
                 name
@@ -377,6 +375,7 @@ export async function getAllPostsForHome(preview) {
 
   return data?.posts;
 }
+
 export async function getServices(preview) {
   const data = await fetchAPI(
     `

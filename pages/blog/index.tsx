@@ -1,60 +1,196 @@
 import Head from "next/head";
-import { GetStaticProps } from "next";
+import { useState, useEffect } from "react";
 import Container from "../../components/container";
 import MoreStories from "../../components/more-stories";
 import HeroPost from "../../components/hero-post";
 import Intro from "../../components/intro";
-import Footer from "../../components/footer"
+import Footer from "../../components/footer";
 import Layout from "../../components/layout";
-import { getAllPostsForHome } from "../../lib/api";
 
-import ImageCarousel from "../../components/Carousel/ImageCarousel";
+import { getAllPostsForHome, Post } from "../../lib/api"; // Import the Post type if you have defined it
+import "./blog.style.module.css";
+import "./scroll.style.module.css";
 
+// HorizontalScrollIndicator component to display horizontal scroll indicator
 
-export default function Index({ allPosts: { edges }, preview }) {
-  const heroPost = edges[0]?.node;
-  const morePosts = edges.slice(1);
-  // console.log("cukk", morePosts[0].node.categories.edges[0].node.children.nodes[0].name);
+// HorizontalScrollIndicator component to display horizontal scroll indicator
+
+export default function Index({ allPosts }: { allPosts: Post[] }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>(allPosts);
+  const [filteredCategory, setFilteredCategory] = useState("all"); // Define filteredCategory state
+  const pageSize = 10; // Number of posts per page
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const startIndex = (currentPage - 1) * pageSize; // Calculate the start index of the posts for the current page
+  const endIndex = currentPage * pageSize; // Calculate the end index of the posts for the current page
+  const paginatedPosts = filteredPosts.slice(startIndex, endIndex); // Get the posts for the current page
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const handleCategoryFilter = (category) => {
+    // Set the filtered category
+    setFilteredCategory(category);
+    // Filter posts based on the selected category
+    const filtered =
+      category === "all"
+        ? allPosts
+        : allPosts.filter((post) =>
+            post.categories.edges.some((edge) => edge.node.name === category)
+          );
+    setFilteredPosts(filtered);
+    setCurrentPage(1); // Reset to the first page when category changes
+  };
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setSearchTerm(value);
+    const filtered = value
+      ? allPosts.filter((post) =>
+          post.title.toLowerCase().includes(value.toLowerCase())
+        )
+      : allPosts;
+    setFilteredPosts(filtered);
+    setCurrentPage(1);
+  };
 
   return (
-    <Layout preview={preview}>
-      {/* <ClientPage>
-
-      </ClientPage> */}
+    <Layout preview={false}>
       <Head>
-        <title>{`JAWI | Javan Wildlife`}</title>
+        <title>JAWI | Javan Wildlife</title>
       </Head>
-      {/* <Container> */}
-        {/* <Intro /> */}
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.featuredImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          />
-        )}
-        <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-     
-      {/* </Container> */}
-{/* 
-      <ImageCarousel>
+  
+      {/* <div className="mt-10"> */}
 
-      </ImageCarousel> */}
-    
+      {/* </div> */}
+      {allPosts.length > 0 && (
+        <HeroPost
+          title={allPosts[0].title}
+          coverImage={allPosts[0].featuredImage}
+          date={allPosts[0].date}
+          author={allPosts[0].author}
+          slug={allPosts[0].slug}
+          excerpt={allPosts[0].excerpt}
+        />
+      )}
+      <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
+        {/* Category Navigation */}
+          
+        <div className="flex items-center justify-between mx-10 md:mx-0">
+          <h2 className="sm:my-5  text-left md:px-0 md:my-10 text-base md:text-7xl font-bold tracking-tighter">
+            More Stories
+          </h2>
+          <div className="flex w-[20px] justify-end">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="px-3 py-1 md:py-2 md:font-semibold mx-1 sm:rounded-0  focus:outline-none focus:outline-orange  bg-gray-200 text-gray-700 sm:text-xs md:text-3xl"
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+          </div>
+        </div>
+
+        <h4 className="text-xs mb-2 sm:mx-10 mx-0 font-bold">Categories: </h4>
+        <div className="flex sm:mx-10  ">
+         <div className="pl-2 droop-shadow-xl">
+  {"<<"}
+         </div>
+          <div className="sm:flex md:hidden button-container md:justify-center mx-0 pb-5 sm:px-2  overflow-x-auto">
+            <button
+              className={`px-3 drop-shawdow-xl py-1 mx-1  sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
+                filteredCategory === "all" ? "bg-gray-800 text-white" : ""
+              }`}
+              onClick={() => handleCategoryFilter("all")}
+            >
+              All
+            </button>
+            {getUniqueCategories(allPosts).map((category) => (
+              <button
+                key={category}
+                className={`px-3 drop-shawdow-xl py-1 mx-1 sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
+                  filteredCategory === category ? "bg-gray-800 text-white" : ""
+                }`}
+                onClick={() => handleCategoryFilter(category)}
+                style={{ maxWidth: "250px", whiteSpace: "nowrap" }}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+         <div className="pl-2 droop-shadow-xl">
+  {">>"}
+         </div>
+             
+        </div>
+        {/* Render paginated posts */}
+        <MoreStories
+          posts={paginatedPosts}
+          handleCategoryClick={handleCategoryFilter}
+        />
+
+        {/* Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(filteredPosts.length / pageSize)}
+          onPageChange={handlePageChange}
+        />
+      </Container>
     </Layout>
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const allPosts = await getAllPostsForHome(preview);
+// Function to get unique categories from all posts
+const getUniqueCategories = (allPosts: Post[]) => {
+  const categoriesSet = new Set<string>();
+  allPosts.forEach((post) => {
+    post.categories.edges.forEach((edge) => {
+      categoriesSet.add(edge.node.name);
+    });
+  });
+  return Array.from(categoriesSet);
+};
+
+export const getStaticProps = async () => {
+  const allPostsResponse = await getAllPostsForHome(false);
+  const allPosts = allPostsResponse?.edges?.map(({ node }) => node) || []; // Extract nodes from edges
 
   return {
-    props: { allPosts, preview },
-    revalidate: 10,
+    props: {
+      allPosts,
+    },
   };
 };
+
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (pageNumber: number) => void;
+}
+
+function Pagination({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: PaginationProps) {
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  return (
+    <div className="flex justify-center mt-4 mb-4">
+      {pageNumbers.map((pageNumber) => (
+        <button
+          key={pageNumber}
+          className={`px-3 py-1 mx-1 rounded-md ${
+            pageNumber === currentPage
+              ? "bg-gray-800 text-white"
+              : "bg-gray-200 text-gray-700"
+          }`}
+          onClick={() => onPageChange(pageNumber)}
+        >
+          {pageNumber}
+        </button>
+      ))}
+    </div>
+  );
+}
