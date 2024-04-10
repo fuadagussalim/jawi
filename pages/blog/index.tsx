@@ -7,7 +7,7 @@ import Intro from "../../components/intro";
 import Footer from "../../components/footer";
 import Layout from "../../components/layout";
 
-import { getAllPostsForHome, } from "../../lib/api"; // Import the Post type if you have defined it
+import { getAllPostsForHome } from "../../lib/api"; // Import the Post type if you have defined it
 import "./blog.style.module.css";
 import "./scroll.style.module.css";
 
@@ -15,7 +15,7 @@ import "./scroll.style.module.css";
 
 // HorizontalScrollIndicator component to display horizontal scroll indicator
 
-export default function Index({ allPosts } ) {
+export default function Index({ allPosts }: { allPosts }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredPosts, setFilteredPosts] = useState(allPosts);
   const [filteredCategory, setFilteredCategory] = useState("all"); // Define filteredCategory state
@@ -142,7 +142,7 @@ export default function Index({ allPosts } ) {
 }
 
 // Function to get unique categories from all posts
-const getUniqueCategories = (allPosts: Post[]) => {
+const getUniqueCategories = (allPosts) => {
   const categoriesSet = new Set<string>();
   allPosts.forEach((post) => {
     post.categories.edges.forEach((edge) => {
