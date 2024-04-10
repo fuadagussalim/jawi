@@ -2,7 +2,7 @@ import PostPreview from "./post-preview";
 import PostPreview3 from "./post-preview-3";
 import React from "react";
 
-export default function MoreStories({ posts, handleCategoryClick  }) {
+export default function MoreStories({ posts,  handleCategoryClick = () => {} }) {
   //   const handleCategoryClick = (category) => {
   //   // Implement logic to filter posts based on category
   //   console.log(`Filter posts by category: ${category}`);
