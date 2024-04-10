@@ -77,29 +77,28 @@ export default function Index({ allPosts }: { allPosts }) {
       <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
         {/* Category Navigation */}
           
-        <div className="flex items-center justify-between mx-10 md:mx-0">
-          <h2 className="sm:my-5  text-left md:px-0 md:my-10 text-base md:text-7xl font-bold tracking-tighter">
+        <div className="grid grid-cols-2   items-center  mx-10 md:mx-0">
+          <h2 className="grid sm col-span-2 mx-auto md:mx-0 md:col-span-1 sm:my-5  text-left md:px-0 md:my-10 text-xl md:text-7xl font-bold tracking-tighter">
             More Stories
           </h2>
-          <div className="flex w-[20px] justify-end">
+          <div className="grid sm:col-span-2 md:col-span-1 w-full ">
             <input
               type="text"
               placeholder="Search..."
-              className="px-3 py-1 md:py-2 md:font-semibold mx-1 sm:rounded-0  focus:outline-none focus:outline-orange  bg-gray-200 text-gray-700 sm:text-xs md:text-3xl"
+              className="px-3 md:px-5 py-4 md:py-3 md:font-semibold mx-1 sm:rounded-0  focus:outline-none focus:outline-orange  bg-gray-200 text-gray-700 sm:text-xs md:text-3xl"
               value={searchTerm}
               onChange={handleSearch}
             />
           </div>
         </div>
 
-        <h4 className="text-xs mb-2 sm:mx-10 mx-0 font-bold">Categories: </h4>
-        <div className="flex sm:mx-10  ">
-         <div className="pl-2 droop-shadow-xl">
-  {"<<"}
+        <div className="flex sm:mx-10 md:mx-0  ">
+ 
+        <h4 className="text-xs md:text-xl mb-2 sm:mx-2 sm:mt-5 md:mx-0  font-bold">Categories: </h4>
          </div>
-          <div className="sm:flex md:hidden button-container md:justify-center mx-0 pb-5 sm:px-2  overflow-x-auto">
+          <div className="button-container sm:mx-10 md:mx-0 md:justify-center items-center mx-0 pb-5 sm:px-2  ">
             <button
-              className={`px-3 drop-shawdow-xl py-1 mx-1  sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
+              className={`px-3 drop-shawdow-xl py-1 mx-1 my-2  sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
                 filteredCategory === "all" ? "bg-gray-800 text-white" : ""
               }`}
               onClick={() => handleCategoryFilter("all")}
@@ -109,7 +108,7 @@ export default function Index({ allPosts }: { allPosts }) {
             {getUniqueCategories(allPosts).map((category) => (
               <button
                 key={category}
-                className={`px-3 drop-shawdow-xl py-1 mx-1 sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
+                className={`px-3 drop-shawdow-xl py-1 mx-1 my-2 sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
                   filteredCategory === category ? "bg-gray-800 text-white" : ""
                 }`}
                 onClick={() => handleCategoryFilter(category)}
@@ -120,10 +119,10 @@ export default function Index({ allPosts }: { allPosts }) {
             ))}
           </div>
          <div className="pl-2 droop-shadow-xl">
-  {">>"}
+
          </div>
              
-        </div>
+    
         {/* Render paginated posts */}
         <MoreStories
           posts={paginatedPosts}
