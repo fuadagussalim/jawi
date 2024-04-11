@@ -68,15 +68,15 @@ export default function Index({ page ,teams}) {
   }
 
   const { front, content } = node;
-
+ console.log("isi content: ", content)
   return (
     <Layout preview={false}>
       <OtherpageBanner image={front?.banner?.node?.sourceUrl ?? "/hero.jpg"} maintext={front?.judul ?? "About"} subtext={front?.subjudul ?? "Kenali lebih dalam tentang kami"} />
-      <PostBody content={content ?? "Tidak dapat memperoleh data :("} />
-    <Timeline/>
+      <AboutBody content={content ?? "Tidak dapat memperoleh data :("} members={members} />
+    {/* <Timeline/> */}
 
    
-     <Team memberData={members}/>
+     
     </Layout>
   );
 }

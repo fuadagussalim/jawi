@@ -310,6 +310,46 @@ export async function getGalleryFront() {
   
 }
 
+export async function getContactFront() {
+  const data = await fetchAPI(`
+  query contact {
+  pages(where: {title: "contact-us"}) {
+    edges {
+      node {
+        contact {
+          alamat
+          email
+          telepon
+        }
+        front {
+          banner {
+            node {
+              sourceUrl
+            }
+          }
+          judul
+          subjudul
+        }
+      }
+    }
+  }
+}
+  `);
+  console.log('fungsi terpanggil, data:', data);
+
+  if (data?.pages.edges[0]?.node?.front) {
+    // console.log(data.pages.edges[0].node.portofoliosFront)
+    console.log('api services front' ,data.pages.edges[0]);
+    return data.pages.edges[0];
+  } else {
+    return null;
+
+  }
+
+  
+  
+}
+
 
 
 

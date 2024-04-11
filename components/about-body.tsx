@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./post-body.module.css";
 import ImageWithWidth from "./ImageWithWidth";
-
-export default function AboutBody({ content }) {
+import Team from "./Team/Team";
+export default function AboutBody({ content, members }) {
   // Add this CSS to your stylesheet
   const figureStyles = {
     width: "100%",
@@ -18,11 +18,16 @@ export default function AboutBody({ content }) {
   // );
 
   return (
-    <div className=" p-10 mx-auto text-justify">
+      <div className=" md:p-10 mx-auto text-justify  md:px-48 lg:px-60 2xl:px-80">
+      <div  className={`${styles.content} shadow-xl`}>
+
       <div
-        className={`${styles.content} md:px-20`}
+        className={`${styles.content}  px-10`}
         dangerouslySetInnerHTML={{ __html: content }}
-      />
+        />
+    <Team   memberData={members}/>
     </div>
+        </div>
+   
   );
 }

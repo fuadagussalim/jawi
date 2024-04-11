@@ -91,12 +91,12 @@ export function NavigationMenuCustom() {
           <NavigationMenuContent>
             <ul className={"bg-white p-5  pr-10 trackin-wide font-light  w-[170px]  font-bold text-sm  "}
             >
-              <li className ="m-2 tracking-wide ml-3 font-NORMAL hover:text-orange">
+              {/* <li className ="m-2 tracking-wide ml-3 font-NORMAL hover:text-orange">
                 <Link href="/about#programs">
                   PROGRAM
                 </Link>
                 
-              </li>
+              </li> */}
               <li className ="m-2 tracking-wide ml-3 font-NORMAL hover:text-orange">
                 <Link href="/about#our-story">
                   OUR STORY

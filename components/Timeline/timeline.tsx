@@ -8,7 +8,7 @@ const Timeline = () => {
   <h1 id="programs" className='md:pt-28 text-gray-900 text-4xl font-bold mb-8 text-center mx-auto'>Programs</h1>
                                   <MotionBTTContainer className={""} transition={{ delay: 0.2, duration: 0.5 }}>
 
- <div  className="flex items-center justify-center bg-white px-6 md:px-60">
+ <div  className="flex items-center justify-center bg-white px-6 md:px-48 lg:px-80">
   <div className="space-y-6 border-l-2 border-dashed">
     <div className="relative w-full">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="absolute -top-0.5 z-10 -ml-3.5 h-7 w-7 rounded-full text-blue-500">

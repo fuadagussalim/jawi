@@ -26,7 +26,7 @@ export default function PostBody({ content }) {
 
   return (
     <div className=" md:p-10 mx-auto text-justify">
-      <div  className={`${styles.content} md:px-48 lg:px-80 `}>
+      <div  className={`${styles.content} md:px-48 lg:px-60 2xl:px-80 `}>
 
       <div
         className={`${styles.content} shadow-xl p-10`}
