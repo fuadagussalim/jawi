@@ -12,7 +12,7 @@ export const AboutOverview = ()=>{
                           <h3 className="text-black sm:text-sm md:text-3xl sm:text-center sm:px-auto text-justify md:text-left mb-3 sm:font-bold md:font-bold sm:font-bold my-0">
                             ABOUT JAWI
                           </h3>
-                          <p className="text-black sm:text-xs md:text-xl font-postbody md:text-base md:w-full mx-auto  text-justify hover:text-black-200 max-w-xs sm:max-w-full">
+                          <p className="text-black sm:text-xs  font-postbody md:text-base md:w-full mx-auto  text-justify hover:text-black-200 max-w-xs sm:max-w-full">
                             {" "}
                             Organisasi non-profit di bidang konservasi sumber
                             daya alam ingin membangkitkan kembali budaya hidup
