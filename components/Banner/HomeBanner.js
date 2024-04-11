@@ -48,7 +48,7 @@ export const HomeBanner = ({
 
       <div className=" md:pt-0 page-banner--image relative m-0 p-0">
         <div
-          className={`absolute  lg:block z-20 stroke-black items-start  sm:top-1/5 w-full text-center sm:mt-5  text-white md:top-1/3  text-${align}  `}
+          className={`absolute  lg:block z-20 stroke-black items-start  sm:top-1/5 w-full text-center sm:mt-5  text-white md:top-1/4 xl:top-1/3  text-${align}  `}
         >
           <div className="w-full grid grid-cols-1 ">
             <PageTitle
@@ -98,7 +98,7 @@ export const HomeBanner = ({
           >
             Read More
           </Link>
-          <div className="grid md:grid-cols-1 w-full hidden lg:block md:mt-10 lg:mt-10 xl:mt-40 mx-auto col-span-1 md:w-1/2 row-span-1 z-25">
+          <div className="grid md:grid-cols-1 w-full hidden lg:block md:mt-10 lg:mt-20 xl:mt-40 mx-auto col-span-1 md:w-1/2 row-span-1 z-25">
             <div className="items-bottom">
               <p className="text-white grid font-thin text-xl  h-full col-span-1 items-end flex items-center">
                 Social Media
