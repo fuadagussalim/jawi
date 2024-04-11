@@ -81,31 +81,31 @@ export default function Index({ page ,teams}) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({
-  params,
-  preview = false,
-  previewData,
-}) => {
-  // const data = await getPostAndMorePosts(params?.slug, preview, previewData);
-  // console.log('params itu apa',params)
-  // console.log('data post itu apa',data.post)
-  const slug = typeof params?.slug === 'string' ? params.slug : '';
-  const data = await getPageBySlug(slug);
-  const teams = await getTeams();
+// export const getStaticProps: GetStaticProps = async ({
+//   params,
+//   preview = false,
+//   previewData,
+// }) => {
+//   // const data = await getPostAndMorePosts(params?.slug, preview, previewData);
+//   // console.log('params itu apa',params)
+//   // console.log('data post itu apa',data.post)
+//   const slug = typeof params?.slug === 'string' ? params.slug : '';
+//   const data = await getPageBySlug(slug);
+//   const teams = await getTeams();
 
-  console.log('slug', slug)
-  console.log('data halaman',data.edges)
-  console.log('Teams',teams.edges)
-  return {
-    props: {
+//   console.log('slug', slug)
+//   console.log('data halaman',data.edges)
+//   console.log('Teams',teams.edges)
+//   return {
+//     props: {
     
-      page: data?.edges[0]??[],
-      teams: teams?.edges??[]
+//       page: data?.edges[0]??[],
+//       teams: teams?.edges??[]
       
-    },
-    revalidate: 10,
-  };
-};
+//     },
+//     revalidate: 10,
+//   };
+// };
 
 // export const getStaticPaths: GetStaticPaths = async () => {
 //   const allPages = await getAllPagesWithSlug();
@@ -123,3 +123,30 @@ export const getStaticProps: GetStaticProps = async ({
 //     fallback: true,
 //   };
 // };
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    // const allPhotos = await getAllPhotos();
+    const data = await getPageBySlug('about');
+    const teamsData = await getTeams();
+    const teams = teamsData?.edges??[]
+    const page = data?.edges[0]??[];
+
+    // console.log('frontnya gallery',galleryFront)
+    return {
+      props: {
+         page,
+         teams },
+      revalidate: 10,
+    };
+  } catch (error) {
+    console.error("Error in getStaticProps: ", error.message);
+    return {
+      props: {
+        allPhotos: null,
+        galleryFront: null
+      },
+    };
+  }
+};

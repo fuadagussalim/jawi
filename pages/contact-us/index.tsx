@@ -36,7 +36,9 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
         <Head>
           <title>{`JAWI's Portofolio | Javan Wildlife Institute`}</title>
         </Head>
-        <OtherpageBanner maintext={portofolioFrontData.front.judul}
+        <OtherpageBanner
+        maintextclass="mb-2 md:mb-10"
+        maintext={portofolioFrontData.front.judul}
           image={portofolioFrontData.front.banner.node.sourceUrl}
           subtext={portofolioFrontData.front.subjudul} />
         {/* <Container> */}

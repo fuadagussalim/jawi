@@ -64,13 +64,16 @@ export default function Index({
       return (
         <Layout preview={preview}>
           <OtherpageBanner
+          className=""
+          subtextclass=""
+          maintextclass="mb-2 md:mb-10"
             maintext={front.judul}
             subtext={front.subjudul}
             image={front.banner.node.sourceUrl}
           />
           <div>
             <div>
-              <h1 className="text-orange font-bold sm:text-xl md:text-4xl sm:uppercase md:capitalize drop-shadow-sm sm:mt-5 sm:mb-2 md:my-10 mx-auto text-center">
+              <h1 className="text-orange font-bold sm:text-xl md:text-4xl sm:uppercase  drop-shadow-sm sm:mt-5 sm:mb-2 md:my-10 md:mb-0 md:uppercase mx-auto text-center">
                 {node.servicesFront.heading ?? "Services"}
               </h1>
               <p className="text-base md:text-xl mx-auto w-full px-10 md:px-28 sm:mt-3 md:mt-5 text-justify md:text-center font-postbody">

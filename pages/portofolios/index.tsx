@@ -35,7 +35,9 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
         <Head>
           <title>{`JAWI's Portofolio | Javan Wildlife INstititu`}</title>
         </Head>
-        <OtherpageBanner maintext={portofolioFrontData.front.judul}
+        <OtherpageBanner
+        maintextclass="mb-2 md:mb-10"
+        maintext={portofolioFrontData.front.judul}
           image={portofolioFrontData.front.banner.node.sourceUrl}
           subtext={portofolioFrontData.front.subjudul} />
         {/* <Container> */}
@@ -54,8 +56,8 @@ export default function Index({ allPortofolios: { edges }, portoFolioFront: { no
           />
         )} */}
         <br></br>
-        <br></br>
-        <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
+        <br className="hidden md:block"></br>
+        <Container classNames="tracking-widest lg:px-10 mx-auto items-center w-full">
           {morePosts.length > 0 && <MorePortofolios posts={morePosts} />}
         </Container>
 

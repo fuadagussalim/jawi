@@ -17,7 +17,7 @@ export default function PortofolioPreview({
     <div className="bg-white sm:grid-cols-2 sm:drop-shadow-xl sm:m-2 sm:p-3 md:m-0 md:p-5">
       <div className="">
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} imageClassName="sm:h-[300px]" showOverlay={true} slug={slug} />
+          <CoverImage title={title} coverImage={coverImage} imageClassName="sm:h-[250px] w-full md:h-[400px]" showOverlay={true} slug={slug} />
         )}
       </div>
       {/* <h3 className="text-base md:text-3xl mb-3 font-semibold md:font-bold">

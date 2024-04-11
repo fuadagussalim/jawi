@@ -263,7 +263,9 @@ export default function Index({ allPhotos: { edges }, galleryFront: {node} }) {
           <title>{`JAWI's Gallery | Javan Wildlife INstititu`}</title>
            <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" />
         </Head>
+    
         <Layout preview={false}>
+          
           <OtherpageBanner image={front.banner.node.sourceUrl??"./hero.jpg"} maintext={front.judul} subtext={front.subjudul}/>
           <div className="pt-2 md:pt-5">
             {/* {images.map((image) => (
@@ -284,14 +286,25 @@ export default function Index({ allPhotos: { edges }, galleryFront: {node} }) {
             />
             ;
           </div>
-          <Modal isOpen={isOpen} onClose={onClose}>
-            <ModalContent className="bg-white shadow-xl">
+          <Modal
+           backdrop="opaque" 
+        isOpen={isOpen} 
+        
+        classNames={{
+          backdrop: "bg-gradient-to-t from-black-900 to-black-900/10 backdrop-opacity-2"
+        }}
+           onClose={onClose}>
+            <ModalContent className="bg-white w-full shadow-xl">
+         
+
               <ModalHeader className="capitalize">
                 {selectedImage?.title}
               </ModalHeader>
               <ModalBody>
                 {selectedImage && (
                   <div className="grid grid-cols-1 md:grid-cols-4">
+
+                    
                     <div className="grid col-span-1">
 
                     <Image

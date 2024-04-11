@@ -15,8 +15,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 grid-rows-5">
         
           <div className="grid container col-span-1 ml-10 row-span-6">
-          <div className='inline-block content-top  lg:w-8/12 pr-2'>
-          <p className="text-white text-[11px] font-semibold my-0">
+          <div className='inline-block content-top  lg:w-8/12 2xl:w-8/12 pr-2'>
+          <p className="text-white text-[11px] 2xl:text-[12px] font-semibold my-0">
 
 © {year} <span className="text-black">-</span> Lembaga Jawi Indonesia - Javan Wildlife Institute (JAWI)
 <span className="font-normal">
@@ -617,7 +617,7 @@ Indonesia </p>
         </div>
 
         <div>
-        <p className="text-white text-left grid col-span-3 font-thin align-middle w-[150px] pt-0 pl-5 text-xs ">
+        <p className="text-white text-left grid col-span-3 font-thin align-middle w-[150px] pt-0 pl-5 lg:text-xs ">
               © {year} Lembaga Jawi 
               <br/>
               Indonesia - 
