@@ -1,6 +1,7 @@
 import { CardGroup, Card, CardBody } from "../Card"
 import YouTubePlayer from "../YoutubePlayer"
 import { Button } from "@nextui-org/react"
+import Link from "next/link"
 export const SiteProjectOverview = ()=>{
     return (
         <>
@@ -28,12 +29,12 @@ export const SiteProjectOverview = ()=>{
                           {/* <Button className="self-auto bg-black text-white rounded-5 items-center mt-5"> */}
                           {/* <Link type="button" className="text-white  font-bold bg-black px-10 py-3 hover:bg-[#faa51a] hover:text-black " href="/detail/site-projek" passHref={true}> */}
 
-                          <Button
-                            className="bg-orange font-semibold py-2 text-black hover:text-white sm:w-28 md:w-[150px]"
+                          <Link
+                            className="bg-orange font-semibold px-auto text-center py-2 text-black hover:text-white sm:w-28 md:w-[150px]"
                             href="/portofolio/site-project-hutan-kemuning-temanggung-jawa-tengah"
                           >
                             Read More
-                          </Button>
+                          </Link>
                         </div>
                       </div>
                     </CardBody>

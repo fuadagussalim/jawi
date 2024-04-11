@@ -275,26 +275,7 @@ export default function Index({ allPhotos: { edges }, galleryFront: {node} }) {
              
               </Link>
             ))} */}
-            {/* <PhotoAlbum
-            layout="columns"
-            photos={images}
-  renderRowContainer={({ rowContainerProps, children }) => (
-    <div {...rowContainerProps}>
-      {children?.map((child, index) => (
-        <div key={index} className="relative">
-          {child}
-          <div className="absolute bottom-0 left-0 z-10 w-full text-center text-white bg-black bg-opacity-50 py-2">
-            <h1 className="text-xl font-bold">{images[index].title}</h1>
-          </div>
-        </div>
-      ))}
-    </div>
-  )}
-  // Other props...
-/> */}
-
             <PhotoAlbum
-              
               layout="rows"
               photos={images}
               onClick={({ index }) => {
