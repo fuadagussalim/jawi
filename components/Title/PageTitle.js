@@ -11,6 +11,7 @@ const titleVariant = {
     small: "text-xl lg:text-3xl font-semibold",
     xsmall: "text-lg lg:text-2xl font-semibold",
     homexsmall: "sm:text-xs  md:text-sm lg:text-[20px] font-light",
+    homesmall: "sm:text-base  md:text-xl ",
     xxsmall: "text-m lg:text-xl font-semibold",
 };
 export const PageTitle = ({ children, className = "", type = "" }) => {

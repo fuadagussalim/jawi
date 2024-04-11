@@ -81,7 +81,7 @@ export default function ClientPage({ allPosts }) {
             href="#about-jawi"
             image="/DEF_7207.JPG"
             maintext="Javan Wildlife Institute"
-            subtextclass="sm:w-8/12 md:w-full md:text-normal lg:text-sm"
+            subtextclass="sm:w-10/12 md:w-full font-normal lg:text-xl"
             subtext="Menjadi mitra rujukan sains konservasi di Indonesia"
             align="left"
           />

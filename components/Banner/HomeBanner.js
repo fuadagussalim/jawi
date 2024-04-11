@@ -61,8 +61,8 @@ export const HomeBanner = ({
               </MotionBTTContainer>
             </PageTitle>
             <PageTitle
-              className={`${subtextclass} grid  lg:w-full sm:mx-auto  relative drop-shadow-xl capitalize font-light mt-0`}
-              type="homexsmall"
+              className={`${subtextclass} grid  lg:w-full sm:mx-auto   relative drop-shadow-xl capitalize font-light mt-0`}
+              type="homesmall"
             >
               <MotionBTTContainer
                 className={`${motionClass} ${visibility}`}
