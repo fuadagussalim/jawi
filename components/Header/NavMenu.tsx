@@ -79,24 +79,31 @@ export function NavigationMenuCustom() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <Link href="/gallery" legacyBehavior passHref>
+            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:text-orange`}>
+              GALLERY
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
 
           <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} hover:text-orange`}>ABOUT</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className={"bg-white p-5  pr-10 trackin-wide font-light  w-[170px]  font-bold text-sm  "}
             >
-              <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
+              <li className ="m-2 tracking-wide ml-3 font-NORMAL hover:text-orange">
                 <Link href="/about#programs">
                   PROGRAM
                 </Link>
                 
               </li>
-              <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
+              <li className ="m-2 tracking-wide ml-3 font-NORMAL hover:text-orange">
                 <Link href="/about#our-story">
                   OUR STORY
                 </Link>
                 
               </li>
-              <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
+              <li className ="m-2 tracking-wide ml-3 font-NORMAL hover:text-orange">
 
                 <Link href="/about#mission">
                   MISSION
@@ -104,7 +111,7 @@ export function NavigationMenuCustom() {
                 </Link>
               </li>
 
-              <li className ="m-2 tracking-wide ml-4 font-semibold hover:text-orange">
+              <li className ="m-2 tracking-wide ml-3 font-NORMAL hover:text-orange">
 
                 <Link href="/about#team">
                   TEAM

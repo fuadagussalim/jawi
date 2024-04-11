@@ -1,16 +1,20 @@
-'use client'
+"use client";
 
 // import React, { useEffect, useState } from 'react';
-import { NavLink } from '../Nav/NavLinks'
-import { Image } from "@nextui-org/react"
-import { Button } from '../Button';
-import { MotionBTTContainer } from '../Motion';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
-import Sidebar from '../Nav/SideBar';
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
-
+import { NavLink } from "../Nav/NavLinks";
+import { Image } from "@nextui-org/react";
+import { Button } from "../Button";
+import { MotionBTTContainer } from "../Motion";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import Sidebar from "../Nav/SideBar";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from "@nextui-org/react";
 
 import {
   NavigationMenu,
@@ -21,18 +25,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from "../Nav/NavMenuDesktop"
+} from "../Nav/NavMenuDesktop";
 
+import styles from "../Headermobile/style.module.scss";
+import { useEffect, useState } from "react";
+import Nav from "../Headermobile/nav";
+import { AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
-
-import styles from '../Headermobile/style.module.scss'
-import { useEffect, useState } from 'react';
-import Nav from '../Headermobile/nav';
-import { AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-
-import HeaderMobile from "../Headermobile/nav"
-import { NavigationMenuCustom} from './NavMenu.tsx';
+import HeaderMobile from "../Headermobile/nav";
+import { NavigationMenuCustom } from "./NavMenu.tsx";
 export const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [transparent, setTransparent] = useState(true);
@@ -43,16 +45,14 @@ export const Header = () => {
 
   const [isActive, setIsActive] = useState(false);
 
-
   const pathname = usePathname();
 
   useEffect(() => {
-    if (isActive) setIsActive(false)
-  }, [pathname])
+    if (isActive) setIsActive(false);
+  }, [pathname]);
   // const toggle = () => {
   //   setIsOpen(!isOpen);
   // };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,10 +60,10 @@ export const Header = () => {
       setScrollPosition(position);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -81,11 +81,14 @@ export const Header = () => {
   // console.log(transparent)
 
   return (
-
-    <header >
-      <div className={`header  hidden md:block shadow-lg pb-20 md:pb-0 ${transparent ? 'md:transparent text-white' : 'solid text-black'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-
-
+    <header>
+      <div
+        className={`header  hidden md:block shadow-lg pb-20 md:pb-0 ${
+          transparent ? "md:transparent text-white" : "solid text-black"
+        }`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {/* <nav className="hidden justify-evenly  md:flex items-baseline h-16 mb-5">
           <div className='inline-block content-center bg-white mr-10'>
          
@@ -152,33 +155,30 @@ export const Header = () => {
 
         </nav> */}
 
-
-<nav className="hidden justify-evenly  md:flex items-baseline h-16 mb-5">
-   <div className='inline-block content-center bg-white mr-10'>
-         
-         <Image
-           src={"/LOGO-JAWI-PNG.png"}
-           width={300}
-           height={300}
-           objectFit="cover"
-           alt="Process Banner 1"
-           className="inline-block drop-shadow-m w-[90px] p-4 pt-4 offset-t-10 offset-y-0 offset-x-8  blur-16 bg-white"
-         />
-       </div>
-<ul className={"navbar-nav  font-bold text-sm "}
-          >
-        
+        <nav className="hidden justify-evenly  md:flex items-baseline h-16 mb-5">
+          <div className="inline-block content-center bg-white mr-10">
+            <Image
+              src={"/LOGO-JAWI-PNG.png"}
+              width={300}
+              height={300}
+              objectFit="cover"
+              alt="Process Banner 1"
+              className="inline-block drop-shadow-m w-[90px] p-4 pt-4 offset-t-10 offset-y-0 offset-x-8  blur-16 bg-white"
+            />
+          </div>
+          <ul className={"navbar-nav  font-bold text-sm "}>
             <li>
-
-<NavigationMenuCustom/>
+              <NavigationMenuCustom />
             </li>
-            </ul>
-            <Button variant='orange' href="/blog" className='button w-25 text-sm bg-orange text-black hover:text-white rounded-none'>
+          </ul>
+          <Button
+            variant="orange"
+            href="/blog"
+            className="button w-25 text-sm bg-orange text-black hover:text-white rounded-none"
+          >
             MAGAZINE
           </Button>
-            </nav>
-
-
+        </nav>
 
         {/* <nav className='flex bg-transparent md:hidden '>
         <NavBar toggle={toggle}/>
@@ -198,46 +198,47 @@ export const Header = () => {
           <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
 
         </div> */}
-
-
-
-
       </div>
 
-
-      <div className='md:hidden '>
-
+      <div className="md:hidden ">
         <div className={`${styles.main} `}>
-
-          <div className={`${styles.header} bg-white w-full flex ${isActive ? "shadow-sm" : "shadow-xl "}`}>
-            <div className='my-auto px-auto ml-5 w-full'>
-
+          <div
+            className={`${styles.header} bg-white w-full flex ${
+              isActive ? "shadow-sm" : "shadow-xl "
+            }`}
+          >
+            <div className="my-auto px-auto ml-5 w-full">
               <div className="my-auto mx-auto">
                 <Image
                   src="/Logo Jawi PNG.png"
                   height={60}
                   width={60}
                   alt=""
-                  className="flex col-span-1 py-auto -drop-shadow-xl  mx-auto">
-
-                </Image>
+                  className="flex col-span-1 py-auto -drop-shadow-xl  mx-auto"
+                ></Image>
               </div>
             </div>
-            <div onClick={() => { setIsActive(!isActive) }} className={styles.button}>
-              <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""} ${transparent ? styles.burgerTransparent : ''}`}></div>
+            <div
+              onClick={() => {
+                setIsActive(!isActive);
+              }}
+              className={styles.button}
+            >
+              <div
+                className={`${styles.burger} ${
+                  isActive ? styles.burgerActive : ""
+                } ${transparent ? styles.burgerTransparent : ""}`}
+              ></div>
             </div>
           </div>
-
-        </div >
+        </div>
         <AnimatePresence mode="wait">
           {isActive && <Sidebar isOpen={isActive} />}
         </AnimatePresence>
-
       </div>
 
       {/* {menuOpen && <Menu />} */}
     </header>
-
   );
 };
 
@@ -251,7 +252,6 @@ export const Header = () => {
 //     <NavLink href="/">
 //       HOME
 //     </NavLink>
-
 
 //     <NavLink href="/services">
 //       SERVICES
@@ -274,10 +274,5 @@ export const Header = () => {
 //       CONTACT US
 //     </NavLink>
 
-
 //   </ul>)
 // }
-
-
-
-

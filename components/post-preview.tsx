@@ -22,11 +22,11 @@ const maxLines = 2; // Maximum number of lines for the title
   const trimmedExcerpt = excerpt.length > maxCharacters ? `${excerpt.substring(0, maxCharacters)}...` : excerpt;
   return (
             <MotionBTTContainer className={""} transition={{ delay: 0.7, duration: 0.5 }}>
-    <div className="bg-pastel sm:grid-cols-2 md:h-[780px] sm:drop-shadow-xl sm:m-2 sm:p-3 md:m-0 md:p-5">
+    <div className="bg-pastel sm:grid-cols-2 md:h-[690px] sm:drop-shadow-xl sm:m-2 sm:p-3 md:m-0 md:p-5">
 
       <div className="mb-5">
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} imageClassName="sm:h-[200px] md:h-[500px] " slug={slug} />
+          <CoverImage title={title} coverImage={coverImage} imageClassName="sm:h-[200px] md:h-[400px] " slug={slug} />
         )}
       </div>
       <div className="flex mb-4 ">

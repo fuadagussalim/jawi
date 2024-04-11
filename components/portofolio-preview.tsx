@@ -1,6 +1,7 @@
 
 import CoverImage from "./cover-image";
 import Link from "next/link";
+import { MotionBTTContainer } from "./Motion";
 
 
 export default function PortofolioPreview({
@@ -12,6 +13,7 @@ export default function PortofolioPreview({
   slug,
 }) {
   return (
+     <MotionBTTContainer className={""} transition={{ delay: 0.7, duration: 0.5 }}>
     <div className="bg-white sm:grid-cols-2 sm:drop-shadow-xl sm:m-2 sm:p-3 md:m-0 md:p-5">
       <div className="">
         {coverImage && (
@@ -42,5 +44,6 @@ export default function PortofolioPreview({
      
       {/* <Avatar author={author} /> */}
     </div>
+    </MotionBTTContainer>
   );
 }
