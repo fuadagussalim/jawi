@@ -63,18 +63,27 @@ export async function getAllPostsWithSlug() {
 }
 export async function getAllPhotos() {
   const data = await fetchAPI(`
-  query Gallery {
-    gallery {
-      edges {
-        node {
-          content
-          galleryAttachment {
-            caption
-            socialMedia
-            socialMediaPlatform
-            image {
-              node {
-                sourceUrl
+ query gallery {
+  gallery {
+    edges {
+      node {
+        content
+        title
+        slug
+        galleryAttachment {
+          caption
+          facebook
+          instagram
+          linkedin
+          x
+          youtube
+          size
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                height
+                width
               }
             }
           }
@@ -82,6 +91,7 @@ export async function getAllPhotos() {
       }
     }
   }
+}
   `);
 
   return data?.gallery;
