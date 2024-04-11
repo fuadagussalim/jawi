@@ -21,7 +21,7 @@ export default function PostPreviewTiga({
       <MotionBTTContainer className={""} transition={{ delay: 0.7, duration: 0.5 }}>
         <div className="grid col-span1 bg-black">
           {coverImage && (
-            <CoverImage title={title} coverImage={coverImage} slug={slug} />
+            <CoverImage title={title} coverImage={coverImage} imageClassName="sm:h-[200px] md:h-[500px] " slug={slug} />
           )}
           
         </div>

@@ -16,19 +16,19 @@ export default function PortofolioPreviewTiga({
       <div className="grid col-span1 bg-black">
 
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} titleClassname="text-center text-justify" />
+          <CoverImage title={title} coverImage={coverImage} slug={slug} showOverlay={true} titleClassname="text-center text-justify" />
         )}
 
       </div>
       <div className="grid  col-span-1  p-10 md:p-20 bg-black text-white">
         <div className="my-auto">
-        <h3 className="sm:text-sm md:text-3xl font-semibold mb-3">
+        {/* <h3 className="sm:text-sm md:text-3xl font-semibold mb-3">
           <Link
             href={`${slug}`}
             className="hover:underline"
             dangerouslySetInnerHTML={{ __html: title }}
             ></Link>
-        </h3>
+        </h3> */}
         {/* <div className="flex sm:block md:inline sm:font-base md:font-bold sm:text-xs md:text-xs mb-4 inline">
           <Date dateString={date} />
           <div className="flex md:inline">
@@ -43,7 +43,15 @@ export default function PortofolioPreviewTiga({
           dangerouslySetInnerHTML={{ __html: excerpt }}
           />
       </div>
-          </div>
+       <button
+       
+       className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+       type="button">
+      <Link href={`${slug}`}>
+      Read More
+        </Link>
+    </button>
+      </div>
 
     </div>
    

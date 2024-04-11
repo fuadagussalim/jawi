@@ -31,7 +31,7 @@ export default function MorePortofolios({ posts }) {
 
 
           <React.Fragment key={node.slug}>
-          {(index+1) % 3 === 0 ? (
+          {/* {(index+1) % 3 === 0 ? (
             // {console.log(index)};
             <PortofolioPreview3
               title={node.title}
@@ -41,7 +41,7 @@ export default function MorePortofolios({ posts }) {
               slug={`/portofolio/${node.slug}`}
               excerpt={node.excerpt}
             />
-          ) : (
+          ) : ( */}
             <PortofolioPreview
               title={node.title}
               coverImage={node.featuredImage?.node.sourceUrl}
@@ -50,7 +50,7 @@ export default function MorePortofolios({ posts }) {
               slug={`/portofolio/${node.slug}`}
               excerpt={node.excerpt}
             />
-          )}
+          {/* )} */}
         </React.Fragment>
           // <PostPreview
           //      key={node.slug}

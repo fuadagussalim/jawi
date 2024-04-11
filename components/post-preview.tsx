@@ -26,7 +26,7 @@ const maxLines = 2; // Maximum number of lines for the title
 
       <div className="mb-5">
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} />
+          <CoverImage title={title} coverImage={coverImage} imageClassName="sm:h-[200px] md:h-[500px] " slug={slug} />
         )}
       </div>
       <div className="flex mb-4 ">
