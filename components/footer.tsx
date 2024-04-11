@@ -15,10 +15,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 grid-rows-5">
         
           <div className="grid container col-span-1 ml-10 row-span-6">
-          <div className='inline-block content-top w-7/12 pr-2'>
+          <div className='inline-block content-top  lg:w-8/12 pr-2'>
           <p className="text-white text-[11px] font-semibold my-0">
 
-© {year} Lembaga Jawi Indonesia - Javan Wildlife Institute (JAWI)
+© {year} <span className="text-black">-</span> Lembaga Jawi Indonesia - Javan Wildlife Institute (JAWI)
 <span className="font-normal">
   {" "}
   <Link
@@ -79,7 +79,7 @@ Indonesia</p>
           <div className="grid md:grid-cols-2 w-autoh-1/3 col-span-1 mb-4 row-span-1">
             <div className="items-bottom">
 
-            <p className="text-white grid font-thin text-xl  mr-auto h-full col-span-1 items-end flex items-center">Social Media</p>
+            <p className="text-white grid font-thin text-xl ml-5  mr-auto h-full col-span-1 items-end flex items-center">Social Media</p>
             </div>
             <div className="grid justify-evenly col-span-1 gap-2 w-auto  md:items-center md:grid-cols-4">
               
@@ -145,7 +145,7 @@ Indonesia</p>
             </div>
             <div className="grid justify-evenly col-span-1 gap-2 w-auto  md:items-center md:grid-cols-1 ">
               
-            <div className="grid grid-cols-7 gap-0 my-auto p-0 mx-0 col-span-1">
+            <div className="grid grid-cols-7 gap-0 my-auto p-0 mx-0 md:mr-10 col-span-1">
           <Image
                 className="flex col-span-1  mx-0 mt-2"
                 src="/Logo ISI Baru.png"

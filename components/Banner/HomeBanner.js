@@ -92,13 +92,13 @@ export const HomeBanner = ({
 
           <Link
             type="button"
-            className="text-white hidden md:block font-bold bg-black w-[200px] mx-auto px-10 py-3 hover:bg-white hover:text-black"
+            className="text-white hidden md:block font-bold bg-black  w-[200px] mx-auto px-10 py-3 hover:bg-white hover:text-black"
             href={href}
             passHref={true}
           >
             Read More
           </Link>
-          <div className="grid md:grid-cols-1 w-full hidden lg:block md:mt-10 lg:mt-20 xl:mt-40 mx-auto col-span-1 md:w-1/2 row-span-1 z-25">
+          <div className="grid md:grid-cols-1 w-full hidden lg:block xl:mt-20 2xl:mt-40    mx-auto col-span-1 md:w-1/2 row-span-1 z-25">
             <div className="items-bottom">
               <p className="text-white grid font-thin text-xl  h-full col-span-1 items-end flex items-center">
                 Social Media
