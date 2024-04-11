@@ -273,6 +273,43 @@ export async function getServicesFront() {
   
 }
 
+export async function getGalleryFront() {
+  const data = await fetchAPI(`
+  query gallery {
+    pages(where: {title: "gallery"}) {
+      edges {
+        node {
+          front {
+            banner {
+              node {
+                sourceUrl
+              }
+            }
+            judul
+            subjudul
+          }
+          content
+          
+        }
+      }
+    }
+  }
+  `);
+  console.log('fungsi terpanggil, data:', data);
+
+  if (data?.pages.edges[0]?.node?.front) {
+    // console.log(data.pages.edges[0].node.portofoliosFront)
+    console.log('api services front' ,data.pages.edges[0]);
+    return data.pages.edges[0];
+  } else {
+    return null;
+
+  }
+
+  
+  
+}
+
 
 
 

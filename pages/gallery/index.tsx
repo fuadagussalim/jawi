@@ -188,6 +188,7 @@ import {
   getAllPortofoliosWithSlug,
   getPortofolioFront,
   getAllPhotos,
+  getGalleryFront,
 } from "../../lib/api";
 import TabMenu from "../../components/Tab/TabMenu";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
@@ -207,7 +208,10 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
-export default function Index({ allPhotos: { edges } }) {
+import { Gallery } from "next-gallery";
+export default function Index({ allPhotos: { edges }, galleryFront: {node} }) {
+  
+  const front = node.front;
   if (edges) {
     interface Image {
       index: number;
@@ -260,7 +264,8 @@ export default function Index({ allPhotos: { edges } }) {
            <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" />
         </Head>
         <Layout preview={false}>
-          <div className="mt-20 pt-1">
+          <OtherpageBanner image={front.banner.node.sourceUrl??"./hero.jpg"} maintext={front.judul} subtext={front.subjudul}/>
+          <div className="pt-2 md:pt-5">
             {/* {images.map((image) => (
               <Link
                 key={image.index}
@@ -270,7 +275,26 @@ export default function Index({ allPhotos: { edges } }) {
              
               </Link>
             ))} */}
+            {/* <PhotoAlbum
+            layout="columns"
+            photos={images}
+  renderRowContainer={({ rowContainerProps, children }) => (
+    <div {...rowContainerProps}>
+      {children?.map((child, index) => (
+        <div key={index} className="relative">
+          {child}
+          <div className="absolute bottom-0 left-0 z-10 w-full text-center text-white bg-black bg-opacity-50 py-2">
+            <h1 className="text-xl font-bold">{images[index].title}</h1>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+  // Other props...
+/> */}
+
             <PhotoAlbum
+              
               layout="rows"
               photos={images}
               onClick={({ index }) => {
@@ -387,8 +411,10 @@ export default function Index({ allPhotos: { edges } }) {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const allPhotos = await getAllPhotos();
+    const galleryFront = await getGalleryFront();
+    console.log('frontnya gallery',galleryFront)
     return {
-      props: { allPhotos },
+      props: { allPhotos, galleryFront },
       revalidate: 10,
     };
   } catch (error) {
@@ -396,6 +422,7 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       props: {
         allPhotos: null,
+        galleryFront: null
       },
     };
   }
