@@ -27,7 +27,7 @@ export default function Layout({ preview, className = "", children }) {
           /> */}
       <Header />
       <main
-        className={`main relative overflow-hidden scroll-smooth  ${
+        className={`main relative scroll-smooth  ${
           className && className
         }`}
       >

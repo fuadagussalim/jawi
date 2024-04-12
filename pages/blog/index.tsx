@@ -10,6 +10,7 @@ import Layout from "../../components/layout";
 import { getAllPostsForHome } from "../../lib/api"; // Import the Post type if you have defined it
 import "./blog.style.module.css";
 import "./scroll.style.module.css";
+import { Rubric } from "../../components/Nav/Rubric";
 
 // HorizontalScrollIndicator component to display horizontal scroll indicator
 
@@ -54,13 +55,31 @@ export default function Index({ allPosts }: { allPosts }) {
     setFilteredPosts(filtered);
     setCurrentPage(1);
   };
+  const [isSticky, setIsSticky] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 672) {
+        setIsSticky(true);
+        console.log("nilai scroll y", window.scrollY);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  console.log("sticky", isSticky);
   return (
     <Layout preview={false}>
       <Head>
         <title>JAWI | Javan Wildlife</title>
       </Head>
-  
+
       {/* <div className="mt-10"> */}
 
       {/* </div> */}
@@ -74,67 +93,71 @@ export default function Index({ allPosts }: { allPosts }) {
           excerpt={allPosts[0].excerpt}
         />
       )}
-      <Container classNames="tracking-widest lg:px-40 mx-auto items-center w-full">
+      <Container classNames="tracking-widest  mx-auto items-center w-full">
         {/* Category Navigation */}
-          
-        <div className="grid grid-cols-2   items-center  mx-10 md:mx-0">
+
+        <div className="grid grid-cols-2 bg-white items-center  sticky z-30 lg:px-40 top-8 pb-2 md:top-14 mx-10 md:mx-0">
           <h2 className="grid sm col-span-2 mx-auto md:mx-0 md:col-span-1 sm:my-5  text-left md:px-0 md:my-10 text-xl md:text-7xl font-bold tracking-tighter">
             More Stories
           </h2>
-          <div className="grid sm:col-span-2 md:col-span-1 w-full ">
+          <div className={`grid sm:col-span-2 md:col-span-1 sticky top-20 w-full  ${""}`}>
             <input
               type="text"
               placeholder="Search..."
-              className="px-3 md:px-5 py-4 md:py-3 md:font-semibold mx-1 sm:rounded-0  focus:outline-none focus:outline-orange  bg-gray-200 text-gray-700 sm:text-xs md:text-3xl"
+              className="px-3 md:px-5 py-4 md:py-3 md:font-semibold mx-1 sm:rounded-0 focus:outline-none focus:outline-orange bg-gray-200 text-gray-700 sm:text-xs md:text-3xl"
               value={searchTerm}
               onChange={handleSearch}
             />
           </div>
         </div>
+        <div>
 
-        <div className="flex sm:mx-10 md:mx-0  ">
- 
-        <h4 className="text-xs md:text-xl mb-2 sm:mx-2 sm:mt-5 md:mx-0  font-bold">Categories: </h4>
-         </div>
-          <div className="button-container sm:mx-10 md:mx-0 md:justify-center items-center mx-0 pb-5 sm:px-2  ">
-            <button
-              className={`px-3 drop-shawdow-xl py-1 mx-1 my-2  sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
-                filteredCategory === "all" ? "bg-gray-800 text-white" : ""
-              }`}
-              onClick={() => handleCategoryFilter("all")}
+
+        <div className="flex sm:mx-10 md:mx-0 lg:px-40 ">
+          <h4 className="text-xs md:text-xl mb-2 sm:mx-2 sm:mt-5 md:mx-0  font-bold">
+            Categories:{" "}
+          </h4>
+        </div>
+        <div className="lg:px-40 button-container sm:mx-10 md:mx-0 md:justify-center items-center mx-0 pb-5 sm:px-2  ">
+          <button
+            className={`px-3 drop-shawdow-xl py-1 mx-1 my-2  sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
+              filteredCategory === "all" ? "bg-gray-800 text-white" : ""
+            }`}
+            onClick={() => handleCategoryFilter("all")}
             >
-              All
+            All
+          </button>
+          {getUniqueCategories(allPosts).map((category) => (
+            <button
+            key={category}
+            className={`px-3 drop-shawdow-xl py-1 mx-1 my-2 sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
+              filteredCategory === category ? "bg-gray-800 text-white" : ""
+            }`}
+            onClick={() => handleCategoryFilter(category)}
+            style={{ maxWidth: "250px", whiteSpace: "nowrap" }}
+            >
+              {category}
             </button>
-            {getUniqueCategories(allPosts).map((category) => (
-              <button
-                key={category}
-                className={`px-3 drop-shawdow-xl py-1 mx-1 my-2 sm:rounded-0 md:rounded-md bg-gray-200 text-gray-700 sm:text-xs md:text-xl ${
-                  filteredCategory === category ? "bg-gray-800 text-white" : ""
-                }`}
-                onClick={() => handleCategoryFilter(category)}
-                style={{ maxWidth: "250px", whiteSpace: "nowrap" }}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-         <div className="pl-2 droop-shadow-xl">
+          ))}
+        </div>
+        <div className="pl-2 drop-shadow-xl lg:px-40 ">
+          <Rubric/>
 
-         </div>
-             
-    
+
         {/* Render paginated posts */}
         <MoreStories
           posts={paginatedPosts}
           handleCategoryClick={handleCategoryFilter}
-        />
+          />
+          </div>
 
         {/* Pagination */}
         <Pagination
           currentPage={currentPage}
           totalPages={Math.ceil(filteredPosts.length / pageSize)}
           onPageChange={handlePageChange}
-        />
+          />
+</div>
       </Container>
     </Layout>
   );
@@ -154,7 +177,7 @@ const getUniqueCategories = (allPosts) => {
 export const getStaticProps = async () => {
   const allPostsResponse = await getAllPostsForHome(false);
   const allPosts = allPostsResponse?.edges?.map(({ node }) => node) || []; // Extract nodes from edges
-
+  
   return {
     props: {
       allPosts,

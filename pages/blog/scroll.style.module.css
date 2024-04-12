@@ -2,7 +2,7 @@
 .scroll-indicator-container {
   position: relative;
   width: 100%;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 .scroll-indicator {

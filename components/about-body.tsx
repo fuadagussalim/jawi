@@ -47,10 +47,10 @@ export default function AboutBody({ content, members }) {
       </em></p>
   </div>
 </blockquote> */}
-        </div>
     <Team   memberData={members}/>
-    </div>
         </div>
+    </div>
+        // </div>
    
   );
 }

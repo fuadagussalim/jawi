@@ -13,3 +13,19 @@
 .button-container::-webkit-scrollbar {
   display: none; /* hide scrollbar for Chrome/Safari */
 }
+
+.sticky {
+  position: fixed;
+  top: 10px; /* Adjust this value according to your needs */
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white; /* Ensure background color matches your container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure that when the search bar is sticky, it maintains its width */
+#searchBar.sticky {
+  width: calc(100% - 2 * 1rem); /* Adjust the padding value (1rem) */
+}
+

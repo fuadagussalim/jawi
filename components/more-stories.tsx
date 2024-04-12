@@ -10,7 +10,7 @@ export default function MoreStories({ posts, handleCategoryClick  }) {
   console.log("post cukk", posts);
 
   return (
-    <section className="mb-20 sm:p-10 md:p-0 sm:py-0">
+    <section className="mb-20  sm:p-10 md:p-0 sm:py-0">
     
       <div className="grid grid-cols-1 gap-y-2 md:grid-cols-2 md:gap-x-5 gap-y-10 md:gap-y-10">
         {posts.map((node, index) => (
