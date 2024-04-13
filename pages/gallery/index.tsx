@@ -190,6 +190,8 @@ import {
   getAllPhotos,
   getGalleryFront,
 } from "../../lib/api";
+
+import DOMPurify from "isomorphic-dompurify";
 import TabMenu from "../../components/Tab/TabMenu";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
 import { OtherpageBanner } from "../../components/Banner";
@@ -216,7 +218,7 @@ export default function Index({ allPhotos: { edges }, galleryFront: {node} }) {
     interface Image {
       index: number;
       title: string;
-      content: Element;
+      content: string | TrustedHTML;
       src: string;
       width: number;
       height: number;
@@ -227,12 +229,12 @@ export default function Index({ allPhotos: { edges }, galleryFront: {node} }) {
       facebook: string;
     }
     const images: Image[] = [];
-
     edges.map((node, index) => {
+      const sanitizedContent = DOMPurify.sanitize(node.node.content);
       images.push({
         index: index,
         title: node.node.title,
-        content: node.node.content,
+        content: sanitizedContent,
         src: node.node.galleryAttachment.image.node.sourceUrl,
         width: node.node.galleryAttachment.image.node.mediaDetails.width,
         height: node.node.galleryAttachment.image.node.mediaDetails.height,
@@ -319,6 +321,7 @@ export default function Index({ allPhotos: { edges }, galleryFront: {node} }) {
 
                     <div className="text-xs text-justify"
                       dangerouslySetInnerHTML={{
+                        
                         __html: selectedImage.content,
                       }}
                       />
