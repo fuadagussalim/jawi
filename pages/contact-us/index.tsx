@@ -6,7 +6,7 @@ import HeroPortofolio from "../../components/hero-portofolio";
 import Intro from "../../components/intro";
 import Footer from "../../components/footer";
 import Layout from "../../components/layout";
-import { getAllPortofoliosWithSlug, getPortofolioFront } from "../../lib/api";
+import { getAllPortofoliosWithSlug,  getContactFront } from "../../lib/api";
 import TabMenu from "../../components/Tab/TabMenu";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
 import { OtherpageBanner } from "../../components/Banner";
@@ -16,15 +16,15 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Index({
   allPortofolios: { edges },
-  portoFolioFront: { node },
+  contactFront: { node },
 }) {
   console.log("porto edge", node);
 
   if (edges && node) {
     // console.log(edges);
-    const portofolioFrontData = node;
-    console.log("data constanta", portofolioFrontData);
-    console.log("banner:", portofolioFrontData.front.banner.node.sourceUrl);
+    const contactFrontdata = node;
+    console.log("data constanta", contactFrontdata);
+    console.log("banner:", contactFrontdata.front.banner.node.sourceUrl);
 
     const heroPortofolio = edges[0]?.node;
     // console.log(heroPortofolio);
@@ -41,9 +41,9 @@ export default function Index({
         </Head>
         <OtherpageBanner
           maintextclass="mb-2 md:mb-10"
-          maintext={portofolioFrontData.front.judul}
-          image={portofolioFrontData.front.banner.node.sourceUrl}
-          subtext={portofolioFrontData.front.subjudul}
+          maintext={contactFrontdata.front.judul}
+          image={contactFrontdata.front.banner.node.sourceUrl}
+          subtext={contactFrontdata.front.subjudul}
         />
         {/* <Container> */}
 
@@ -67,7 +67,7 @@ export default function Index({
         <ImageCarousel>
   
         </ImageCarousel> */}
-        <CardGroup className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 m-20 mx-auto  p-10 sm:p-20 pt-0 mt-5 w-full">
+        <CardGroup className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 m-20 mx-auto  p-10 sm:px-20 py-10 mt-5 w-full">
           {/* <Maps address={"Jawi (Javan Wildlife Institute"} /> */}
           <div>
             <div className="align-top">
@@ -81,8 +81,7 @@ export default function Index({
               </div>
 
               <p className="text-black text-lg md:pr-10 my-0 md:tracking-wide   text-justify">
-                Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota
-                Yogyakarta, Daerah Istimewa Yogyakarta
+                {contactFrontdata.contact.alamat}
               </p>
               <br />
               <br />
@@ -96,7 +95,7 @@ export default function Index({
                       <p>:</p>
                     </td>
                     <td>
-                      <p>(0274) 5023685</p>
+                      <p> {contactFrontdata.contact.telepon}</p>
                     </td>
                   </tr>
                   <tr>
@@ -107,13 +106,13 @@ export default function Index({
                       <p>:</p>
                     </td>
                     <td>
-                      <p>javanwildlife@gmail.com</p>
+                      <p> {contactFrontdata.contact.email}</p>
                     </td>
                   </tr>
                 </tbody>
               </table>
 
-              <div className="grid  col-span-1 gap-0 w-1/2 items-left mt-3  md:items-center grid-cols-4">
+              <div className="grid  col-span-1 gap-0 w-full md:w-1/2 items-left mt-3  md:items-center grid-cols-4">
                 <Link
                   className="grid col-span-1 drop-shadow-xl  my-5"
                   href={"https://web.facebook.com/jawi.or.id/?_rdc=1&_rdr"}
@@ -194,23 +193,23 @@ export default function Index({
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const allPortofolios = await getAllPortofoliosWithSlug();
-    const portoFolioFront = await getPortofolioFront();
-    console.log(portoFolioFront);
+    const contactFront = await getContactFront() ;
+    console.log(contactFront);
 
     return {
-      props: { allPortofolios, portoFolioFront },
+      props: { allPortofolios, contactFront },
       revalidate: 10,
     };
   } catch (error) {
     console.error("Error in getStaticProps: ", error.message);
   }
   // console.log('all porto: ', allPortofolios);
-  // console.log('front porto: ', portoFolioFront);
+  // console.log('front porto: ', contactFront);
 
   return {
     props: {
       allPortofolios: null,
-      portoFolioFront: null,
+      contactFront: null,
     },
   };
 };

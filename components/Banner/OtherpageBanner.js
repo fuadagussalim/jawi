@@ -59,7 +59,7 @@ export const OtherpageBanner = ({
             </PageTitle>
 
             <PageTitle
-              className={`${subtextclass}  relative w-full mx-auto px-auto text-center  font-extrabold mt-0`}
+              className={`${subtextclass}  relative w-full mx-auto px-auto text-center sm:px-5  font-extrabold mt-0`}
               type="xsmall"
             >
               <MotionBTTContainer
