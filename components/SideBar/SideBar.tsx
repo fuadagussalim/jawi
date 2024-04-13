@@ -10,13 +10,13 @@ const Sidebar = ({
     return (
         <>
             <div
-                className="sidebar-container fixed w-full h-full overflow-hidden justify-center bg-white grid pt-[120px] left-0 z-26"
+                className="sidebar-container fixed w-full h-full overflow-hidden justify-center bg-white grid pt-[120px] left-0 z-[1000]"
                 style={{
                     opacity: `${isOpen ? "1" : "0"}`,
                     top: ` ${isOpen ? "0" : "-100%"}`,
                 }}
             >
-                <button className="absolute z-23 bg-white right-0 p-5" onClick={toggle}>
+                <button className="absolute z-[100] bg-white right-0 p-5" onClick={toggle}>
                     {/* Close icon */}
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
                         <path

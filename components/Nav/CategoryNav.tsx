@@ -12,10 +12,10 @@ const CategoryNav = ({
     <Navbar
       fluid
       rounded={false}
-      className={`${className} bg-white  dark:bg-gray-900`}
+      className={`${className} md:my-0 bg-white  dark:bg-gray-900`}
     >
      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
-  <Navbar.Brand href="">
+  <Navbar.Brand className="md:hidden" href="">
     <span className="self-center whitespace-nowrap md:mb-5 text-xl font-semibold dark:text-white">
       Categories
     </span>
@@ -79,7 +79,7 @@ const CategoryNav = ({
         )
       )}
   </Navbar.Collapse>
-</div>;
+</div>
 
     </Navbar>
   );

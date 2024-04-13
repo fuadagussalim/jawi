@@ -139,12 +139,12 @@ export default function Index({
       <Container classNames="tracking-widest  mx-auto items-center w-full">
         {/* Category Navigation */}
 
-        <div className="grid grid-cols-2 bg-white items-center  sticky z-30 lg:px-40 top-8 pb-2 md:top-14 mx-10 md:mx-0">
-          <h2 className="grid sm col-span-2 mx-auto md:mx-0 md:col-span-1 sm:my-5  text-left md:px-0 md:my-10 text-xl md:text-7xl font-bold tracking-tighter">
+        <div className="grid grid-cols-2 bg-white items-center  sticky z-20 lg:px-40 top-8 pb-2 md:top-14 mx-10 md:mx-0">
+          <h2 className="grid sm col-span-2 mx-auto md:mx-0 md:col-span-1 sm:my-5 md:my-0 md:mb-0  text-left md:px-0  text-xl md:text-7xl font-bold tracking-tighter">
             More Stories
           </h2>
           <div
-            className={`grid sm:col-span-2 md:col-span-1 sticky top-20 w-full  ${""}`}
+            className={`grid sm:col-span-2 md:col-span-1  md:my-10 sticky top-20 w-full  ${""}`}
           >
             <input
               type="text"
