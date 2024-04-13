@@ -1,25 +1,25 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Head from "next/head";
+// import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
-import Container from "../../components/container";
+// import Container from "../../components/container";
 import AboutBody from "../../components/about-body";
-import MoreStories from "../../components/more-stories";
-import Header from "../../components/header";
-import PostHeader from "../../components/post-header";
-import SectionSeparator from "../../components/section-separator";
+// import MoreStories from "../../components/more-stories";
+// import Header from "../../components/header";
+// import PostHeader from "../../components/post-header";
+// import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
-import PostTitle from "../../components/post-title";
-import Tags from "../../components/tags";
-import { getAllPagesWithSlug, getPortofolioBySlug, getPostAndMorePosts, getPageBySlug, getTeams } from "../../lib/api";
-import { CMS_NAME } from "../../lib/constants";
-import Footer from "../../components/footer";
-import PortofolioHeader from "../../components/portofolio-header";
+// import PostTitle from "../../components/post-title";
+// import Tags from "../../components/tags";
+import {getPageBySlug, getTeams } from "../../lib/api";
+// import { CMS_NAME } from "../../lib/constants";
+// import Footer from "../../components/footer";
+// import PortofolioHeader from "../../components/portofolio-header";
 import { OtherpageBanner } from "../../components/Banner";
-import { title } from "process";
-import PostBody from "../../components/post-body";
-import Timeline from "../../components/Timeline/timeline";
-import Team from "../../components/Team/Team";
+// import { title } from "process";
+// import PostBody from "../../components/post-body";
+// import Timeline from "../../components/Timeline/timeline";
+// import Team from "../../components/Team/Team";
 export default function Index({ page ,teams}) {
   const { node } = page ?? {};
   const edges = teams ?? {};
@@ -72,7 +72,7 @@ export default function Index({ page ,teams}) {
   return (
     <Layout preview={false}>
       <OtherpageBanner image={front?.banner?.node?.sourceUrl ?? "/hero.jpg"} maintext={front?.judul ?? "About"} subtext={front?.subjudul ?? "Kenali lebih dalam tentang kami"} />
-      <AboutBody content={content ?? "Tidak dapat memperoleh data :("} members={members} />
+      <AboutBody content={content ?? "Tidak dapat memperoleh data :("} members={members??"Tidak dapat memperoleh data"} />
     {/* <Timeline/> */}
 
    
@@ -80,49 +80,6 @@ export default function Index({ page ,teams}) {
     </Layout>
   );
 }
-
-// export const getStaticProps: GetStaticProps = async ({
-//   params,
-//   preview = false,
-//   previewData,
-// }) => {
-//   // const data = await getPostAndMorePosts(params?.slug, preview, previewData);
-//   // console.log('params itu apa',params)
-//   // console.log('data post itu apa',data.post)
-//   const slug = typeof params?.slug === 'string' ? params.slug : '';
-//   const data = await getPageBySlug(slug);
-//   const teams = await getTeams();
-
-//   console.log('slug', slug)
-//   console.log('data halaman',data.edges)
-//   console.log('Teams',teams.edges)
-//   return {
-//     props: {
-    
-//       page: data?.edges[0]??[],
-//       teams: teams?.edges??[]
-      
-//     },
-//     revalidate: 10,
-//   };
-// };
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const allPages = await getAllPagesWithSlug();
-//   // console.log('halaman by slug', allPages.edges[0]);
-
-//   const paths = allPages.edges.map(({ node }) => (
-    
-//     {
-    
-//     params: { slug: node?.slug??'about' },
-//   }));
-
-//   return {
-
-//     fallback: true,
-//   };
-// };
 
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -144,8 +101,8 @@ export const getStaticProps: GetStaticProps = async () => {
     console.error("Error in getStaticProps: ", error.message);
     return {
       props: {
-        allPhotos: null,
-        galleryFront: null
+        page: null,
+        teams: null
       },
     };
   }
