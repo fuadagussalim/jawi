@@ -547,7 +547,7 @@ Indonesia</p>
          
           </div> */}
       <div className="grid grid-cols-5">
-            <div className="grid col-span-2">
+            {/* <div className="grid col-span-2">
               <div>
               <Image
             src={"/LOGO-JAWI-PNG.png"}
@@ -558,9 +558,9 @@ Indonesia</p>
             className="inline-block drop-shadow-m w-[128px] p-2 ml-5 pt-6 offset-t-10 offset-y-0 offset-x-8  blur-16 bg-white"
             />
             </div>
-            </div>
+            </div> */}
       
-            <div className="grid col-span-3 mr-5">
+            <div className="grid col-span-5 mx-5 my-5">
             <div className="grid grid-cols-2 mt-1 w-auto h-1/3 col-span-1 mb-4 pt-2 row-span-5">
               <p className="text-white grid font-light align-middle text-xs mr-auto h-full col-span-1 flex items-center">Social Media: </p>
             <div className="grid  col-span-1 gap-1 w-auto   items-end grid-cols-4">
@@ -617,12 +617,12 @@ Indonesia </p>
         </div>
 
         <div>
-        <p className="text-white text-left grid col-span-3 font-thin align-middle w-[150px] pt-0 pl-5 lg:text-xs ">
+        <p className="text-white text-center grid col-span-5 font-thin align-middle text-xs pt-0  lg:text-xs ">
               © {year} Lembaga Jawi 
-              <br/>
+          
               Indonesia - 
               Javan Wildlife 
-              <br/>
+             
               Institute (JAWI)
         </p>
         </div>
