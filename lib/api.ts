@@ -433,6 +433,7 @@ export async function getTeams() {
                       name
                     }
                   }
+                  
                   name
                 }
               }
@@ -488,6 +489,31 @@ export async function getServices(preview) {
   );
 
   return data?.posts;
+}
+
+export async function getCategories() {
+  const data = await fetchAPI(
+    `
+    query AllCategory {
+  categories(first: 10000) {
+    edges {
+      node {
+      	name
+        children {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+  `
+    
+  );
+
+  console.log("tess",data?.categories)
+  return data?.categories;
 }
 
 export async function getPostAndMorePosts(slug, preview, previewData) {

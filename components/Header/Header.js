@@ -35,6 +35,7 @@ import { usePathname } from "next/navigation";
 
 import HeaderMobile from "../Headermobile/nav";
 import { NavigationMenuCustom } from "./NavMenu.tsx";
+import { SimpleNav } from "./SimpleNav";
 export const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [transparent, setTransparent] = useState(true);
@@ -166,6 +167,7 @@ export const Header = () => {
               className="inline-block drop-shadow-m w-[90px] p-4 pt-4 offset-t-10 offset-y-0 offset-x-8  blur-16 bg-white"
             />
           </div>
+            {/* <SimpleNav/> */}
           <ul className={"navbar-nav  font-bold text-sm "}>
             <li>
               <NavigationMenuCustom />
@@ -175,9 +177,11 @@ export const Header = () => {
             variant="orange"
             href="/blog"
             className="button w-25 text-sm bg-orange text-black hover:text-white rounded-none"
-          >
+            >
             MAGAZINE
           </Button>
+                 
+
         </nav>
 
         {/* <nav className='flex bg-transparent md:hidden '>
