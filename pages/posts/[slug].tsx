@@ -11,10 +11,11 @@ import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
 import PostTitle from "../../components/post-title";
 import Tags from "../../components/tags";
-import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
+import { getAllPostsWithSlug, getPostAndMorePosts, getPostIdBySlug } from "../../lib/api";
 import { CMS_NAME } from "../../lib/constants";
 import Footer from "../../components/footer";
-export default function Post({ post, posts, preview }) {
+import CommentForm from "../../components/comments/CommentForm";
+export default function Post({ post, posts, preview, postId }) {
   const router = useRouter();
   const morePosts = posts?.edges;
   console.log('post itu apa',post)
@@ -31,6 +32,7 @@ export default function Post({ post, posts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
+       
             <article>
               <Head>
                 <title>
@@ -56,6 +58,7 @@ export default function Post({ post, posts, preview }) {
 
             <SectionSeparator />
             {/* {morePosts.length > 0 && <MoreStories posts={morePosts}  />} */}
+            <CommentForm postId={postId}/>
           </>
         )}
       {/* </Container> */}
@@ -70,14 +73,16 @@ export const getStaticProps: GetStaticProps = async ({
   previewData,
 }) => {
   const data = await getPostAndMorePosts(params?.slug, preview, previewData);
+  const postId = await getPostIdBySlug(params?.slug)
   // console.log('params itu apa',params)
-  // console.log('data post itu apa',data.post)
+  console.log('data post Id itu apa',postId)
 
   return {
     props: {
       preview,
       post: data.post,
       posts: data.posts,
+      postId: postId
     },
     revalidate: 10,
   };
@@ -85,6 +90,7 @@ export const getStaticProps: GetStaticProps = async ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allPosts = await getAllPostsWithSlug();
+  
 
   return {
     paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],

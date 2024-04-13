@@ -6,53 +6,67 @@ import { SectionContainer } from "../Section";
 import { PageTitle } from "../Title";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import Typewriter from 'typewriter-effect';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLeaf, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
+import Typewriter from "typewriter-effect";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLeaf,
+  faSquarePollVertical,
+} from "@fortawesome/free-solid-svg-icons";
 
 import clsx from "clsx";
 // import { useWindowSize } from '../../utils/hooks/useWindowSize';
 import Link from "next/link";
-import Video from 'next-video';
+import Video from "next-video";
 import { CardBody, CardGroup, CardHeader, Card } from "../Card";
-export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", maintext, subtext, typeAnimation = true, type="xheavy", maintextclass = "", subtextclass = "", align = "center", motionClass = "", className="" }) => {
+export const OtherpageBanner = ({
+  href = "",
+  image = "/portofolio-default.jpg",
+  maintext,
+  subtext,
+  typeAnimation = true,
+  type = "xheavy",
+  maintextclass = "",
+  subtextclass = "",
+  align = "center",
+  motionClass = "",
+  className = "",
+}) => {
+  var visibility = "awal";
+  if (typeAnimation) {
+    visibility = "visible";
+  } else {
+    visibility = "hidden";
+  }
+  console.log(visibility);
+  console.log(typeAnimation);
 
-    var visibility = 'awal'
-    if (typeAnimation) {
-        visibility = 'visible'
+  return (
+    <SectionContainer className={`${className} page-banner--container m-0 p-0`}>
+      {/* <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}> */}
 
-    } else {
-        visibility = 'hidden'
-    }
-    console.log(visibility);
-    console.log(typeAnimation);
+      <div className="page-banner--image relative m-0 p-0">
+        <div
+          className={`absolute  md:block lg:block z-20 stroke-black  text-white sm:top-1/4 md:top-1/4 left-0 right-0 text-${align} w-full md:p-10  px-0 mx-0 `}
+        >
+          <div className="w-full">
+            <PageTitle
+              className={`${maintextclass} relative sm:text-4xl font-extrabold w-full`}
+              type={type}
+            >
+              <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}>
+                {maintext}
+              </MotionBTTContainer>
+            </PageTitle>
 
-
-
-
-
-
-    return (
-
-        <SectionContainer className={`${className} page-banner--container m-0 p-0`}>
-
-            {/* <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}> */}
-
-            <div className="page-banner--image relative m-0 p-0">
-                <div className={`absolute  md:block lg:block z-20 stroke-black  text-white sm:top-1/4 md:top-1/4 left-0 right-0 text-${align} w-full md:p-10  px-0 mx-0 `}>
-                    <div className="w-full">
-                        <PageTitle className={`${maintextclass} relative sm:text-4xl font-extrabold w-full`} type={type}>
-                            <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}>
-
-                                {maintext}
-
-                            </MotionBTTContainer>
-                        </PageTitle>
-
-                        <PageTitle className={`${subtextclass}  relative w-full mx-auto px-auto text-center  font-extrabold mt-0`} type="xsmall">
-
-                            <MotionBTTContainer className={`${motionClass} ${visibility}`} transition={{ delay: 0.7, duration: 0.5 }}>
-                                {/* <Typewriter 
+            <PageTitle
+              className={`${subtextclass}  relative w-full mx-auto px-auto text-center  font-extrabold mt-0`}
+              type="xsmall"
+            >
+              <MotionBTTContainer
+                className={`${motionClass} ${visibility}`}
+                transition={{ delay: 0.7, duration: 0.5 }}
+              >
+                {/* <Typewriter 
                                         onInit={(typewriter) => {
                                             if (typeAnimation){
                                                 typewriter.typeString(`${subtext}`)
@@ -66,12 +80,11 @@ export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", 
                                            
                                         }}
                                     /> */}
-                                {subtext}
-
-                            </MotionBTTContainer>
-                        </PageTitle>
-                    </div>
-{/* 
+                {subtext}
+              </MotionBTTContainer>
+            </PageTitle>
+          </div>
+          {/* 
                     <Link type="button" className="text-white font-bold bg-black px-10 py-3 hover:bg-white hover:text-black" href={href} passHref={true}>
 
 
@@ -79,24 +92,22 @@ export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", 
 
 
                     </Link> */}
+        </div>
+        <div>
+          <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+          <Image
+            className="object-cover sm:h-[200px] lg:h-[400px] m-0 p-0 bg-blend-darken"
+            src={image}
+            width={4000}
+            height={3000}
+            alt="Page Banner"
+            objectFit="cover"
+            // className="m-0 p-0"
+          />
+        </div>
+      </div>
 
-                </div>
-                <div>
-                    <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-                    <Image
-                        className="object-cover sm:h-[200px] lg:h-[400px] m-0 p-0 bg-blend-darken"
-                        src={image}
-                        width={4000}
-                        height={3000}
-                        alt="Page Banner"
-                        objectFit="cover"
-                    // className="m-0 p-0"
-                    />
-                </div>
-
-            </div>
-
-            {/* <CardGroup className="p-5 ">
+      {/* <CardGroup className="p-5 ">
                 <Card className="rounded-0 block-inline">
                     <CardHeader className={'font-black inline'}>
                     IDENTIFIKASI SATWA LIAR
@@ -109,20 +120,16 @@ export const OtherpageBanner = ({ href = "", image = "/portofolio-default.jpg", 
                     </CardBody>
                 </Card>
             </CardGroup> */}
-          
-            
-         
-            <SectionContainer className="page-banner--inner-container wrap wrap-px z-10">
 
-                <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
-
-                </MotionBTTContainer>
-                {/* Appear Second */}
-                <MotionBTTContainer transition={{ delay: 0.4, duration: 0.5 }}>
-
-                </MotionBTTContainer>
-
-            </SectionContainer>
-        </SectionContainer>
-    );
+      <SectionContainer className="page-banner--inner-container wrap wrap-px z-10">
+        <MotionBTTContainer
+          transition={{ delay: 0.2, duration: 0.5 }}
+        ></MotionBTTContainer>
+        {/* Appear Second */}
+        <MotionBTTContainer
+          transition={{ delay: 0.4, duration: 0.5 }}
+        ></MotionBTTContainer>
+      </SectionContainer>
+    </SectionContainer>
+  );
 };

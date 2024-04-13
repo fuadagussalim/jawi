@@ -947,3 +947,23 @@ export async function getServicePage(slug: string) {
 
   return data?.services;
 }
+
+// Function to fetch individual post ID by its slug
+export async function getPostIdBySlug(slug) {
+  const postData = await fetchAPI(
+    `
+   query postBySlug {
+  posts(where: {name: "${slug}"}) {
+    edges {
+      node {
+        postId
+      }
+    }
+  }
+}
+    `,
+    { variables: { slug } }
+  );
+
+  return postData.posts.edges[0]?.node.postId;
+}

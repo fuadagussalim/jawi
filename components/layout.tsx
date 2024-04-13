@@ -60,6 +60,8 @@ export default function Layout({ preview, className = "", children }) {
           </motion.div>
         )} */}
         <div className="h-[80px] md:hidden"></div>
+        
+    
         {children}
         {/* </motion.div> */}
       </main>

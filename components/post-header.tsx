@@ -26,7 +26,8 @@ export default function PostHeader({
         <div className="block md:hidden mb-6">
           <Avatar author={author} />
         </div> */}
-        <OtherpageBanner maintextclass="font-base pt-0" image={coverImage.node.sourceUrl} maintext={title} type='default' subtext={format(parseISO(date), "LLLL	d, yyyy")}/>
+      
+        <OtherpageBanner maintextclass="font-base sm:text-xl pt-0" subtextclass="sm:mt-0" image={coverImage.node.sourceUrl} maintext={title} type='default' subtext={format(parseISO(date), "LLLL	d, yyyy")}/>
         {/* <div className="mb-6 text-lg">
           Posted <Date dateString={date} />
           <Categories categories={categories} />
