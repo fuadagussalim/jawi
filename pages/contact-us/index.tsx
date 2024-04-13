@@ -37,7 +37,7 @@ export default function Index({
   
         </ClientPage> */}
         <Head>
-          <title>{`JAWI's Portofolio | Javan Wildlife Institute`}</title>
+          <title>{`Contact JAWI | Javan Wildlife Institute`}</title>
         </Head>
         <OtherpageBanner
           maintextclass="mb-2 md:mb-10"
