@@ -154,7 +154,7 @@ export async function getAllPagesWithSlug() {
 export async function getPortofolioFront() {
   const data = await fetchAPI(`
   query portofolioFront {
-    pages(where: {title: "portofolio"}) {
+    pages(where: {name: "portofolio"}) {
       edges {
         node {
           portofoliosFront {
@@ -236,7 +236,7 @@ export async function getPortofolioFront() {
 export async function getServicesFront() {
   const data = await fetchAPI(`
   query services {
-    pages(where: {title: "service"}) {
+    pages(where: {name: "service"}) {
       edges {
         node {
           front {
@@ -276,7 +276,7 @@ export async function getServicesFront() {
 export async function getGalleryFront() {
   const data = await fetchAPI(`
   query gallery {
-    pages(where: {title: "gallery"}) {
+    pages(where: {name: "gallery"}) {
       edges {
         node {
           front {
@@ -313,7 +313,7 @@ export async function getGalleryFront() {
 export async function getContactFront() {
   const data = await fetchAPI(`
   query contact {
-  pages(where: {title: "contact-us"}) {
+  pages(where: {name: "contact-us"}) {
     edges {
       node {
         contact {
