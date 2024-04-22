@@ -2,6 +2,7 @@
 import { CardGroup, CardBody, Card, CardHeader, CardImage } from "../Card"
 import Link from "next/link"
 export const AboutOverview = ({previewTexts})=>{
+  console.log("Preview text: ", previewTexts.previewLink1)
     return (
         <>
           <CardGroup className=" sm:grid-cols-1 md:grid-cols-2  divide-y  divide-black-100">

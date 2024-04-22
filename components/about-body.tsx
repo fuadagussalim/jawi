@@ -10,9 +10,9 @@ export default function AboutBody({ content, members }) {
   return (
     <div id="our-story" className="md:p-10 mx-auto text-justify md:px-48 lg:px-60 2xl:px-80">
       <div className={`${styles.content} shadow-xl`}>
-        <h1 className="font-bold mt-10 mb-0 mx-auto text-center w-full">
+        {/* <h1 className="font-bold mt-10 mb-0 mx-auto text-center w-full">
           Our Story
-        </h1>
+        </h1> */}
         <div
           className={`${styles.content}  px-10`}
           dangerouslySetInnerHTML={{ __html: sanitizedContent}}
