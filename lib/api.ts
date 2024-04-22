@@ -272,6 +272,207 @@ export async function getServicesFront() {
   
   
 }
+export async function getHomeFront() {
+  const data = await fetchAPI(`
+  query homeFront {
+  pages(where: {name: "beranda"}) {
+    edges {
+      node {
+        highlightPosts {
+          highlightPost {
+            edges {
+              node {
+                slug
+                ... on Portofolio {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Post {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Service {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+              }
+            }
+          }
+          highlightPost2 {
+            edges {
+              node {
+                slug
+                ... on Portofolio {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Post {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Service {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+              }
+            }
+          }
+          highlightPost3 {
+            edges {
+              node {
+                slug
+                ... on Portofolio {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Post {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Service {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+              }
+            }
+          }
+          highlightPost4 {
+            edges {
+              node {
+                slug
+                ... on Portofolio {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Post {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+                ... on Service {
+                  id
+                  title
+                  slug
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        front {
+          banner {
+            node {
+              sourceUrl
+            }
+          }
+          judul
+          subjudul
+        }
+        previewTexts {
+          mainPreview
+          mainPreviewHead
+          mainPreviewLink
+          previewHead1
+          previewLink1
+          previewText1
+          previewHead2
+          previewHead3
+          previewHead4
+          previewLink2
+          previewLink3
+          previewLink4
+          previewText2
+          previewText3
+          previewText4
+        }
+      }
+    }
+  }
+}
+  `);
+  console.log('fungsi terpanggil, data:', data);
+
+  if (data?.pages.edges[0]?.node?.front) {
+    // console.log(data.pages.edges[0].node.portofoliosFront)
+    console.log('api home front' ,data.pages.edges[0]);
+    return data.pages.edges[0];
+  } else {
+    return null;
+
+  }
+
+  
+  
+}
 
 export async function getGalleryFront() {
   const data = await fetchAPI(`

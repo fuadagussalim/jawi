@@ -42,7 +42,8 @@ import AnimatedLine from "../components/Timeline/AnimatedLine";
 import { AboutOverview } from "../components/Overview/AboutOverview";
 import { SiteProjectOverview } from "../components/Overview/SiteProjectOverview";
 
-export default function ClientPage({ allPosts }) {
+export default function ClientPage({ allPosts, node }) {
+  console.log("tes",node.highlightPosts.highlightPost.edges[0].node)
   interface CarouselPost {
     title: string;
     image: string;
@@ -79,8 +80,8 @@ export default function ClientPage({ allPosts }) {
         <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
           <HomeBanner
             href="#about-jawi"
-            image="/DEF_7207.JPG"
-            maintext="Javan Wildlife Institute"
+            image={node.front.banner.node.sourceUrl??"/DEF_7207.JPG"}
+            maintext={node.front.judul??"Javan Wildlife Institute"}
             subtextclass="sm:w-10/12 md:w-full font-normal lg:text-xl"
             subtext="Menjadi mitra rujukan sains konservasi di Indonesia"
             align="left"
@@ -91,7 +92,7 @@ export default function ClientPage({ allPosts }) {
           >
             <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
               <SectionContainer id="about-jawi" className="feature-tabs ">
-              <AboutOverview/>
+              <AboutOverview previewTexts={node.previewTexts}/>
               
               <SiteProjectOverview/>
            
@@ -108,7 +109,7 @@ export default function ClientPage({ allPosts }) {
                       </p>
                       <CardGroup className="absolute h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 my-20 mt-0 mx-auto left-0 right-0 sm:p-5  sm:w-full md:drop-shadow-none sm:drop-shadow-lg md:p-10 md:w-11/12">
                         <CardImage
-                          src="/survey-biodibersitas-crop.png"
+                          src={"/survey-biodibersitas-crop.png"}
                           className="gridcol-span-1  md:sm-0 h-[330px]"
                           imageClassName={"object-cover objet-bottom"}
                           alt={""}

@@ -9,13 +9,14 @@ import MoreStories from "../components/more-stories";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPostsForHome } from "../lib/api";
+import { getAllPostsForHome, getHomeFront } from "../lib/api";
 import { getAllPages } from "../lib/api";
 import { CMS_NAME } from "../lib/constants";
 import ClientPage from "./ClientPage";
 import ImageCarousel from "../components/Carousel/ImageCarousel";
 import Footer from "../components/footer";
-export default function Index({ allPosts: { edges }, preview, allPages: { edgesPages } }) {
+export default function Index({ allPosts: { edges }, preview, allPages: { edgesPages }, homeFront: {node}}) {
+  console.log("front",node)
 
   if (edges
     //  && edgesPages
@@ -25,7 +26,7 @@ export default function Index({ allPosts: { edges }, preview, allPages: { edgesP
     // console.log(heroPost);
     // const pages = edgesPages[0]?.node;
     return (
-      <ClientPage allPosts={morePosts}/>
+      <ClientPage allPosts={morePosts} node={node}/>
       // <div className="text-center h-[400px]">Web Sedang dalam proses Upgrade
       // <br />
       // Stay tune
@@ -47,6 +48,7 @@ export default function Index({ allPosts: { edges }, preview, allPages: { edgesP
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome(preview);
   const allPages = await getAllPages(preview);
+  const homeFront = await getHomeFront();
 
   // // If the data is not available, return an error
   // if (!allPosts || !allPages) {
@@ -59,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   // }
 
   return {
-    props: { allPosts, allPages, preview },
+      props: { allPosts, allPages, preview, homeFront},
     revalidate: 10,
   };
 };
