@@ -98,7 +98,7 @@ export const HomeBanner = ({
           >
             Read More
           </Link>
-          <div className="grid md:grid-cols-1 w-full hidden lg:block xl:mt-20 2xl:mt-40    mx-auto col-span-1 md:w-1/2 row-span-1 z-25">
+          {/* <div className="grid md:grid-cols-1 w-full hidden lg:block xl:mt-20 2xl:mt-40    mx-auto col-span-1 md:w-1/2 row-span-1 z-25">
             <div className="items-bottom">
               <p className="text-white grid font-thin text-xl  h-full col-span-1 items-end flex items-center">
                 Social Media
@@ -156,7 +156,7 @@ export const HomeBanner = ({
                 ></Image>
               </Link>
             </div>
-          </div>
+          </div> */}
 
           {/* <Button variant="black" radius="100" className="relative text-white">Read More</Button> */}
         </div>
