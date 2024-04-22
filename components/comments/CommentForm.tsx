@@ -76,7 +76,7 @@ const CommentForm = ({ postId }) => {
      {responseMessage}
      </div>
     }
-      <div className="mx-auto p-10 mb-10 gap-x-6 gap-y-8 max-w-sm mx-auto">
+      <div className="mx-auto p-10 mb-10 gap-x-6 gap-y-8 max-w-3xl mx-auto">
         <h1 className='font-bold mb-0 text-center sm:text-xl'>Comment</h1>
         <div className="sm:col-span-4">
           <label htmlFor="author" className="mt-5 block text-sm font-medium leading-6 text-gray-900">Name</label>
