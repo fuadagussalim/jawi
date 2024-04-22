@@ -59,35 +59,35 @@ export function NavigationMenuCustom() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:text-orange`}>
+            <NavigationMenuLink className={`${navigationMenuTriggerStyle()}tracking-wide hover:text-orange`}>
               HOME
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/services" legacyBehavior passHref>
-            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:text-orange`}>
-              SERVICES
+            <NavigationMenuLink className={`${navigationMenuTriggerStyle()}tracking-wide hover:text-orange`}>
+              PROGRAM
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/portofolios" legacyBehavior passHref>
-            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:text-orange`}>
+            <NavigationMenuLink className={`${navigationMenuTriggerStyle()}tracking-wide hover:text-orange`}>
               PORTOFOLIO
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/gallery" legacyBehavior passHref>
-            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:text-orange`}>
+            <NavigationMenuLink className={`${navigationMenuTriggerStyle()}tracking-wide hover:text-orange`}>
               GALLERY
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
 
-          <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} hover:text-orange`}>ABOUT</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()}tracking-wide hover:text-orange`}>ABOUT</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className={"bg-white p-5  pr-10 trackin-wide font-light  w-[170px]  font-bold text-sm  "}
             >
