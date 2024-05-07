@@ -287,6 +287,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -297,6 +299,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -307,6 +311,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -324,6 +330,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -334,6 +342,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -344,6 +354,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -361,6 +373,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -371,6 +385,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -381,6 +397,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -398,6 +416,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -408,6 +428,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl
@@ -418,6 +440,8 @@ export async function getHomeFront() {
                   id
                   title
                   slug
+                  content
+                  excerpt
                   featuredImage {
                     node {
                       sourceUrl

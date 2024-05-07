@@ -8,9 +8,10 @@ export const ExCard = ({
   cardClassName,
   cardImageClassName,
   cardGroupClassname,
+  routeParams,
 }) => {
-  console.log("cek data excard new: ", cardDatas);
   const cardDatasObject = cardDatas;
+  console.log("cek data excard new: ", cardDatasObject.length);
   // cardDatas.map((cardData, index)=>{
   //     console.log('cek satuan node cardData:', cardData.title, index)
   // })
@@ -21,8 +22,8 @@ export const ExCard = ({
       className={`${cardGroupClassname} h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:pb-0 sm:mb-0 gap-0 my-20 mt-0 mx-auto left-0 right-0 sm:p-5 sm:pt-0  sm:w-full md:drop-shadow-none sm:drop-shadow-lg md:p-10 md:pt-0 md:w-11/12`}
     >
       {cardDatasObject.map((cardData, index) => (
-        <React.Fragment key={cardData?.slug}>
-          {(index + 1) % 2 === 0 ? (
+        <React.Fragment key={index}>
+          {(index) % 2 === 0 ? (
             // {console.log(index)};
             <>
               <CardImage
@@ -54,7 +55,7 @@ export const ExCard = ({
                     <div className="flex justify-center pt-5">
                       {/* <Link type="button" className="uppercase text-[#faa51a] uppercase font-bold px-4 py-2 hover:bg-[#faa51a] hover:text-white " href="/detail/site-projek" passHref={true}> */}
                       <Button
-                        href={`/service/${cardData.slug}`}
+                        href={`/${routeParams}/${cardData.slug}`}
                         variant="orange"
                       >
                         Read More
@@ -99,7 +100,7 @@ export const ExCard = ({
                       {/* <Link type="button" className="uppercase text-[#faa51a] uppercase font-bold px-4 py-2 hover:bg-[#faa51a] hover:text-white " href="/detail/site-projek" passHref={true}> */}
 
                       <Button
-                        href={`/service/${cardData.slug}`}
+                        href={`/${routeParams}/${cardData.slug}`}
                         variant="orange"
                       >
                         Read More

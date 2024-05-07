@@ -87,6 +87,7 @@ export default function Index({
               cardImageClassName={"md:my-10"}
               cardClassName={"md:py-10"}
               cardGroupClassname={"mt-10 md:mt-5"}
+              routeParams={"service"}
             />
           </div>
         </Layout>
