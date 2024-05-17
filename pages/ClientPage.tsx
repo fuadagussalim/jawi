@@ -81,7 +81,7 @@ const logos = [
   { src: '/logo arupa.jpg', height: 24, width: 24, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
   { src: '/Logo IPS.jpg', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
   { src: '/Logo RISTEK-BRIN.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo UGM.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo UGM.png', height: 70, width: 70, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
   { src: '/Logo Temanggung Baru.png', height: 25, width: 25, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
   { src: '/Logo PBNF.png', height: 50, width: 50, alt: '', className: 'flex col-span-2 mx-0 mt-2' },
   { src: '/Logo LFP.png', height: 80, width: 80, alt: '', className: 'flex col-span-2 pt-2 mx-0 mt-2' },

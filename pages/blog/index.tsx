@@ -82,7 +82,7 @@ const handleCategoryFilter = (category) => {
     category === "all"
       ? allPosts
           .slice()
-          .sort((a, b) => new Date(b.date) - new Date(a.date)) // Sort by date descending
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime() ) // Sort by date descending
           .slice(0, 5) // Take the top 5 newest posts
       : allPosts.filter((post) =>
           post.categories.edges.some((edge) => edge.node.name === category)
