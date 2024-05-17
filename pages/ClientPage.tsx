@@ -88,21 +88,21 @@ const logos = [
   { src: '/international-elephant-project.png', height: 45, width: 80, alt: '', className: 'flex col-span-2 mx-0 mt-2' },
 ];
 
-    const cardDatas: cardData[] = [];
-  highlightPost?.map((node) => {
-  console.log("satuan node:", node)
-  // .highlightPosts.highlightPost.edges[0].node);
-  console.log("sanitized node:",  DOMPurify.sanitize(node.node.excerpt))
-  cardDatas.push({
-    id: uuid(),
-    title: node.node.title,
-    isOpen: false,
-    content: DOMPurify.sanitize(node.node.content),
-    image: node.node.featuredImage.node.sourceUrl,
-    slug: node.node.slug,
-    excerpt: DOMPurify.sanitize(node.node.excerpt)??<p></p>,
-  });
-});
+//     const cardDatas: cardData[] = [];
+//   highlightPost?.map((node) => {
+//   console.log("satuan node:", node)
+//   // .highlightPosts.highlightPost.edges[0].node);
+//   console.log("sanitized node:",  DOMPurify.sanitize(node.node.excerpt))
+//   cardDatas.push({
+//     id: uuid(),
+//     title: node.node.title,
+//     isOpen: false,
+//     content: DOMPurify.sanitize(node.node.content),
+//     image: node.node.featuredImage.node.sourceUrl,
+//     slug: node.node.slug,
+//     excerpt: DOMPurify.sanitize(node.node.excerpt)??<p></p>,
+//   });
+// });
 
 
   const carouselPosts: CarouselPost[] = [];

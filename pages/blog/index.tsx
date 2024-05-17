@@ -145,7 +145,7 @@ const handleCategoryFilter = (category) => {
         {/* Category Navigation */}
 
         <div className="grid grid-cols-2 bg-white items-center  sticky z-20 lg:px-40 top-8 pb-2 md:top-14 mx-10 md:mx-0">
-          <h2 className="grid sm col-span-2 mx-auto md:mx-0 md:col-span-1 sm:my-5 md:my-0 md:mb-0  text-left md:px-0  text-xl md:text-7xl font-bold tracking-tighter">
+          <h2 className="grid sm col-span-2 mx-auto md:mx-0 md:col-span-1 sm:my-5 md:my-0 md:mb-0  text-left md:px-0  text-xl md:text-4xl font-bold tracking-tighter">
             More Stories
           </h2>
           <div
@@ -154,7 +154,7 @@ const handleCategoryFilter = (category) => {
             <input
               type="text"
               placeholder="Search..."
-              className="px-3 md:px-5 py-4 md:py-3 md:font-semibold mx-1 sm:rounded-0 focus:outline-none focus:outline-orange bg-gray-200 text-gray-700 sm:text-xs md:text-3xl"
+              className="px-3 md:px-5 py-4 md:py-3 md:font-semibold mx-1 sm:rounded-0 focus:outline-none focus:outline-orange bg-gray-200 text-gray-700 sm:text-xs md:text-base"
               value={searchTerm}
               onChange={handleSearch}
             />

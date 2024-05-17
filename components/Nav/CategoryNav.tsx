@@ -12,7 +12,7 @@ const CategoryNav = ({
     <Navbar
       fluid
       rounded={false}
-      className={`${className} md:my-0 bg-white  dark:bg-gray-900`}
+      className={`${className} md:my-0 bg-white mt-0 py-0  dark:bg-gray-900`}
     >
      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
   <Navbar.Brand className="md:hidden" href="">
@@ -44,7 +44,7 @@ const CategoryNav = ({
                 label={categoryItem.name}
                 inline
                 key={categoryItem.name}
-                className="block flex-none my-2 ml-2 py-2 pl-3 pr-4 md:p-0 text-gray-700 border-0 hover:bg-gray-50  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+                className="block flex-none ml-2 pl-3 pr-4 md:p-0 text-gray-700 border-0 hover:bg-gray-50  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
               >
                 {categoryItem.children.map((child) => (
                   <Dropdown.Item key={child} className="mx-0">
@@ -52,7 +52,7 @@ const CategoryNav = ({
                       <button
                         key={child}
                         onClick={() => handleCategoryClick(child)}
-                        className={`py-1 md:px-2 mx-1 my-2 sm:rounded-0 text-gray-700 sm:text-xs md:text-xl ${
+                        className={`py-1 md:px-2 mx-1  sm:rounded-0 text-gray-700 sm:text-xs md:text-base ${
                           filteredCategory === `${child}` ? "bg-orange text-white ml-3 md:ml-0" : ""
                         }`}
                       >
