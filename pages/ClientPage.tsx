@@ -48,14 +48,14 @@ import { SiteProjectOverview } from "../components/Overview/SiteProjectOverview"
 import LogoCarousel from "../components/Sponsor/LogoCarousel";
 
 export default function ClientPage({ allPosts, node }) {
-  console.log("tes",node.highlightPosts.highlightPost.edges[0].node)
-  const highlightPost = node.highlightPosts.highlightPost.edges;
-  highlightPost.push(node.highlightPosts.highlightPost2.edges[0]);
-  highlightPost.push(node.highlightPosts.highlightPost3.edges[0]);
-  highlightPost.push(node.highlightPosts.highlightPost4.edges[0]);
+  // console.log("tes",node.highlightPosts.highlightPost.edges[0].node)
+  // const highlightPost = node.highlightPosts.highlightPost.edges;
+  // highlightPost.push(node.highlightPosts.highlightPost2.edges[0]);
+  // highlightPost.push(node.highlightPosts.highlightPost3.edges[0]);
+  // highlightPost.push(node.highlightPosts.highlightPost4.edges[0]);
 
-  console.log("highlight cukk ",highlightPost.length)
-  console.log("highlight cukk ",highlightPost)
+  // console.log("highlight cukk ",highlightPost.length)
+  // console.log("highlight cukk ",highlightPost)
   interface CarouselPost {
     title: string;
     image: string;
