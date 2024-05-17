@@ -23,7 +23,8 @@ export const ExCard = ({
     >
       {cardDatasObject.map((cardData, index) => (
         <React.Fragment key={index}>
-          {(index) % 2 === 0 ? (
+          {(index+1
+          ) % 2 === 0 ? (
             // {console.log(index)};
             <>
               <CardImage
@@ -49,7 +50,7 @@ export const ExCard = ({
                         className={
                           "text-black font-postbody sm:text-justify md:text-justify md:tracking-normal sm:text-xs md:text-xl w-2/3 mx-auto"
                         }
-                        dangerouslySetInnerHTML={{ __html: cardData?.excerpt }}
+                        // dangerouslySetInnerHTML={{ __html: cardData?.excerpt }}
                       />
                     </div>
                     <div className="flex justify-center pt-5">

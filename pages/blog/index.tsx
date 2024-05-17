@@ -73,20 +73,25 @@ export default function Index({
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
+const handleCategoryFilter = (category) => {
+  // Set the filtered category
+  setFilteredCategory(category);
 
-  const handleCategoryFilter = (category) => {
-    // Set the filtered category
-    setFilteredCategory(category);
-    // Filter posts based on the selected category
-    const filtered =
-      category === "all"
-        ? allPosts
-        : allPosts.filter((post) =>
-            post.categories.edges.some((edge) => edge.node.name === category)
-          );
-    setFilteredPosts(filtered);
-    setCurrentPage(1); // Reset to the first page when category changes
-  };
+  // Filter posts based on the selected category
+  const filtered =
+    category === "all"
+      ? allPosts
+          .slice()
+          .sort((a, b) => new Date(b.date) - new Date(a.date)) // Sort by date descending
+          .slice(0, 5) // Take the top 5 newest posts
+      : allPosts.filter((post) =>
+          post.categories.edges.some((edge) => edge.node.name === category)
+        );
+
+  setFilteredPosts(filtered);
+  setCurrentPage(1); // Reset to the first page when category changes
+};
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setSearchTerm(value);
@@ -200,11 +205,13 @@ export default function Index({
           </div>
 
           {/* Pagination */}
-          <Pagination
-            currentPage={currentPage}
-            totalPages={Math.ceil(filteredPosts.length / pageSize)}
-            onPageChange={handlePageChange}
-          />
+           {filteredCategory !== "all" && (
+      <Pagination
+        currentPage={currentPage}
+        totalPages={Math.ceil(filteredPosts.length / pageSize)}
+        onPageChange={handlePageChange}
+      />
+    )}
         </div>
       </Container>
     </Layout>

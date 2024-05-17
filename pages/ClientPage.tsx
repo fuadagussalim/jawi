@@ -16,6 +16,7 @@ import { Accordion } from "../components/Accordion";
 import { MotionBTTContainer } from "../components/Motion";
 import SEO from "../components/SEO/SEO";
 import DOMPurify from 'isomorphic-dompurify';
+import { ExCardStatic } from "../components/Card";
 
 import {
   CardBody,
@@ -48,9 +49,9 @@ import { SiteProjectOverview } from "../components/Overview/SiteProjectOverview"
 export default function ClientPage({ allPosts, node }) {
   console.log("tes",node.highlightPosts.highlightPost.edges[0].node)
   const highlightPost = node.highlightPosts.highlightPost.edges;
-  // highlightPost.push(node.highlightPosts.highlightPost2.edges[0]);
-  // highlightPost.push(node.highlightPosts.highlightPost3.edges[0]);
-  // highlightPost.push(node.highlightPosts.highlightPost4.edges[0]);
+  highlightPost.push(node.highlightPosts.highlightPost2.edges[0]);
+  highlightPost.push(node.highlightPosts.highlightPost3.edges[0]);
+  highlightPost.push(node.highlightPosts.highlightPost4.edges[0]);
 
   console.log("highlight cukk ",highlightPost.length)
   console.log("highlight cukk ",highlightPost)
@@ -65,11 +66,18 @@ export default function ClientPage({ allPosts, node }) {
       id: string;
       title: string;
       isOpen: boolean;
-      content: ReactElement<any, any>;
+      content: SVGRectElement<any, any>;
       image: string;
       slug: string;
       excerpt: string;
     }
+
+    const logos = [
+  { src: '/logo arupa.jpg', alt: 'Logo 1' },
+  { src: '/Logo IPS.jpg', alt: 'Logo 2' },
+  { src: '/Logo ISI Baru', alt: 'Logo 3' },
+  // Add more logos as needed
+];
 
     const cardDatas: cardData[] = [];
   highlightPost?.map((node) => {
@@ -83,7 +91,7 @@ export default function ClientPage({ allPosts, node }) {
     content: DOMPurify.sanitize(node.node.content),
     image: node.node.featuredImage.node.sourceUrl,
     slug: node.node.slug,
-    excerpt: DOMPurify.sanitize(node.node.excerpt)??"",
+    excerpt: DOMPurify.sanitize(node.node.excerpt)??<p></p>,
   });
 });
 
@@ -144,8 +152,9 @@ export default function ClientPage({ allPosts, node }) {
                       <p className="text-white text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">
                         Our Capability
                       </p>
+                      <ExCardStatic/>
                      
-                       <ExCard cardDatas={cardDatas} cardImageClassName={""} routeParams={"portofolio"} cardGroupClassname={"mt-10"} cardClassName={""}/>
+                       {/* <ExCard cardDatas={cardDatas} cardImageClassName={""} routeParams={"portofolio"} cardGroupClassname={"mt-10"} cardClassName={""}/> */}
                     </div>
                   </div>
                 </div>

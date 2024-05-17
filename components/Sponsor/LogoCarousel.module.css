@@ -1,0 +1,27 @@
+/* components/LogoCarousel.module.css */
+.logoContainer {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.logoMarquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.logo {
+  display: inline-block;
+  padding: 0 15px;
+  height: 50px; /* Adjust height as needed */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
