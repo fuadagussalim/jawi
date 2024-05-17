@@ -17,11 +17,11 @@
   height: 50px; /* Adjust height as needed */
 }
 
-@keyframes marquee {
+/* @keyframes marquee {
   from {
     transform: translateX(100%);
   }
   to {
     transform: translateX(-100%);
   }
-}
+} */

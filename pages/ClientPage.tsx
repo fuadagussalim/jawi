@@ -17,7 +17,7 @@ import { MotionBTTContainer } from "../components/Motion";
 import SEO from "../components/SEO/SEO";
 import DOMPurify from 'isomorphic-dompurify';
 import { ExCardStatic } from "../components/Card";
-
+import RunningLogo  from "../components/Carousel/RunningLogo";
 import {
   CardBody,
   CardGroup,
@@ -45,6 +45,7 @@ import { Gallery } from "next-gallery";
 import AnimatedLine from "../components/Timeline/AnimatedLine";
 import { AboutOverview } from "../components/Overview/AboutOverview";
 import { SiteProjectOverview } from "../components/Overview/SiteProjectOverview";
+import LogoCarousel from "../components/Sponsor/LogoCarousel";
 
 export default function ClientPage({ allPosts, node }) {
   console.log("tes",node.highlightPosts.highlightPost.edges[0].node)
@@ -66,17 +67,25 @@ export default function ClientPage({ allPosts, node }) {
       id: string;
       title: string;
       isOpen: boolean;
-      content: SVGRectElement<any, any>;
+      content: any;
       image: string;
       slug: string;
       excerpt: string;
     }
 
-    const logos = [
-  { src: '/logo arupa.jpg', alt: 'Logo 1' },
-  { src: '/Logo IPS.jpg', alt: 'Logo 2' },
-  { src: '/Logo ISI Baru', alt: 'Logo 3' },
-  // Add more logos as needed
+ 
+const logos = [
+  { src: '/Logo ISI Baru.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo TN Bukit Raya.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo_TN_Komodo (1).png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/logo arupa.jpg', height: 24, width: 24, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo IPS.jpg', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo RISTEK-BRIN.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo UGM.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo Temanggung Baru.png', height: 25, width: 25, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
+  { src: '/Logo PBNF.png', height: 50, width: 50, alt: '', className: 'flex col-span-2 mx-0 mt-2' },
+  { src: '/Logo LFP.png', height: 80, width: 80, alt: '', className: 'flex col-span-2 pt-2 mx-0 mt-2' },
+  { src: '/international-elephant-project.png', height: 45, width: 80, alt: '', className: 'flex col-span-2 mx-0 mt-2' },
 ];
 
     const cardDatas: cardData[] = [];
@@ -238,6 +247,17 @@ export default function ClientPage({ allPosts, node }) {
       ) : (
         <p>No posts found.</p>
       )}
+
+       {/* <LogoCarousel logos={logos} /> */}
+         <h3 className="text-orange w-full text-center m-0 text-2xl font-extrabold">
+                        OUR PARTNERS
+                      </h3>
+       <br>
+       </br>
+       
+       <RunningLogo logos={logos}/>
+       <br/>
+       <br/>
 
     </Layout>
   );
