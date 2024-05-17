@@ -87,6 +87,8 @@ const logos = [
   { src: '/Logo LFP.png', height: 80, width: 80, alt: '', className: 'flex col-span-2 pt-2 mx-0 mt-2' },
   { src: '/international-elephant-project.png', height: 45, width: 80, alt: '', className: 'flex col-span-2 mx-0 mt-2' },
 ];
+console.log("preview",node.previewTexts)
+
 
 //     const cardDatas: cardData[] = [];
 //   highlightPost?.map((node) => {
@@ -127,6 +129,7 @@ const logos = [
         date: "Tidak dapat terkoneksi dengan server",
       });
   console.log("isi caro", carouselPosts);
+  const preview = node.previewTexts
 
   return (
     <Layout preview={false} className="bg-[#F3F5F8]">
@@ -146,7 +149,7 @@ const logos = [
           >
             <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
               <SectionContainer id="about-jawi" className="feature-tabs ">
-              <AboutOverview previewTexts={node?.previewTexts??"tes"}/>
+              <AboutOverview previewTexts={preview}/>
               
               <SiteProjectOverview/>
            
