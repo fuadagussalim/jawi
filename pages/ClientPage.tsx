@@ -134,8 +134,8 @@ const logos = [
         <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
           <HomeBanner
             href="#about-jawi"
-            image={node.front?.banner.node.sourceUrl??"/DEF_7207.JPG"}
-            maintext={node.front?.judul??"Javan Wildlife Institute"}
+            image={node?.front?.banner.node.sourceUrl??"/DEF_7207.JPG"}
+            maintext={node?.front?.judul??"Javan Wildlife Institute"}
             subtextclass="sm:w-10/12 md:w-full font-normal lg:text-xl"
             subtext="Menjadi mitra rujukan sains konservasi di Indonesia"
             align="left"
