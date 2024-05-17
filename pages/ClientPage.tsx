@@ -146,7 +146,7 @@ const logos = [
           >
             <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
               <SectionContainer id="about-jawi" className="feature-tabs ">
-              <AboutOverview previewTexts={node.previewTexts}/>
+              <AboutOverview previewTexts={node?.previewTexts??"tes"}/>
               
               <SiteProjectOverview/>
            
