@@ -129,7 +129,24 @@ console.log("preview",node.previewTexts)
         date: "Tidak dapat terkoneksi dengan server",
       });
   console.log("isi caro", carouselPosts);
-  const preview = node.previewTexts
+   const previewTextsFailsafe = {
+    mainPreviewLink: "/main-link",
+    mainPreviewHead: "Main Preview",
+    mainPreview: "This is the main preview text",
+    previewLink1: "/link1",
+    previewHead1: "Preview 1",
+    previewText1: "This is the preview text 1",
+    previewLink2: "/link2",
+    previewHead2: "Preview 2",
+    previewText2: "This is the preview text 2",
+    previewLink3: "/link3",
+    previewHead3: "Preview 3",
+    previewText3: "This is the preview text 3",
+    previewLink4: "/link4",
+    previewHead4: "Preview 4",
+    previewText4: "This is the preview text 4",
+  };
+  const preview = node?.previewTexts??previewTextsFailsafe;
 
   return (
     <Layout preview={false} className="bg-[#F3F5F8]">
