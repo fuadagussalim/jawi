@@ -149,7 +149,7 @@ console.log("preview",node.previewTexts)
           >
             <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
               <SectionContainer id="about-jawi" className="feature-tabs ">
-              <AboutOverview previewTexts={preview}/>
+              {preview&&<AboutOverview previewTexts={preview}/>}
               
               <SiteProjectOverview/>
            
