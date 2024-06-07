@@ -40,12 +40,12 @@ export default function Post({ post, posts, preview, postId }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={(post.featuredImage)?post.featuredImage.node.sourceUrl:"/nullimage.jpg"}
+                  content={(post.featuredImage)?post.featuredImage?.node?.sourceUrl:"/nullimage.jpg"}
                 />
               </Head>
               <PostHeader
                 title={(post.title)?post.title:"Judul masih kosong"}
-                coverImage={(post.featuredImage)?post.featuredImage.node.sourceUrl:"/nullimage.jpg"}
+                coverImage={(post.featuredImage)?post.featuredImage.node?.sourceUrl:"/nullimage.jpg"}
                 date={(post.date)?post.date:'2030-06-05T12:52:05'}
                 author={(post.author)?post.author:"Tidak ada author"}
                 categories={(post.categories)?post.categories:[]}
@@ -93,7 +93,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
+    paths: allPosts.edges?.map(({ node }) => `/posts/${node?.slug}`) || [],
     fallback: true,
   };
 };
