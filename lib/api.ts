@@ -64,7 +64,7 @@ export async function getAllPostsWithSlug() {
 export async function getAllPhotos() {
   const data = await fetchAPI(`
  query gallery {
-  gallery {
+  gallery(first: 100) {
     edges {
       node {
         content

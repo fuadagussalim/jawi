@@ -216,7 +216,7 @@ console.log("preview",node.previewTexts)
                   <div className="max-w-80 mb-2">
                     <hr className="h-1 bg-[#faa51a]" />
                     <h4 className="text-black text-left m-0 max-w-xs mt-2 text-lg font-bold sm:max-w-full">
-                      K-COFFE 150 Gr. Kopi Robusta Kemuning, Temanggung
+                      K-COFFEE 150 Gr. Kopi Robusta Kemuning, Temanggung
                     </h4>
                   </div>
 
