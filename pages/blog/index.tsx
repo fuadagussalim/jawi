@@ -240,6 +240,7 @@ export const getStaticProps = async () => {
       allPosts,
       categories,
     },
+     revalidate: 10
   };
 };
 
