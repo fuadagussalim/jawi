@@ -12,7 +12,7 @@ export default function PostHeader({
   author,
   categories,
 }) {
-  console.log('coverimage:',coverImage.node.sourceUrl)
+  console.log('coverimage:',coverImage?.node?.sourceUrl)
   return (
     <div className="pt-1">
       {/* <PostTitle>{title}</PostTitle>
@@ -27,7 +27,7 @@ export default function PostHeader({
           <Avatar author={author} />
         </div> */}
       
-        <OtherpageBanner maintextclass="font-base sm:text-xl pt-0" subtextclass="sm:mt-0" image={coverImage.node.sourceUrl} maintext={title} type='default' subtext={format(parseISO(date), "LLLL	d, yyyy")}/>
+        <OtherpageBanner maintextclass="font-base sm:text-xl pt-0" subtextclass="sm:mt-0" image={(coverImage?.node?.sourceUrl)?coverImage.node.sourceUrl:"/nullimage.jpg"} maintext={title} type='default' subtext={format(parseISO(date), "LLLL	d, yyyy")}/>
         {/* <div className="mb-6 text-lg">
           Posted <Date dateString={date} />
           <Categories categories={categories} />

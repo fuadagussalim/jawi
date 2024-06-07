@@ -36,19 +36,19 @@ export default function Post({ post, posts, preview, postId }) {
             <article>
               <Head>
                 <title>
-                  {`${post.title} | JAWI Magazine`}
+                  {`${(post.title)?post.title:"Judul masih kosong"} | JAWI Magazine`}
                 </title>
                 <meta
                   property="og:image"
-                  content={post.featuredImage?.node.sourceUrl}
+                  content={(post.featuredImage)?post.featuredImage.node.sourceUrl:"/nullimage.jpg"}
                 />
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage}
-                date={post.date}
-                author={post.author}
-                categories={post.categories}
+                title={(post.title)?post.title:"Judul masih kosong"}
+                coverImage={(post.featuredImage)?post.featuredImage.node.sourceUrl:"/nullimage.jpg"}
+                date={(post.date)?post.date:'2030-06-05T12:52:05'}
+                author={(post.author)?post.author:"Tidak ada author"}
+                categories={(post.categories)?post.categories:[]}
               />
               <PostBody content={post.content} />
               <footer>
