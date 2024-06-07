@@ -44,13 +44,13 @@ export default function Index({
     const childrenStr: string[] = [];
 
     // Looping setiap anak dan nge-push nama anaknya ke array childrenStr
-    node.node.children.nodes?.forEach((childNode) => {
+    node?.node?.children.nodes?.forEach((childNode) => {
       childrenStr.push(childNode.name);
     });
 
     // Nge-push data kategori yang udah di-remap ke array categoriesRemapped
     categoriesRemapped.push({
-      name: node.node.name,
+      name: node?.node?.name,
       children: childrenStr,
     });
   });
@@ -223,8 +223,8 @@ const getUniqueCategories = (allPosts) => {
   const categoriesSet = new Set<string>();
   allPosts.forEach((post) => {
     post.categories.edges.forEach((edge) => {
-      console.log("categori cuy", edge.node.children.nodes);
-      categoriesSet.add(edge.node.name);
+      console.log("categori cuy", edge.node?.children.nodes);
+      categoriesSet.add(edge.node?.name);
     });
   });
   return Array.from(categoriesSet);
@@ -281,7 +281,7 @@ function remapJSON(originalJson) {
 
   // Traverse the original JSON to collect parent names
   originalJson.edges.forEach((edge) => {
-    const nodeName = edge.node.name;
+    const nodeName = edge.node?.name;
     if (edge.node.children && edge.node.children.nodes.length > 0) {
       edge.node.children.nodes.forEach((child) => {
         const childName = child.name;
@@ -292,7 +292,7 @@ function remapJSON(originalJson) {
 
   // Filter out the nodes that are not listed as parents elsewhere
   const filteredNodes = originalJson.edges.filter((edge) => {
-    const nodeName = edge.node.name;
+    const nodeName = edge.node?.name;
     return !parents.has(nodeName);
   });
 
