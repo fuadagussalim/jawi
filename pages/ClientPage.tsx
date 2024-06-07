@@ -116,8 +116,7 @@ console.log("preview",node.previewTexts)
         carouselPosts.push({
           title: node.node.title,
           slug: node.node.slug,
-          image: node.node.featuredImage.node.sourceUrl,
-
+          image: node.node.featuredImage?.node.sourceUrl,
           date: format(postDate, "MMMM dd, yyyy HH:mm:ss"),
         });
       })
