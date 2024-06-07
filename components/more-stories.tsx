@@ -20,7 +20,7 @@ export default function MoreStories({ posts, handleCategoryClick  }) {
             {(index + 1) % 3 === 0 ? (
               <PostPreview3
                 title={(node?.title)? node.title : "Judul Kosong"}
-                coverImage={(node.featuredImage.node.sourceUrl)?node.featuredImage.node.sourceUrl:"/nullimage.jpg"} //"/nullimage.jpg"
+                coverImage={(node.featuredImage)?node.featuredImage.node.sourceUrl:"/nullimage.jpg"} //"/nullimage.jpg"
                 date={(node.date)?node.date: "2023-03-30T12:52:22"}//2023-03-30T12:52:22
                 author={(node.author)?node.author:"Author tidak ada"}
                 slug={`/posts/${(node.slug)?node.slug:"slug-null"}`}
