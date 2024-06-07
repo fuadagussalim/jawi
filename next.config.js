@@ -12,7 +12,7 @@ const { protocol, hostname, port, pathname } = new URL(
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: false,
- 
+ staticPageGenerationTimeout: 1000,
   images: {
     domains: ['blog.jawi.or.id', 'secure.gravatar.com', 'picsum.photos'],
     remotePatterns: [
