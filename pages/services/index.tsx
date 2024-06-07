@@ -73,9 +73,9 @@ export default function Index({
           />
           <div>
             <div>
-              <h1 className="text-orange font-bold sm:text-xl md:text-4xl sm:uppercase  drop-shadow-sm sm:mt-5 sm:mb-2 md:my-10 md:mb-0 md:uppercase mx-auto text-center">
+              {node.servicesFront.heading && <h1 className="text-orange font-bold sm:text-xl md:text-4xl sm:uppercase  drop-shadow-sm sm:mt-5 sm:mb-2 md:my-10 md:mb-0 md:uppercase mx-auto text-center">
                 {node.servicesFront.heading ?? "Services"}
-              </h1>
+              </h1>}
               <p className="text-base md:text-xl mx-auto w-full px-10 md:px-28 sm:mt-3 md:mt-5 text-justify md:text-center font-postbody">
                 {node.servicesFront.shortParagraph ?? ""}
               </p>

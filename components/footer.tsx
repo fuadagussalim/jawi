@@ -392,10 +392,12 @@ export default function Footer() {
           
           <div className="text-center text-sm mb-5">
             <Link href="contact-us">
-            <p>Contact Us</p>
+            <p className="px-5 pb-5">Contact Us</p>
             </Link>
-            <br></br>
-            <p>Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia</p>
+            
+            <p className="px-5 pt-0 my-0">© Lembaga Jawi Indonesia/ Javan Wildlife Institute (JAWI). All rights reserved.</p>
+            
+            <p className="px-5 ">Gedongkiwo MJ.I/848 RT.47/RW10, Kecamatan Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia</p>
           </div>
           
           {/* <div className="text-center mb-5">

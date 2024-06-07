@@ -60,7 +60,7 @@ export const ExCardStatic = () =>{
                                                   <div className="w-full sm:pt-5  rounded-0">
                                                       <div>
 
-                                                          <h3 className="text-black w-full text-center m-0 text-base font-extrabold">PPEMODELAN SPASIAL</h3>
+                                                          <h3 className="text-black w-full text-center m-0 text-base font-extrabold">PEMODELAN SPASIAL</h3>
                                                           <p className="text-black text-center m-0 max-w-xs mt-2 text-base sm:max-w-full"></p>
                                                       </div>
 

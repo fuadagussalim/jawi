@@ -97,7 +97,7 @@ export const AboutOverview = ({previewTexts})=>{
                           <td className="align-top ">
                             <Link href={previewTexts.previewLink3}>
                               <p className="text-justify hidden md:block sm:min-h-[20px] md:min-h-[50px]  hover:text-[#808080] font-postbody sm:text-xs  md:text-sm pr-10">
-                                     {previewTexts.previewText3??"Bekerja untuk menjamin masa depan keanekaragaman"}                          hayati Indonesia melalui ilmu konservasi
+                                     {previewTexts.previewText3??"Bekerja untuk menjamin masa depan keanekaragaman"}          
                               </p>
                             </Link>
 
