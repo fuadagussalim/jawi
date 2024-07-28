@@ -8,7 +8,7 @@ export const ExCardStatic = () =>{
 
   return (
  <CardGroup className="h-max items-center z-22 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 my-20 mt-0 mx-auto left-0 right-0 sm:p-5  sm:w-full md:drop-shadow-none sm:drop-shadow-lg md:p-10 md:w-11/12">
-      <CardImage src='/survey-biodibersitas-crop.png' className='gridcol-span-1  md:sm-0 h-[330px]' imageClassName={'object-cover objet-bottom'} alt={''} />
+      <CardImage src='/Foto Survei Biodiversitas.JPG' className='gridcol-span-1  md:sm-0 h-[330px]' imageClassName={'object-cover objet-bottom'} alt={''} />
           <Card className="grid h-full rounded-none  sm:mb-10 md:mb-0 col-span-1 align-middle text-primary-400">
                <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] m-10">
                                                   <div className="w-full sm:pt-5  rounded-0">
@@ -28,7 +28,7 @@ export const ExCardStatic = () =>{
 
                                               </CardBody>
                                           </Card>
-                                          <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64 sm:block md:hidden' imageClassName={' object-cover objet-bottom'} alt={''} />
+                                          <CardImage src='/Foto Manajemen Data.jpg' className='gridcol-span-1 h-64 sm:block md:hidden' imageClassName={' object-cover objet-bottom'} alt={''} />
                                           <Card className="grid h-full rounded-none  sm:mb-10 md:mb-0 col-span-1 align-middle text-primary-400">
                                               <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] m-10">
                                                   <div className="w-full sm:pt-5  rounded-0">
@@ -53,7 +53,7 @@ export const ExCardStatic = () =>{
 
                                               </CardBody>
                                           </Card>
-                                          <CardImage src='/manajemen-data-jawi.png' className='gridcol-span-1 h-64 sm:hidden md:block h-[330px]' imageClassName={' object-cover objet-bottom'} alt={''} />
+                                          <CardImage src='/Foto Manajemen Data.jpg' className='gridcol-span-1 h-64 sm:hidden md:block h-[330px]' imageClassName={' object-cover objet-bottom'} alt={''} />
                                           <CardImage src='/model-OU-17052023-1.jpg' className='gridcol-span-1 h-64 h-[330px]' imageClassName={'object-cover objet-bottom'} alt={''} />
                                           <Card className="grid h-full rounded-none  sm:mb-10 md:mb-0 col-span-1 align-middle text-primary-400">
                                               <CardBody className="flex align-middle h-full items-center align-center bg-[#F3F5F8] m-10">
