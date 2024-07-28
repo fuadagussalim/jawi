@@ -19,7 +19,7 @@ export default function PostHeader({
       <div className="hidden md:block md:mb-12">
         <Avatar author={author} />
       </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div className="mb-8 md:mb-16 sm:mx-0">sourceUrsourceUrl);
         <CoverImage title={title} coverImage={coverImage} />
       </div>
       <div className="max-w-2xl mx-auto">
@@ -27,7 +27,7 @@ export default function PostHeader({
           <Avatar author={author} />
         </div> */}
       
-        <OtherpageBanner maintextclass="font-base sm:text-xl pt-0" subtextclass="sm:mt-0" image={(coverImage?.node?.sourceUrl)?coverImage.node.sourceUrl:"/nullimage.jpg"} maintext={title} type='default' subtext={format(parseISO(date), "LLLL	d, yyyy")}/>
+        <OtherpageBanner maintextclass="font-base sm:text-xl pt-0" subtextclass="sm:mt-0" image={coverImage} maintext={title} type='default' subtext={format(parseISO(date), "LLLL	d, yyyy")}/>
         {/* <div className="mb-6 text-lg">
           Posted <Date dateString={date} />
           <Categories categories={categories} />

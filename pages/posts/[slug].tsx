@@ -18,7 +18,9 @@ import CommentForm from "../../components/comments/CommentForm";
 export default function Post({ post, posts, preview, postId }) {
   const router = useRouter();
   const morePosts = posts?.edges;
-  console.log('post itu apa',post)
+  console.log('post itu apa',post);
+  console.log('post itu apa',post.featuredImage);
+
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -40,7 +42,7 @@ export default function Post({ post, posts, preview, postId }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={(post.featuredImage)?post.featuredImage?.node?.sourceUrl:"/nullimage.jpg"}
+                  content={post?.featuredImage?.node?.sourceUrl ?? "/nullimage.jpg"}
                 />
               </Head>
               <PostHeader
