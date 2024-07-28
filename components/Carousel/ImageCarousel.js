@@ -30,7 +30,7 @@ const ImageCarousel = ({ carouselPosts, className = "" }) => {
                 </button>
                 <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
                     <Link href={`/posts/${carouselPosts[previousImageIndex]?.slug}`}>
-                        <div className="hover:shadow-xl relative hidden md:block col-span-1 w-[400px] h-96 overflow-hidden transition-transform duration-500 ease-in-out">
+                        <div className="hover:shadow-xl relative hidden md:block col-span-1 w-full h-96 overflow-hidden transition-transform duration-500 ease-in-out">
                             <h5 className="absolute font-bold text-shadow text-white z-20 bottom-[30px] m-5">
                                 {carouselPosts[previousImageIndex]?.title}
                             </h5>
@@ -39,14 +39,14 @@ const ImageCarousel = ({ carouselPosts, className = "" }) => {
                         </div>
                     </Link>
                     <Link href={`/posts/${carouselPosts[currentImageIndex]?.slug}`}>
-                        <div className="hover:shadow-xl relative col-span-1 w-[400px] h-96 overflow-hidden transition-transform duration-500 ease-in-out">
+                        <div className="hover:shadow-xl relative col-span-1 w-full h-96 overflow-hidden transition-transform duration-500 ease-in-out">
                             <h5 className="absolute font-bold drop-shadow-lg text-white z-20 bottom-[30px] m-5">{carouselPosts[currentImageIndex]?.title}</h5>
                             <p className="absolute text-white font-thin z-20 bottom-[10px] m-5">{carouselPosts[currentImageIndex]?.date}</p>
                             <img src={carouselPosts[currentImageIndex]?.image} alt="" className="absolute w-full h-full object-cover transition-opacity duration-500 ease-in-out" />
                         </div>
                     </Link>
                     <Link href={`/posts/${carouselPosts[afterImageIndex]?.slug}`}>
-                        <div className="hover:shadow-xl relative hidden md:block col-span-1 w-[400px] h-96 overflow-hidden transition-transform duration-500 ease-in-out">
+                        <div className="hover:shadow-xl relative hidden md:block col-span-1 w-full h-96 overflow-hidden transition-transform duration-500 ease-in-out">
                             <h5 className="absolute font-bold text-white z-20 bottom-[30px] m-5">
                                 {carouselPosts[afterImageIndex]?.title}
                             </h5>
