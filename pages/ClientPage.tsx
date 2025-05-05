@@ -1,3 +1,5 @@
+"use client";
+
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { BadgeMessage, BadgeGroup, BadgeIcon } from "../components/Badge";
@@ -15,9 +17,9 @@ import { Content } from "../components/Content";
 import { Accordion } from "../components/Accordion";
 import { MotionBTTContainer } from "../components/Motion";
 import SEO from "../components/SEO/SEO";
-import DOMPurify from 'isomorphic-dompurify';
+import DOMPurify from "isomorphic-dompurify";
 import { ExCardStatic } from "../components/Card";
-import RunningLogo  from "../components/Carousel/RunningLogo";
+import RunningLogo from "../components/Carousel/RunningLogo";
 import {
   CardBody,
   CardGroup,
@@ -63,49 +65,112 @@ export default function ClientPage({ allPosts, node }) {
     slug: string;
   }
 
-   interface cardData {
-      id: string;
-      title: string;
-      isOpen: boolean;
-      content: any;
-      image: string;
-      slug: string;
-      excerpt: string;
-    }
+  interface cardData {
+    id: string;
+    title: string;
+    isOpen: boolean;
+    content: any;
+    image: string;
+    slug: string;
+    excerpt: string;
+  }
 
- 
-const logos = [
-  { src: '/Logo ISI Baru.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo TN Bukit Raya.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo_TN_Komodo (1).png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/logo arupa.jpg', height: 24, width: 24, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo IPS.jpg', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo RISTEK-BRIN.png', height: 35, width: 35, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo UGM.png', height: 70, width: 70, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo Temanggung Baru.png', height: 25, width: 25, alt: '', className: 'flex col-span-1 mx-0 mt-2' },
-  { src: '/Logo PBNF.png', height: 50, width: 50, alt: '', className: 'flex col-span-2 mx-0 mt-2' },
-  { src: '/Logo LFP.png', height: 80, width: 80, alt: '', className: 'flex col-span-2 pt-2 mx-0 mt-2' },
-  { src: '/international-elephant-project.png', height: 45, width: 80, alt: '', className: 'flex col-span-2 mx-0 mt-2' },
-];
-console.log("preview",node.previewTexts)
+  const logos = [
+    {
+      src: "/partners/ugm.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/pemdes_kemuning.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/relung.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/karomap.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/birdpack.png",
+      height: 35,
+      width: 35,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/arupa.png",
+      height: 35,
+      width: 35,
+      alt: "Arupa",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/sgp.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/space.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/isi.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/ltkl.png",
+      height: 24,
+      width: 24,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+    {
+      src: "/partners/fireface.png",
+      height: 35,
+      width: 35,
+      alt: "",
+      className: "flex col-span-1 mx-0 mt-2",
+    },
+  ];
+  console.log("preview", node.previewTexts);
 
-
-//     const cardDatas: cardData[] = [];
-//   highlightPost?.map((node) => {
-//   console.log("satuan node:", node)
-//   // .highlightPosts.highlightPost.edges[0].node);
-//   console.log("sanitized node:",  DOMPurify.sanitize(node.node.excerpt))
-//   cardDatas.push({
-//     id: uuid(),
-//     title: node.node.title,
-//     isOpen: false,
-//     content: DOMPurify.sanitize(node.node.content),
-//     image: node.node.featuredImage.node.sourceUrl,
-//     slug: node.node.slug,
-//     excerpt: DOMPurify.sanitize(node.node.excerpt)??<p></p>,
-//   });
-// });
-
+  //     const cardDatas: cardData[] = [];
+  //   highlightPost?.map((node) => {
+  //   console.log("satuan node:", node)
+  //   // .highlightPosts.highlightPost.edges[0].node);
+  //   console.log("sanitized node:",  DOMPurify.sanitize(node.node.excerpt))
+  //   cardDatas.push({
+  //     id: uuid(),
+  //     title: node.node.title,
+  //     isOpen: false,
+  //     content: DOMPurify.sanitize(node.node.content),
+  //     image: node.node.featuredImage.node.sourceUrl,
+  //     slug: node.node.slug,
+  //     excerpt: DOMPurify.sanitize(node.node.excerpt)??<p></p>,
+  //   });
+  // });
 
   const carouselPosts: CarouselPost[] = [];
 
@@ -128,7 +193,7 @@ console.log("preview",node.previewTexts)
         date: "Tidak dapat terkoneksi dengan server",
       });
   console.log("isi caro", carouselPosts);
-   const previewTextsFailsafe = {
+  const previewTextsFailsafe = {
     mainPreviewLink: "/main-link",
     mainPreviewHead: "Main Preview",
     mainPreview: "This is the main preview text",
@@ -145,7 +210,7 @@ console.log("preview",node.previewTexts)
     previewHead4: "Preview 4",
     previewText4: "This is the preview text 4",
   };
-  const preview = node?.previewTexts??previewTextsFailsafe;
+  const preview = node?.previewTexts ?? previewTextsFailsafe;
 
   return (
     <Layout preview={false} className="bg-[#F3F5F8]">
@@ -153,8 +218,8 @@ console.log("preview",node.previewTexts)
         <div className="main-wrapper tracking-wide bg-[#F3F5F8] relative z-10 ">
           <HomeBanner
             href="#about-jawi"
-            image={node?.front?.banner.node.sourceUrl??"/DEF_7207.JPG"}
-            maintext={node?.front?.judul??"Javan Wildlife Institute"}
+            image={node?.front?.banner.node.sourceUrl ?? "/DEF_7207.JPG"}
+            maintext={node?.front?.judul ?? "Javan Wildlife Institute"}
             subtextclass="sm:w-10/12 md:w-full font-normal lg:text-xl"
             subtext="Menjadi mitra rujukan sains konservasi di Indonesia"
             align="left"
@@ -165,10 +230,10 @@ console.log("preview",node.previewTexts)
           >
             <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
               <SectionContainer id="about-jawi" className="feature-tabs ">
-              {preview&&<AboutOverview previewTexts={preview}/>}
-              
-              <SiteProjectOverview/>
-           
+                {preview && <AboutOverview previewTexts={preview} />}
+
+                <SiteProjectOverview />
+
                 <div className="w-full h-full sm:mt-10 md:mt-20">
                   <div className="relative sm:h-[1800px] md:h-[1580px]">
                     <div className="absolute z-1 w-full h-[250px] bg-[#faa51a]"></div>
@@ -180,9 +245,9 @@ console.log("preview",node.previewTexts)
                       <p className="text-white text-center m-0 max-w-xs mt-2 text-base sm:max-w-full">
                         Our Capability
                       </p>
-                      <ExCardStatic/>
-                     
-                       {/* <ExCard cardDatas={cardDatas} cardImageClassName={""} routeParams={"portofolio"} cardGroupClassname={"mt-10"} cardClassName={""}/> */}
+                      <ExCardStatic />
+
+                      {/* <ExCard cardDatas={cardDatas} cardImageClassName={""} routeParams={"portofolio"} cardGroupClassname={"mt-10"} cardClassName={""}/> */}
                     </div>
                   </div>
                 </div>
@@ -197,7 +262,7 @@ console.log("preview",node.previewTexts)
         </div>
       </div>
       <div className="sm:px-5  pt-5 bg-[#F3F5F8]]">
-        <CardGroup className="sm:shadow-lg md:shadow-none grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-20 md:mt-0 mx-auto sm:p-0  sm:w-full  md:w-full">
+        <CardGroup className="sm:shadow-lg md:shadow-none grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 sm:m-10 sm:p-10  sm:mt-40 sm:mx-auto sm:mb-20 md:mt-0 mx-auto  sm:w-full  md:w-full">
           <CardImage
             src="/product.jpeg"
             className="gridcol-span-1 h-full md:pl-10 md:pr-10"
@@ -250,8 +315,6 @@ console.log("preview",node.previewTexts)
                   >
                     SHOP NOW
                   </Button>
-
-   
                 </div>
                 <p className="text-black font-bold text-sm my-0 pt-2 text-justify">
                   Powered by <span className="text-[#FAA51A]">Shopee</span>
@@ -267,17 +330,15 @@ console.log("preview",node.previewTexts)
         <p>No posts found.</p>
       )}
 
-       {/* <LogoCarousel logos={logos} /> */}
-         <h3 className="text-orange w-full text-center m-0 text-2xl font-extrabold">
-                        OUR PARTNERS
-                      </h3>
-       <br>
-       </br>
-       
-       <RunningLogo logos={logos}/>
-       <br/>
-       <br/>
+      {/* <LogoCarousel logos={logos} /> */}
+      <h3 className="text-orange w-full text-center m-0 text-2xl font-extrabold">
+        OUR COLLABORATIONS
+      </h3>
+      <br></br>
 
+      <RunningLogo logos={logos} />
+      <br />
+      <br />
     </Layout>
   );
 }
